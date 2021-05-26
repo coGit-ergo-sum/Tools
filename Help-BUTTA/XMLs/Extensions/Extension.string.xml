@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Docs>
+  <namespace name="ExtensionString">
+    <p>
+      Collection of 'extension methods for 'string'
+    </p>
+  </namespace>
+  <class name="Methods">
+    <summary>
+      <!--
+      <img src="Images\SQLLogger.png"  style="margin: 15px 0px 15px 0px;" />
+      <img src=".\Images\SQLLogger.png"  style="margin: 15px 0px 15px 0px;" />
+      <img src="..\Images\SQLLogger.png"  style="margin: 15px 0px 15px 0px;" />
+      <img src="/Images/SQLLogger.png"  style="margin: 15px 0px 15px 0px;" />
+      <img src="./Images/SQLLogger.png"  style="margin: 15px 0px 15px 0px;" />
+      <img src="C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Images\SQLLogger.png"  style="margin: 15px 0px 15px 0px;" />
+      <img src="Tools/Images/SQLLogger.png"  style="margin: 15px 0px 15px 0px;" />
+      <a href="#">LINK</a>
+      <img src="Images/SQLLogger.pngHelp\Images\SQLLogger.png"/>
+
+      <img src="Images/SQLLogger.png"/>
+      <img src="tools/help/Images/SQLLogger.png"/>
+      <img src="../../help/Images/SQLLogger.png"/>
+      <img src="../../Images/SQLLogger.png"/>
+      <img src="./Images/SQLLogger.png"/>
+      <img src="Tools/Images/SQLLogger.png"/>
+      -->
+      <p style="Padding: 15px 0px 0px 0px;">
+      </p>
+      <example>
+        <code>
+          int c = Math.Add(4, 5);
+          if (c > 10)
+          {
+              Console.WriteLine(c);
+          }
+         </code>
+      
+      </example>
+      <image file="..\help\images\SQLLogger.png">
+        <altText>Information</altText>
+      </image>
+      <image file="help\images\SQLLogger.png">
+        <altText>Information</altText>
+      </image>      
+    </summary>
+
+  </class>
+  <interface name="ILog">
+    <summary>
+      <img src="\Images\ILog.png"  style="margin: 15px 0px 15px 0px;" />
+      <p style="Padding: 15px 0px 0px 0px;">
+      </p>
+
+    </summary>
+  </interface>
+
+  <method name="IsNull">
+    <summary>
+      <para>
+        <p style="padding:9px 0px 7px 0px;">
+          Seems a paradox: How could is possible to ask a null object if it is null?. But, with 'extension  method', that's possible!<br/>
+          <i>(Maybe, the reason is that an 'extension method', at the end, is a static member apparently belonging to the 'extended' type, and the null object is only one of its parameters). </i>
+        </p>
+      </para>
+
+      <example>
+        <code>
+          int c = Math.Add(4, 5);
+          if (c > 10)
+          {
+            Console.WriteLine(c);
+          }
+        </code>
+
+      </example>
+      <image file="..\Help\Images\SQLLogger.png">
+        <altText>Information</altText>
+      </image>
+      <image file="Help\Images\SQLLogger.png">
+        <altText>Information</altText>
+      </image>
+      <image file="Images\SQLLogger.png">
+        <altText>Information</altText>
+      </image>
+
+    </summary>
+  </method>
+
+</Docs>
+
+
+
+
+

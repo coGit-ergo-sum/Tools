@@ -139,7 +139,7 @@ namespace Vi.Tools
 		/// </summary>
 		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
-		/// <param name="value">The value to write in the INI file.</param>
+		/// <param name="values">The value to write in the INI file.</param>
 		/// <param name="fileName">The full path of the INI file where write data. If null the callback 'onWarning' will be called.</param>
 		/// <param name="onWarning">The callback used to manage exceptions.</param>
 		public static void Write(string section, string key, int[] values, string fileName, Vi.Tools.Profile.WarningDelegate onWarning)
@@ -147,7 +147,15 @@ namespace Vi.Tools
 			Vi.Tools.Profile.Write<string>(section, key, System.String.Join(";", values), fileName, onWarning);
 		}
 
-        public static void Write(string section, string key, bool[] values, string fileName, Vi.Tools.Profile.WarningDelegate onWarning)
+		/// <summary>
+		/// Writes an array of booleans separated by ';' in the INI file.
+		/// </summary>
+		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+		/// <param name="values">The value to write in the INI file.</param>
+		/// <param name="fileName">The full path of the INI file where write data. If null the callback 'onWarning' will be called.</param>
+		/// <param name="onWarning">The callback used to manage exceptions.</param>
+		public static void Write(string section, string key, bool[] values, string fileName, Vi.Tools.Profile.WarningDelegate onWarning)
         {
             Vi.Tools.Profile.Write<string>(section, key, System.String.Join(";", values), fileName, onWarning);
         }

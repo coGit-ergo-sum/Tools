@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Vi.API.Kernel32">
+    <Position X="1" Y="0.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAgAAAAAAgAEAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>API\class.Kernel32.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vi.Tools.Settings">
+    <Position X="7" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>API\INI\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vi.Tools.Profile">
+    <Position X="0.75" Y="3" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAwCAAAABAgAAAkAAAAAEAgAAFAAgA=</HashCode>
+      <FileName>API\INI\class.Profile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

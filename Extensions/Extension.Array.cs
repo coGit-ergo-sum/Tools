@@ -98,7 +98,7 @@ namespace Vi.Tools.Extensions.Array
         }
 
         /// <summary>
-        /// Gets the ramaining array starting from the index 'Start' (included).
+        /// Gets the array starting from the position 'Start' (included).
         /// </summary>
         /// <typeparam name="T">The generic type</typeparam>
         /// <param name="source">The source array (the array from which 'cut the slice'.</param>

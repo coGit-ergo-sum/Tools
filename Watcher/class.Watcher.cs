@@ -7,23 +7,51 @@ using System.Threading.Tasks;
 
 namespace Vi.Tools
 {
+    /// <summary>
+    /// Observes a Directory and it's subDirectories, waiting for changes.
+    /// If a change occours writes a copy (in a backup diretory) of the file before the change.
+    /// </summary>
     public class Watcher
     {
-
+        /// <summary>
+        /// It's 'boilerplate code': the delegate for the event 'Copy'
+        /// </summary>
+        /// <param name="changeType">Changes that might occur to a file or directory.</param>
+        /// <param name="subPath">The sub path where the file is stored (relative to the root path from where this watching is 'observing')</param>
+        /// <param name="fileName">The name of the file copied.</param>
         public delegate void CopyDelegate(System.IO.WatcherChangeTypes changeType, string subPath, string fileName);
+
+        /// <summary>
+        /// Notifies the ouside world that a backup copy was created.
+        /// </summary>
         public CopyDelegate Copy;
         private void OnCopy(System.IO.WatcherChangeTypes changeType, string subPath, string fileName)
         {
             if (this.Copy != null) { this.Copy(changeType, subPath, fileName); }
         }
 
+        /// <summary>
+        /// It's 'boilerplate code': the delegate for the event 'Exception'
+        /// </summary>
+        /// <param name="se"></param>
         public delegate void ExceptionDelegate(System.Exception se);
+
+        /// <summary>
+        ///  Notifies the ouside world that an exception occurren in this class.
+        /// </summary>
         public ExceptionDelegate Exception;
+
+        /// <summary>
+        /// It's 'boilerplate code', but this method should be called instead of 'this.Exception'.
+        /// </summary>
         private void OnException(System.Exception se)
         {
             if (this.Exception != null) { this.Exception(se); }
         }
 
+        /// <summary>
+        /// The 'pointer' to the watcher!
+        /// </summary>
         private System.IO.FileSystemWatcher FSW;
 
 
@@ -49,6 +77,7 @@ namespace Vi.Tools
         /// </summary>
         /// <param name="backup">The full path of the backup directory, in standard or Universal Naming Convention (UNC) notation.</param>
         /// <param name="path">The directory to monitor, in standard or Universal Naming Convention (UNC) notation.</param>
+        /// <param name="notifyFilters">Specifies changes to watch for in a file or folder.</param>
         /// <param name="filter">The type of files to watch. For example, "*.txt" watches for changes to all 'txt' files.</param>
         public Watcher(string backup, string path, NotifyFilters notifyFilters, string filter)
         {
@@ -64,11 +93,14 @@ namespace Vi.Tools
             this.FSW.IncludeSubdirectories = true;
             this.FSW.EnableRaisingEvents = true;
 
-            this.FSW.Changed += FileSystemWatcher_Changed;
-            this.FSW.Created += FileSystemWatcher_Created;
-            this.FSW.Deleted += FileSystemWatcher_Deleted;
-            this.FSW.Renamed += FileSystemWatcher_Renamed;
-            this.FSW.Error += Fsw_Error;
+            var eventHandler = new FileSystemEventHandler((sender, e) => { this.Store(e); });
+            this.FSW.Changed += eventHandler;
+            this.FSW.Created += eventHandler;
+            this.FSW.Deleted += eventHandler;
+
+            this.FSW.Renamed += new RenamedEventHandler((sender, e) => { this.Store(e); }); 
+
+            this.FSW.Error += new ErrorEventHandler((sender, e) => { Console.WriteLine("Error"); }); ;
 
             var directories = path.Split(System.IO.Path.DirectorySeparatorChar);
             var root = directories[directories.Length - 1];
@@ -80,31 +112,12 @@ namespace Vi.Tools
             this.Backup = fullPath;
         }
 
-        private void Fsw_Error(object sender, ErrorEventArgs e)
-        {
-            //listBox1.Items.Add(string.Format("Error:"));
-        }
-
-        private void FileSystemWatcher_Renamed(object sender, RenamedEventArgs e)
-        {
-            this.Store(e);
-        }
-
-        private void FileSystemWatcher_Deleted(object sender, FileSystemEventArgs e)
-        {
-            this.Store(e);
-        }
-
-        private void FileSystemWatcher_Created(object sender, FileSystemEventArgs e)
-        {
-            this.Store(e);
-        }
-
-        private void FileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
-        {
-            this.Store(e);
-        }
-
+        /// <summary>
+        /// Creates a copy of the modified file in the backup directory. 
+        /// The backup directory is a 'mirror' of the original directory. 
+        /// Each day there is a new backup diretory under the root folder.
+        /// </summary>
+        /// <param name="e">the parameter provided by all the managed events:{Changed, Created, Deleted, Renamed}</param>
         private void Store(FileSystemEventArgs e)
         {
             try
@@ -123,10 +136,7 @@ namespace Vi.Tools
                     var subPath = System.IO.Path.GetDirectoryName(e.Name);
                     var fileName = System.IO.Path.GetFileName(e.Name);
 
-                    //////////var directories = this.Path.Split(System.IO.Path.DirectorySeparatorChar);
-                    //////////var root = directories[directories.Length - 1];
                     string yyyyMMdd = DateTime.Now.ToString("yyyy-MM-dd");
-                    ////////////string fullPath = System.IO.Path.Combine(this.Backup, name);
                     var destinationPath = System.IO.Path.Combine(this.Backup, yyyyMMdd, subPath);
 
 
@@ -138,6 +148,8 @@ namespace Vi.Tools
                         var newFileName = String.Format("{0}.{1}.{2}", HHmmSS, counter, fileName);
                         destFileName = System.IO.Path.Combine(destinationPath, newFileName);
                     }
+                    // Tries to avoid name collision: 
+                    // if the file already exists tries again with a new HHmmss
                     while (System.IO.File.Exists(destFileName));
 
                     System.IO.Directory.CreateDirectory(destinationPath);
@@ -156,7 +168,3 @@ namespace Vi.Tools
 
     }
 }
-//////      /// <summary>
-//////      /// The base directory that the assembly resolver uses to probe for assemblies.
-//////      /// </summary>
-//////public string BaseDirectory { get; private set; }

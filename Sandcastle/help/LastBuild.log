@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2021.4.9.0" projectFile="C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Sandcastle.Tools.shfbproj" started="26/05/2021 21:53:06">
+<buildStep step="Initializing">
+Finding tools...
+The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
+Searching for HTML Help 1 compiler...
+Found HTML Help 1 compiler in &#39;C:\Program Files (x86)\HTML Help Workshop\&#39;
+Locating components in the following folder(s):
+    C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle
+    C:\ProgramData\EWSoftware\Sandcastle Help File Builder\Components and Plug-Ins\
+    C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\
+Using framework reflection data for &#39;.NET Framework 4.7.2&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETFramework&#39;
+Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013&#39;
+Loading and initializing plug-ins...
+Lightweight Website Style Version 2021.4.9.0
+Copyright &#169; 2006-2021, Eric Woodruff, All Rights Reserved
+Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
+</buildStep>
+<buildStep step="ValidatingDocumentationSources">
+Validating and copying documentation source information
+Source: C:\Vi\Code\coGit-ergo-sum\Tools\Tools.csproj
+    Found project &#39;C:\Vi\Code\coGit-ergo-sum\Tools\Tools.csproj&#39;
+Source: C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\XMLs\Debug\Tools.xml
+SHFB: Warning BE0006: Unable to locate any documentation sources for &#39;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\XMLs\Debug\Tools.xml&#39; (Configuration: Debug Platform: AnyCPU)
+Source: C:\Vi\Code\coGit-ergo-sum\Tools\bin\Debug\Tools.dll
+    Found assembly &#39;C:\Vi\Code\coGit-ergo-sum\Tools\bin\Debug\Tools.dll&#39;
+
+Parsing project files
+    Ignoring duplicate assembly file &#39;C:\Vi\Code\coGit-ergo-sum\Tools\bin\Debug\Tools.dll&#39;
+SHFB: Warning BE0007: A project with a different or higher framework version was found.  Changing project FrameworkVersion property from &#39;.NET Framework 4.7.2&#39; to &#39;.NET Framework 4.5.2&#39; for the build.
+
+References to include:
+    None
+
+Copying XML comments files
+    C:\Vi\Code\coGit-ergo-sum\Tools\bin\Debug\Tools.xml -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Tools.xml
+</buildStep>
+<buildStep step="GenerateSharedContent">
+Generating shared content files (en-US, English (United States))...
+<plugIn name="Lightweight Website Style" behavior="After" priority="1000">
+</plugIn>    Last step completed in 00:00:00.0598
+</buildStep>
+<buildStep step="GenerateApiFilter">
+Generating API filter for MRefBuilder...
+    Last step completed in 00:00:00.0167
+</buildStep>
+<buildStep step="GenerateReflectionInfo">
+Generating reflection information...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe - GenerateRefInfo-badca74a-570b-413e-bec3-3f956eff6eca.proj]
+Build started 26/05/2021 21:53:10.
+Project &quot;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\GenerateRefInfo-badca74a-570b-413e-bec3-3f956eff6eca.proj&quot; on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;obj\Debug\&quot;.
+GenerateRefInfo:
+  MRefBuilder (v2021.4.9.0)
+  Copyright &#184; 2006-2021, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2021, Eric Woodruff, All Rights Reserved.
+  No source code context base path specified.  Source context information is unavailable.
+  Loaded 1 assemblies for reflection and 1 dependency assemblies.
+  Wrote information on 24 namespaces, 40 types, and 228 members
+  Merging duplicate type and member information
+  Merged 0 duplicate type(s) and 0 duplicate member(s)
+Done Building Project &quot;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\GenerateRefInfo-badca74a-570b-413e-bec3-3f956eff6eca.proj&quot; (default targets).
+    Last step completed in 00:00:00.9808
+</buildStep>
+<buildStep step="TransformReflectionInfo">
+Transforming reflection output...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe - TransformManifest.proj]
+Build started 26/05/2021 21:53:11.
+Project &quot;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
+TransformManifest:
+  XslTransform (v2021.4.9.0)
+  Copyright &#184; 2006-2021, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2021, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Copying file from &quot;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\reflection.xml&quot; to &quot;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\reflection.nofilenames&quot;.
+  XslTransform (v2021.4.9.0)
+  Copyright &#184; 2006-2021, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2021, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+  XslTransform (v2021.4.9.0)
+  Copyright &#184; 2006-2021, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2021, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+Done Building Project &quot;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\TransformManifest.proj&quot; (default targets).
+    Last step completed in 00:00:00.7907
+</buildStep>
+<buildStep step="GenerateNamespaceSummaries">
+Generating namespace summary information...
+    Last step completed in 00:00:00.0419
+</buildStep>
+<buildStep step="CopyAdditionalContent">
+Copying additional content files...
+C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Images\ReadMe.txt -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\Images\ReadMe.txt
+    Last step completed in 00:00:00.0200
+</buildStep>
+<buildStep step="MergeTablesOfContents">
+Merging conceptual and additional tables of contents...
+    Last step completed in 00:00:00.0000
+</buildStep>
+<buildStep step="GenerateIntermediateTableOfContents">
+Generating intermediate table of contents file...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe - GenerateIntermediateTOC.proj]
+Build started 26/05/2021 21:53:12.
+Project &quot;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
+GenerateIntermediateTOC:
+  XslTransform (v2021.4.9.0)
+  Copyright &#184; 2006-2021, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2021, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
+Done Building Project &quot;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\GenerateIntermediateTOC.proj&quot; (default targets).
+Generating conceptual content intermediate TOC file...
+    Last step completed in 00:00:00.2894
+</buildStep>
+<buildStep step="CreateBuildAssemblerConfigs">
+Creating Sandcastle configuration files...
+    sandcastle.config
+    Last step completed in 00:00:00.2527
+</buildStep>
+<buildStep step="MergeCustomConfigs">
+Merging custom build component configurations
+C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\sandcastle.config
+  Updating reference topic configurations.
+  No conceptual content.  Removing conceptual content components.
+    Last step completed in 00:00:00.0331
+</buildStep>
+<buildStep step="BuildTopics">
+Building help topics...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe - BuildTopics.proj]
+Build started 26/05/2021 21:53:12.
+Project &quot;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj&quot; on node 1 (default targets).
+BuildTopics:
+  BuildAssembler (v2021.4.9.0)
+  Copyright &#184; 2006-2021, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright &#184; 2006-2021, Eric Woodruff, All Rights Reserved.
+  Loading configuration...
+  Processing topics...
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetLastError] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetLastError] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSection(System.String,System.Byte[],System.Int32,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSection(System.String,System.Byte[],System.Int32,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSection(System.String,System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSection(System.String,System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;bytes&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSection(System.String,System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSection(System.String,System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;fileName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Byte[],System.Int32,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Byte[],System.Int32,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;bytes&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;fileName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Char[],System.Int32,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Char[],System.Int32,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Char[],System.Int32,System.String)] Missing &lt;param name=&quot;characters&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Char[],System.Int32,System.String)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Char[],System.Int32,System.String)] Missing &lt;param name=&quot;fileName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.IntPtr,System.UInt32,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.IntPtr,System.UInt32,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.IntPtr,System.UInt32,System.String)] Missing &lt;param name=&quot;lpszReturnBuffer&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.IntPtr,System.UInt32,System.String)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.IntPtr,System.UInt32,System.String)] Missing &lt;param name=&quot;fileName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;key&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;default&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;bytes&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)] Missing &lt;param name=&quot;fileName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Char[],System.Int32,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Char[],System.Int32,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Char[],System.Int32,System.String)] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Char[],System.Int32,System.String)] Missing &lt;param name=&quot;key&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Char[],System.Int32,System.String)] Missing &lt;param name=&quot;default&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Char[],System.Int32,System.String)] Missing &lt;param name=&quot;characters&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Char[],System.Int32,System.String)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Char[],System.Int32,System.String)] Missing &lt;param name=&quot;fileName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)] Missing &lt;param name=&quot;key&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)] Missing &lt;param name=&quot;default&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)] Missing &lt;param name=&quot;sb&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)] Missing &lt;param name=&quot;fileName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.API.User32] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.FindWindowW(System.String,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.FindWindowW(System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.FindWindowW(System.String,System.String)] Missing &lt;param name=&quot;lpClassName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.FindWindowW(System.String,System.String)] Missing &lt;param name=&quot;lpWindowName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr)] Missing &lt;param name=&quot;hWnd&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr)] Missing &lt;param name=&quot;Msg&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr)] Missing &lt;param name=&quot;wParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr)] Missing &lt;param name=&quot;lParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr@)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr@)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr@)] Missing &lt;param name=&quot;hWnd&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr@)] Missing &lt;param name=&quot;Msg&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr@)] Missing &lt;param name=&quot;wParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.IntPtr@)] Missing &lt;param name=&quot;lParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.String)] Missing &lt;param name=&quot;hWnd&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.String)] Missing &lt;param name=&quot;Msg&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.String)] Missing &lt;param name=&quot;wParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.Int32,System.String)] Missing &lt;param name=&quot;lParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)] Missing &lt;param name=&quot;hWnd&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)] Missing &lt;param name=&quot;wMsg&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)] Missing &lt;param name=&quot;wParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)] Missing &lt;param name=&quot;lParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.String)] Missing &lt;param name=&quot;hWnd&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.String)] Missing &lt;param name=&quot;Msg&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.String)] Missing &lt;param name=&quot;wParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.String)] Missing &lt;param name=&quot;lParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.Text.StringBuilder)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.Text.StringBuilder)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.Text.StringBuilder)] Missing &lt;param name=&quot;hWnd&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.Text.StringBuilder)] Missing &lt;param name=&quot;Msg&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.Text.StringBuilder)] Missing &lt;param name=&quot;wParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SendMessage(System.IntPtr,System.Int32,System.IntPtr,System.Text.StringBuilder)] Missing &lt;param name=&quot;lParam&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SetForegroundWindow(System.IntPtr)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SetForegroundWindow(System.IntPtr)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SetForegroundWindow(System.IntPtr)] Missing &lt;param name=&quot;hWnd&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SwitchToThisWindow(System.IntPtr,System.Boolean)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SwitchToThisWindow(System.IntPtr,System.Boolean)] Missing &lt;param name=&quot;hWnd&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.User32.SwitchToThisWindow(System.IntPtr,System.Boolean)] Missing &lt;param name=&quot;fAltTab&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.API.Wtsapi32] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:Vi.API.Wtsapi32.WTS_CURRENT_SERVER_HANDLE] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.CS.Wtsapi32.WTSQuerySessionInformationW(System.IntPtr,System.Int32,Vi.API.Wtsapi32.WTS_INFO_CLASS)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.CS.Wtsapi32.WTSQuerySessionInformationW(System.IntPtr,System.Int32,Vi.API.Wtsapi32.WTS_INFO_CLASS)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.CS.Wtsapi32.WTSQuerySessionInformationW(System.IntPtr,System.Int32,Vi.API.Wtsapi32.WTS_INFO_CLASS)] Missing &lt;param name=&quot;hServer&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.CS.Wtsapi32.WTSQuerySessionInformationW(System.IntPtr,System.Int32,Vi.API.Wtsapi32.WTS_INFO_CLASS)] Missing &lt;param name=&quot;sessionId&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.API.CS.Wtsapi32.WTSQuerySessionInformationW(System.IntPtr,System.Int32,Vi.API.Wtsapi32.WTS_INFO_CLASS)] Missing &lt;param name=&quot;WTSInfoClass&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [E:Vi.Tools.Log.Exception] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Log.Fatal(System.String,System.String[])] Missing &lt;param name=&quot;format&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Log.Fatal(System.String,System.String[])] Missing &lt;param name=&quot;values&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Log.Info(System.String,System.String[])] Missing &lt;param name=&quot;format&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Log.Info(System.String,System.String[])] Missing &lt;param name=&quot;values&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:Vi.Tools.Log.SkipDebug] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:Vi.Tools.Log.SkipError] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:Vi.Tools.Log.SkipFatal] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:Vi.Tools.Log.SkipInfo] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [F:Vi.Tools.Log.SkipWarn] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Log.Warn(System.String,System.String[])] Missing &lt;param name=&quot;format&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Log.Warn(System.String,System.String[])] Missing &lt;param name=&quot;values&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [E:Vi.Tools.Log.Write] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Log.ExceptionDelegate] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Log.WriteDelegate] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Profile] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Profile.Keys(System.String)] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Profile.Write(System.String,System.String,System.Boolean[])] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Profile.Write(System.String,System.String,System.Boolean[])] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Profile.Write(System.String,System.String,System.Boolean[])] Missing &lt;param name=&quot;key&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Profile.Write(System.String,System.String,System.Boolean[])] Missing &lt;param name=&quot;values&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Profile.Write(System.String,System.String,System.Int32[])] Missing &lt;param name=&quot;values&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Settings] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.#ctor(System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.#ctor(System.String)] Missing &lt;param name=&quot;fileName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.ReadLocation(System.String,System.Drawing.Point)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.ReadLocation(System.String,System.Drawing.Point)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.ReadLocation(System.String,System.Drawing.Point)] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.ReadLocation(System.String,System.Drawing.Point)] Missing &lt;param name=&quot;default&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.ReadSize(System.String,System.Drawing.Size)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.ReadSize(System.String,System.Drawing.Size)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.ReadSize(System.String,System.Drawing.Size)] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.ReadSize(System.String,System.Drawing.Size)] Missing &lt;param name=&quot;default&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.Write(System.String,System.Drawing.Point)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.Write(System.String,System.Drawing.Point)] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.Write(System.String,System.Drawing.Point)] Missing &lt;param name=&quot;location&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.Write(System.String,System.Drawing.Size)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.Write(System.String,System.Drawing.Size)] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Settings.Write(System.String,System.Drawing.Size)] Missing &lt;param name=&quot;size&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Utilities] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.#ctor] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReader(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReader(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;param name=&quot;connectionString&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReader(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;param name=&quot;sql&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReader(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;param name=&quot;row&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReader(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;param name=&quot;header&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReader(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;param name=&quot;onException&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReaderAsync(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReaderAsync(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReaderAsync(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;param name=&quot;connectionString&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReaderAsync(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;param name=&quot;sql&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReaderAsync(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;param name=&quot;row&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReaderAsync(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;param name=&quot;header&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.ExecuteReaderAsync(System.String,System.String,System.Func{System.Data.Common.DbDataReader,System.Boolean},System.Action{System.Data.Common.DbDataReader},System.Action{System.Exception})] Missing &lt;param name=&quot;onException&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.FillAsync(System.String,System.String,System.Action{System.Data.DataTable},System.Action{System.Exception})] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.FillAsync(System.String,System.String,System.Action{System.Data.DataTable},System.Action{System.Exception})] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.FillAsync(System.String,System.String,System.Action{System.Data.DataTable},System.Action{System.Exception})] Missing &lt;param name=&quot;connectionString&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.FillAsync(System.String,System.String,System.Action{System.Data.DataTable},System.Action{System.Exception})] Missing &lt;param name=&quot;sql&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.FillAsync(System.String,System.String,System.Action{System.Data.DataTable},System.Action{System.Exception})] Missing &lt;param name=&quot;onSuccess&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Utilities.FillAsync(System.String,System.String,System.Action{System.Data.DataTable},System.Action{System.Exception})] Missing &lt;param name=&quot;onException&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Delegates.ConfirmDelegate] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Delegates.InfoDelegate] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Array.Methods.Append``1(``0[],``0)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Array.Methods.Append``1(``0[],``0)] Missing &lt;param name=&quot;item&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Array.Methods.MaxIndex(System.Array)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Extensions.Bool.Methods] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Bool.Methods.ToConditional(System.Boolean,System.String,System.String)] Missing &lt;param name=&quot;onTrue&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Bool.Methods.ToConditional(System.Boolean,System.String,System.String)] Missing &lt;param name=&quot;onFalse&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Extensions.Byte.Methods] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsBetween(System.Byte,System.Byte,System.Byte)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsBetween(System.Byte,System.Byte,System.Byte)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsBetween(System.Byte,System.Byte,System.Byte)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsBetween(System.Byte,System.Byte,System.Byte)] Missing &lt;param name=&quot;min&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsBetween(System.Byte,System.Byte,System.Byte)] Missing &lt;param name=&quot;max&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsEven(System.Byte)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsEven(System.Byte)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsEven(System.Byte)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsOdd(System.Byte)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsOdd(System.Byte)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Byte.Methods.IsOdd(System.Byte)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Extensions.DateTime.Methods] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DateTime.Methods.ToDateTime``1(System.Nullable{System.DateTime})] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DateTime.Methods.ToDateTime``1(System.Nullable{System.DateTime})] Missing &lt;typeparam name=&quot;E&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DateTime.Methods.ToDateTime``1(System.Nullable{System.DateTime})] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DateTime.Methods.ToDateTime``1(System.Nullable{System.DateTime})] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DateTime.Methods.ToDateTime(System.Nullable{System.DateTime},System.DateTime)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DateTime.Methods.ToDateTime(System.Nullable{System.DateTime},System.DateTime)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DateTime.Methods.ToDateTime(System.Nullable{System.DateTime},System.DateTime)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DateTime.Methods.ToDateTime(System.Nullable{System.DateTime},System.DateTime)] Missing &lt;param name=&quot;default&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Extensions.DialogResult.Methods] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DialogResult.Methods.IsAbort(System.Windows.Forms.DialogResult)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DialogResult.Methods.IsCancel(System.Windows.Forms.DialogResult)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DialogResult.Methods.IsIgnore(System.Windows.Forms.DialogResult)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DialogResult.Methods.IsNo(System.Windows.Forms.DialogResult)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DialogResult.Methods.IsNone(System.Windows.Forms.DialogResult)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DialogResult.Methods.IsOk(System.Windows.Forms.DialogResult)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DialogResult.Methods.IsRetry(System.Windows.Forms.DialogResult)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.DialogResult.Methods.IsYes(System.Windows.Forms.DialogResult)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Extensions.Enums.Methods] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.Count``1(``0)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.Count``1(``0)] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.Count``1(``0)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.Count``1(``0)] Missing &lt;param name=&quot;soure&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.Description``1(``0)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.Description``1(``0)] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.Description``1(``0)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.Description``1(``0)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.ToInt``1(``0,System.Int32)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.ToInt``1(``0,System.Int32)] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.ToInt``1(``0,System.Int32)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.ToInt``1(``0,System.Int32)] Missing &lt;param name=&quot;source&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Enums.Methods.ToInt``1(``0,System.Int32)] Missing &lt;param name=&quot;default&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Extensions.Exception.Methods] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Exception.Methods.Log(System.Exception)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Exception.Methods.Log(System.Exception)] Missing &lt;param name=&quot;se&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Exception.Methods.Trace(System.Exception)] Missing &lt;param name=&quot;se&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Extensions.Float.Methods] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.IsBetween(System.Single,System.Single,System.Single)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.IsBetween(System.Single,System.Single,System.Single)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.IsBetween(System.Single,System.Single,System.Single)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.IsBetween(System.Single,System.Single,System.Single)] Missing &lt;param name=&quot;min&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.IsBetween(System.Single,System.Single,System.Single)] Missing &lt;param name=&quot;max&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToPercent(System.Single,System.SByte)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToPercent(System.Single,System.SByte)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToPercent(System.Single,System.SByte)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToPercent(System.Single,System.SByte)] Missing &lt;param name=&quot;decimals&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToPercent2(System.Single)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToPercent2(System.Single)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToPercent2(System.Single)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToPercent3(System.Single)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToPercent3(System.Single)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToPercent3(System.Single)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToText(System.Single,System.Byte)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToText(System.Single,System.Byte)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToText(System.Single,System.Byte)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Float.Methods.ToText(System.Single,System.Byte)] Missing &lt;param name=&quot;decimals&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Extensions.Int.Methods] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsBetween(System.Int32,System.Int32,System.Int32)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsBetween(System.Int32,System.Int32,System.Int32)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsBetween(System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsBetween(System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;min&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsBetween(System.Int32,System.Int32,System.Int32)] Missing &lt;param name=&quot;max&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsEven(System.Int32)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsEven(System.Int32)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsEven(System.Int32)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsOdd(System.Int32)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsOdd(System.Int32)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.IsOdd(System.Int32)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.ToText(System.Int32)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.ToText(System.Int32)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Int.Methods.ToText(System.Int32)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Extensions.Long.Methods] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Long.Methods.IsBetween(System.Int64,System.Int64,System.Int64)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Long.Methods.IsBetween(System.Int64,System.Int64,System.Int64)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Long.Methods.IsBetween(System.Int64,System.Int64,System.Int64)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Long.Methods.IsBetween(System.Int64,System.Int64,System.Int64)] Missing &lt;param name=&quot;min&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Long.Methods.IsBetween(System.Int64,System.Int64,System.Int64)] Missing &lt;param name=&quot;max&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToInt(System.Collections.Specialized.NameValueCollection,System.String,System.Int32)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToInt(System.Collections.Specialized.NameValueCollection,System.String,System.Int32)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToInt(System.Collections.Specialized.NameValueCollection,System.String,System.Int32)] Missing &lt;param name=&quot;nvc&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToInt(System.Collections.Specialized.NameValueCollection,System.String,System.Int32)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToInt(System.Collections.Specialized.NameValueCollection,System.String,System.Int32)] Missing &lt;param name=&quot;default&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToString``1(System.Collections.Specialized.NameValueCollection,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToString``1(System.Collections.Specialized.NameValueCollection,System.String)] Missing &lt;typeparam name=&quot;E&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToString``1(System.Collections.Specialized.NameValueCollection,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToString``1(System.Collections.Specialized.NameValueCollection,System.String)] Missing &lt;param name=&quot;nvc&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToString``1(System.Collections.Specialized.NameValueCollection,System.String)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToString(System.Collections.Specialized.NameValueCollection,System.String,System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToString(System.Collections.Specialized.NameValueCollection,System.String,System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToString(System.Collections.Specialized.NameValueCollection,System.String,System.String)] Missing &lt;param name=&quot;nvc&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToString(System.Collections.Specialized.NameValueCollection,System.String,System.String)] Missing &lt;param name=&quot;name&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.NameValueCollection.Methods.ToString(System.Collections.Specialized.NameValueCollection,System.String,System.String)] Missing &lt;param name=&quot;default&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [T:Vi.Tools.Extensions.Object.Methods] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Object.Methods.Deserialize``1(System.Byte[])] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Object.Methods.Deserialize``1(System.Byte[])] Missing &lt;typeparam name=&quot;T&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Object.Methods.Deserialize``1(System.Byte[])] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Object.Methods.Deserialize``1(System.Byte[])] Missing &lt;param name=&quot;bytes&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Object.Methods.ToBytes(System.Object)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Object.Methods.ToBytes(System.Object)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Object.Methods.ToBytes(System.Object)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Random.Methods.Bet(System.Random,System.Byte,Vi.Tools.Types.Percent)] Missing &lt;param name=&quot;rnd&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.Extensions.Random.Methods.Bet(System.Random,Vi.Tools.Types.Percent)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.statics.Profile.Keys(System.String,System.String,Vi.Tools.statics.Profile.WarningDelegate)] Missing &lt;param name=&quot;section&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.statics.Profile.Keys(System.String,System.String,Vi.Tools.statics.Profile.WarningDelegate)] Missing &lt;param name=&quot;fileName&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.statics.Profile.Keys(System.String,System.String,Vi.Tools.statics.Profile.WarningDelegate)] Missing &lt;param name=&quot;onWarning&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.statics.Profile.ToArray(System.String)] Missing &lt;summary&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.statics.Profile.ToArray(System.String)] Missing &lt;returns&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+BuildAssembler : warning : ShowMissingComponent: [M:Vi.Tools.statics.Profile.ToArray(System.String)] Missing &lt;param name=&quot;value&quot;/&gt; documentation [C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj]
+  Processed 324 topic(s)
+  289 warning(s)
+  CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 9 of 15.
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
+Done Building Project &quot;C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\BuildTopics.proj&quot; (default targets).
+    Last step completed in 00:00:07.0912
+</buildStep>
+<buildStep step="CombiningIntermediateTocFiles">
+Combining conceptual and API intermediate TOC files...
+    Last step completed in 00:00:00.0029
+</buildStep>
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe - ExtractHtmlInfo.proj]
+Sandcastle Help File Builder and Tools, version 2021.4.9.0
+Copyright &#184; 2006-2021, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
+
+Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
+
+Processing Help 1 files in C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1
+Processed 324 HTML files
+Sorting keywords and generating See Also indices
+Saving HTML Help 1 keyword index to C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Tools.hhk
+Saving HTML Help 1 table of contents to C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Tools.hhc
+    Last step completed in 00:00:00.3895
+</buildStep>
+<buildStep step="CopyStandardHelpContent">
+Copying standard help content...
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\AlertCaution.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\AlertNote.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\AlertSecurity.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\CFW.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\CodeExample.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\favicon.ico
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\privclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\privdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\privenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\privevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\privextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\privfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\privinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\privmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\privproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\privstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protoperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\protstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\pubclass.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\pubdelegate.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\pubenumeration.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\pubevent.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\pubextension.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\pubfield.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\pubinterface.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\pubmethod.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\puboperator.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\pubproperty.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\pubstructure.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\SectionCollapsed.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\SectionExpanded.png
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\slMobile.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\static.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\icons\xna.gif
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\scripts\branding.js
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-de-DE.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-en-US.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-es-ES.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-Help1.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-it-IT.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-Website.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
+C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\styles\branding.css
+    Last step completed in 00:00:00.3730
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating HTML Help 1 table of contents file...
+    Last step completed in 00:00:00.0010
+</buildStep>
+<buildStep step="GenerateHelpFileIndex">
+Generating HTML Help 1 index file...
+    Last step completed in 00:00:00.0000
+</buildStep>
+<buildStep step="GenerateHelpProject">
+Generating HTML Help 1 project file...
+    Last step completed in 00:00:00.0149
+</buildStep>
+<buildStep step="CompilingHelpFile">
+Compiling HTML Help 1 file...
+[C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe - Build1xHelpFile.proj]
+  Microsoft HTML Help Compiler 4.74.8702
+  
+  
+  
+  Compiling c:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\Tools.chm
+  
+  
+  
+  
+  
+  Compile time: 0 minutes, 10 seconds
+  
+  326	Topics
+  
+  3,201	Local links
+  
+  0	Internet links
+  
+  1	Graphic
+  
+  
+  
+  
+  
+  Created c:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Help\Working\Output\HtmlHelp1\Tools.chm, 505,709 bytes
+  
+  Compression decreased file by 2,637,604 bytes.
+  
+    Last step completed in 00:00:10.9048
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:00.1657
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 26/05/2021 21:53:31.  Total time: 00:00:24.6953
+
+</buildStep>
+</shfbBuild>

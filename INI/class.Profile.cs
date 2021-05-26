@@ -10,7 +10,7 @@ using Vi.Tools.Extensions.Long;
 namespace Vi.Tools
 {
 	/// <summary>
-	/// Collects a set of static methods to manage an 'INI' file. (choose static methods if your application needs one 'INI' file only.) 
+	/// Collection of static methods to manage an 'INI' file.
 	/// </summary>
 	public static partial class Profile
 	{

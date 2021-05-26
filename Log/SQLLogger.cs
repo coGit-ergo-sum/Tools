@@ -9,13 +9,37 @@ using System.Threading.Tasks;
 
 namespace Vi
 {
-    public class SQLLogger //////////////:Vi.ILog
+    //    https://tunnelvisionlabs.github.io/SHFB/docs-master/SandcastleBuilder/html/1aea789d-b226-4b39-b534-4c97c256fac8.htm
+    //
+    //    https://www.codeproject.com/Articles/15176/Sandcastle-Help-File-Builder
+    //
+    /// <summary>
+    ///  <img src = "C:\Vi\Code\coGit-ergo-sum\Tools\Sandcastle\Images\SQLLogger.png"  style="margin: 15px 0px 15px 0px;" />
+    /// <p>
+    /// Writes log directly into ad SQLServer Database  
+    /// comment added just to see what happens:
+    /// See /<see cref="IEnumerable{T}"/> for more information.
+    /// <p/>Another reference to IEnumerable&lt;T&gt;.</p>
+    /// </summary>
+    /// <include file='XMLs/ILog.xml' path='Docs/class[@name="SQLLogger"]/*' />
+    /// <remarks>
+    /// </remarks>
+    public class SQLLogger 
     {
+        /// <summary>
+        /// The classic connection strint ot the SQL Server DB.
+        /// </summary>
         public readonly string  ConnectionString;
+
+        /// <summary>
+        /// Main CTor (The only think it does is to store the connection string)
+        /// </summary>
+        /// <param name="connectionString"></param>
         public SQLLogger(string connectionString)
         {
             this.ConnectionString = connectionString;
         }
+
         /// <summary>
         /// This is the most verbose logging level (maximum volume setting). Debug should be out-of-bounds for a production system and used only for development and testing.
         /// </summary>
@@ -23,7 +47,7 @@ namespace Vi
         /// <param name="line">The line from where this method was called.</param>
         /// <param name="member">The member from where this method was called.</param>
         /// <param name="file">The file from where this method was called.</param>
-        /// <include file='Logger/XMLs/ILog.xml' path='Docs/method[@name="Debug"]/*' />
+        /// <include file='XMLs/ILog.xml' path='Docs/method[@name="Debug"]/*' />
         #region Debug
         public void Debug(string text, [CallerLineNumber] int line = 0, [CallerMemberName] System.String member = "?", [CallerFilePath] System.String file = "?")
         {
@@ -38,7 +62,7 @@ namespace Vi
         /// <param name="line">The line from where this method was called.</param>
         /// <param name="member">The member from where this method was called.</param>
         /// <param name="file">The file from where this method was called.</param>
-        /// <include file='Logger/XMLs/ILog.xml' path='Docs/method[@name="Fatal"]/*' />
+        /// <include file='XMLs/ILog.xml' path='Docs/method[@name="Fatal"]/*' />
         #region Fatal
         public void Fatal(string text, [CallerLineNumber] int line = 0, [CallerMemberName] System.String member = "?", [CallerFilePath] System.String file = "?")
         {
@@ -53,7 +77,7 @@ namespace Vi
         /// <param name="line">The line from where this method was called.</param>
         /// <param name="member">The member from where this method was called.</param>
         /// <param name="file">The file from where this method was called.</param>
-        /// <include file='Logger/XMLs/ILog.xml' path='Docs/method[@name="Info"]/*' />
+        /// <include file='XMLs/ILog.xml' path='Docs/method[@name="Info"]/*' />
         #region Info
         public void Info(string text, [CallerLineNumber] int line = 0, [CallerMemberName] System.String member = "?", [CallerFilePath] System.String file = "?")
         {
@@ -68,7 +92,7 @@ namespace Vi
         /// <param name="line">The line from where this method was called.</param>
         /// <param name="member">The member from where this method was called.</param>
         /// <param name="file">The file from where this method was called.</param>
-        /// <include file='Logger/XMLs/ILog.xml' path='Docs/method[@name="Warn"]/*' />
+        /// <include file='XMLs/ILog.xml' path='Docs/method[@name="Warn"]/*' />
         #region Warn
         public void Warn(string text, [CallerLineNumber] int line = 0, [CallerMemberName] System.String member = "?", [CallerFilePath] System.String file = "?")
         {
@@ -83,7 +107,7 @@ namespace Vi
         /// <param name="line">The line from where this method was called.</param>
         /// <param name="member">The member from where this method was called.</param>
         /// <param name="file">The file from where this method was called.</param>
-        /// <include file='Logger/XMLs/ILog.xml' path='Docs/method[@name="Error"]/*' />
+        /// <include file='XMLs/ILog.xml' path='Docs/method[@name="Error"]/*' />
         #region Error
         public void Error(System.Exception se, [CallerLineNumber] int line = 0, [CallerMemberName] System.String member = "?", [CallerFilePath] System.String file = "?")
         {

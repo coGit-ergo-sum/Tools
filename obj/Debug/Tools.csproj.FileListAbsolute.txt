@@ -86,3 +86,16 @@ C:\Vi\Code\CSharp\Tools\obj\Debug\Tools.csproj.GenerateResource.cache
 C:\Vi\Code\CSharp\Tools\obj\Debug\Tools.dll
 C:\Vi\Code\CSharp\Tools\obj\Debug\Tools.pdb
 C:\Vi\Code\CSharp\Tools\obj\Debug\Tools.csprojAssemblyReference.cache
+C:\Vi\Code\coGit-ergo-sum\Tools\bin\Debug\Tools.dll
+C:\Vi\Code\coGit-ergo-sum\Tools\bin\Debug\Tools.pdb
+C:\Vi\Code\coGit-ergo-sum\Tools\bin\Debug\Tools.xml
+C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Tools.csprojAssemblyReference.cache
+C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Vi.Tools.Properties.Ico.resources
+C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Vi.Tools.Properties.Images3D.resources
+C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Vi.Tools.Properties.ImagesDFlat.resources
+C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Vi.Tools.Properties.ImagesRFlat.resources
+C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Vi.Tools.Properties.Resource.resources
+C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Vi.Tools.Properties.Resources.resources
+C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Tools.csproj.GenerateResource.cache
+C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Tools.dll
+C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Tools.pdb

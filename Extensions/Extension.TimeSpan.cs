@@ -7,20 +7,23 @@ using System.Threading.Tasks;
 
 namespace Vi.Tools.Extensions.TimeSpan
 {
+    /// <summary>
+    /// TimeSpan Extention methods.
+    /// </summary>
     public static class Methods
     {
         /// <summary>
-        /// Converte un TimeSpan in una stringa nel formato HH:MM
+        /// Converts a TimeSpan into a string (format HH:MM)
         /// </summary>
-        /// <param name="value">Il timespan da convertire.</param>
-        /// <returns>Una stringa nel formato 'HH:MM'.</returns>
+        /// <param name="value">The timespan to convert.</param>
+        /// <returns>A string in the format of 'HH:MM'.</returns>
         public static string ToHHMM(this System.TimeSpan value)
         {
             return System.String.Format("{0:00}:{1:00}", value.Hours, value.Minutes); 
         }
 
         /// <summary>
-        /// Converte un TimeSpan in una stringa nel formato HH:MM
+        /// Converts a TimeSpan into a string (format HH:MM)
         /// </summary>
         /// <param name="value">Il timespan da convertire.</param>
         /// <returns>Una stringa nel formato 'HH:MM' se il TimeSpan e not null, empty altrimenti.</returns>

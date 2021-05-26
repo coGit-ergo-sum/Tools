@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>Help\XMLs\Debug\Tools.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -54,6 +55,14 @@
     <Compile Include="API\enum.WTS_INFO_CLASS.cs">
       <DependentUpon>class.Wtsapi32.cs</DependentUpon>
     </Compile>
+    <Compile Include="API\INI\class.Profile.cs" />
+    <Compile Include="API\INI\static.Profile.cs" />
+	<Compile Include="API\INI\Profile.Infrastructure.cs"/>
+    <Compile Include="API\INI\Infrastructure.cs">
+		<DependentUpon>static.Profile.cs</DependentUpon>
+	</Compile>
+	
+    <Compile Include="API\INI\Settings.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="Extensions\Extension.Array.cs" />
     <Compile Include="Extensions\Extension.Bool.cs" />
@@ -72,11 +81,6 @@
     <Compile Include="Extensions\Extension.SqlCommand.cs" />
     <Compile Include="Extensions\Extension.TimeSpan.cs" />
     <Compile Include="Extensions\Extension.Random.cs" />
-    <Compile Include="INI\class.Profile.cs" />
-    <Compile Include="INI\class.Profilo.cs" />
-    <Compile Include="INI\Profile.Infrastructure.cs">
-      <DependentUpon>class.Profile.cs</DependentUpon>
-    </Compile>
     <Compile Include="Log\Log.Levels.cs">
       <DependentUpon>class.Log.cs</DependentUpon>
     </Compile>
@@ -113,7 +117,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="INI\Settings.cs" />
+    <Compile Include="Types\struct.Percent.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Watcher\class.Watcher.cs" />
   </ItemGroup>
@@ -144,7 +148,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Diagrams\Extension.String.cd" />
+    <None Include="Diagrams\Kernel32.cd" />
+    <None Include="Diagrams\SQLLogger.cd" />
     <None Include="Images\Underline.png" />
+    <None Include="Sandcastle\Contents\Code Snippets.snippets" />
+    <None Include="Sandcastle\Contents\Content Layout.content" />
+    <None Include="Sandcastle\help\LastBuild.log" />
+    <None Include="Sandcastle\help\Tools.chw" />
+    <None Include="Sandcastle\SandCastle.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\3D\Piu.12x12.png" />
@@ -251,7 +263,20 @@
   <ItemGroup>
     <None Include="Images\Dotted.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Help-BUTTA\Images\ReadMe.txt" />
+    <Content Include="Help-BUTTA\Sandcastle.Tools.shfbproj" />
+    <Content Include="Help-BUTTA\XMLs\Debug\Tools.xml" />
+    <Content Include="Help-BUTTA\XMLs\Extensions\Extension.string.xml" />
+    <Content Include="Log\XMLs\ILog.xml" />
+    <Content Include="Sandcastle\help\Images\ReadMe.txt" />
+    <Content Include="Sandcastle\Images\ReadMe.txt" />
+    <Content Include="Sandcastle\Images\SQLLogger.png" />
+    <Content Include="Sandcastle\Sandcastle.Tools.shfbproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sandcastle\XMLs\Debug\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

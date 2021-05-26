@@ -7,15 +7,19 @@ using Vi.Tools.Extensions.String;
 
 namespace Vi.Tools.Extensions.SqlDataReader
 {
+
+    /// <summary>
+    /// Collection of extention methods for the SqlDataReader
+    /// </summary>
     public static partial class Methods
     {
 
         /// <summary>
-        /// Converte il valore della colonna 'name' in 'Int32?'.
+        /// Converts value in column 'name' to 'Int32?'.
         /// </summary>
-        /// <param name="dataReader">Il 'DataReader' con i dati da leggere.</param>
-        /// <param name="name">Il nome della colonna da cui estrarre il valore in formato 'Int32'.</param>
-        /// <returns>Il valore della colonna convertito nel formato 'Int32', se possibile, 'null' altrimenti anche in caso di 'System.Exception'.</returns>
+        /// <param name="dataReader">The 'DataReader' containing the data.</param>
+        /// <param name="name">The name of the column to convert to 'Int32'.</param>
+        /// <returns>dataReader.GetInt32(name) if possible, 'null' otherwise ('System.Exception' included).</returns>
         public static Int32? GetInt32(this System.Data.SqlClient.SqlDataReader dataReader, string name)
         {
             try
@@ -23,38 +27,45 @@ namespace Vi.Tools.Extensions.SqlDataReader
                 var ordinal = dataReader.GetOrdinal(name);
                 return dataReader.IsDBNull(ordinal) ? (Int32?)null : (Int32?)dataReader.GetInt32(ordinal);
             }
-            catch (System.Exception se)
+            catch (System.Exception)
             {
                 return (Int32?)null;
             }
         }
 
         /// <summary>
-        /// Converte il valore della colonna 'name' in 'Int32'. 
+        /// Converts value in column 'name' to 'Int32?'. 
         /// </summary>
-        /// <param name="dataReader">Il 'DataReader' con i dati da leggere.</param>
-        /// <param name="name">Il nome della colonna da cui estrarre il valore in formato 'Int32'.</param>
-        /// <param name="default">Il valore di default, da assegnare se per un qualsiasi motivo la lettura della colonna 'name' non andasse a buon fine.</param>
-        /// <returns>Il valore della colonna convertito nel formato 'Int32', se possibile, 'default' altrimenti.</returns>
+        /// <param name="dataReader">The 'DataReader' containing the data.</param>
+        /// <param name="name">The name of the column to convert to 'Int32'.</param>
+        /// <param name="default">The returning valu is when the cast in not possible.</param>
+        /// <returns>dataReader.GetInt32(name) if possible, 'default' otherwise ('System.Exception' included).</returns>
         public static Int32 GetInt32(this System.Data.SqlClient.SqlDataReader dataReader, string name, Int32 @default)
         {
             var value = dataReader.GetInt32(name);
             return value == null ? @default : (Int32)value;
         }
 
+        /// <summary>
+        /// Converts value in column 'name' to 'Int32?'. 
+        /// </summary>
+        /// <param name="dataReader">The 'DataReader' containing the data.</param>
+        /// <param name="name">The name of the column to convert to 'Int32'.</param>
+        /// <param name="default">The returning valu is when the cast in not possible.</param>
+        /// <returns>dataReader.GetInt32(name) if possible, 'default' otherwise ('System.Exception' included).</returns>
         public static Int32? GetInt32(this System.Data.SqlClient.SqlDataReader dataReader, string name, Int32? @default)
         {
-            var x = dataReader[name];
+            /////var x = dataReader[name];
             var value = dataReader.GetInt32(name);
             return value == null ? @default : (Int32)value;
         }
 
         /// <summary>
-        /// Converte il valore della colonna 'name' in 'string'. 
+        /// Converts value in column 'name' to 'string?'.
         /// </summary>
-        /// <param name="dataReader">Il 'DataReader' con i dati da leggere.</param>
-        /// <param name="name">Il nome della colonna da cui estrarre il valore in formato 'string'.</param>
-        /// <returns>Il valore della colonna 'name' convertito nel formato 'string' (può essere 'null').</returns>
+        /// <param name="dataReader">The 'DataReader' containing the data.</param>
+        /// <param name="name">The name of the column to convert to 'string'.</param>
+        /// <returns>dataReader.GetString(name) if possible, 'null' otherwise ('System.Exception' included).</returns>
         public static string GetString(this System.Data.SqlClient.SqlDataReader dataReader, string name)
         {
             var ordinal = dataReader.GetOrdinal(name);
@@ -62,12 +73,12 @@ namespace Vi.Tools.Extensions.SqlDataReader
         }
 
         /// <summary>
-        /// Converte il valore della colonna 'name' in 'string'. 
+        /// Converts value in column 'name' to 'string?'. 
         /// </summary>
-        /// <param name="dataReader">Il 'DataReader' con i dati da leggere.</param>
-        /// <param name="name">Il nome della colonna da cui estrarre il valore in formato 'string'.</param>
-        /// <param name="default">Il valore di default, da assegnare se per un qualsiasi motivo la lettura della colonna 'name' non andasse a buon fine.</param>
-        /// <returns>Il valore della colonna 'name' convertito nel formato 'string' (può essere 'null') il valore 'String.Empty' viene restituito così comè (non viene sostituito da '@default').</returns>
+        /// <param name="dataReader">The 'DataReader' containing the data.</param>
+        /// <param name="name">The name of the column to convert to 'string'.</param>
+        /// <param name="default">The returning value default when the cast in not possible.</param>
+        /// <returns>dataReader.GetString(name) if possible, 'default' otherwise ('System.Exception' included).</returns>
         public static string GetString(this System.Data.SqlClient.SqlDataReader dataReader, string name, string @default)
         {
             var value = dataReader.GetString(name);
@@ -75,16 +86,24 @@ namespace Vi.Tools.Extensions.SqlDataReader
         }
 
         /// <summary>
-        /// Converte il valore della colonna 'name' in 'DateTime'. 
+        /// Converts value in column 'name' to 'DateTime?'.
         /// </summary>
-        /// <param name="dataReader">Il 'DataReader' con i dati da leggere.</param>
-        /// <param name="name">Il nome della colonna da cui estrarre il valore in formato 'DateTime'.</param>
-        /// <returns>Il valore della colonna 'name' convertito nel formato 'DateTime' (può essere 'null').</returns>
-        public static System.DateTime? GetDateTime(this System.Data.SqlClient.SqlDataReader dataReader, string name)
+        /// <param name="dataReader">The 'DataReader' containing the data.</param>
+        /// <param name="name">The name of the column to convert to 'string'.</param>
+        /// <param name="default">The returning value when the cast in not possible.</param>
+        /// <returns>dataReader.GetDateTime(name) if possible, 'null' otherwise ('System.Exception' included).</returns>
+        public static System.DateTime GetDateTime(this System.Data.SqlClient.SqlDataReader dataReader, string name, System.DateTime @default)
         {
-            var ordinal = dataReader.GetOrdinal(name);
-            var value = dataReader.GetDateTime(ordinal);
-            return value;
+            try
+            {
+                var ordinal = dataReader.GetOrdinal(name);
+                var value = dataReader.GetDateTime(ordinal);
+                return value == null ? @default : value;
+            }
+            catch (System.Exception)
+            {
+                return @default;
+            }
         }
 
 
