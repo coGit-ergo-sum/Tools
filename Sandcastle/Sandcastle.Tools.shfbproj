@@ -46,8 +46,43 @@
     <IndentHtml>False</IndentHtml>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
-    <MissingTags>Summary, Parameter, Returns, TypeParameter</MissingTags>
+    <MissingTags>Summary, Parameter, Returns, Value, Remarks, Namespace, TypeParameter, IncludeTargets</MissingTags>
     <WarnOnMissingSourceContext>False</WarnOnMissingSourceContext>
+    <ProjectSummary>This message comes from the tab : &amp;#39%3bProject properties&amp;#39%3b item: &amp;#39%3bSummaries&amp;#39%3b %28from the left list</ProjectSummary>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="(global)" isDocumented="True" xmlns="">Namespace summary for all te namespaces 
+tab 'Project Properties'
+Item Summaries
+Button 'Edit Namespace Summaries'</NamespaceSummaryItem>
+<NamespaceSummaryItem name="Vi" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.API" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.API.CS" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Delegates" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.Array" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.Bool" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.Byte" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.DateTime" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.DialogResult" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.Enums" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.Exception" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.Float" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.Int" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.Long" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.NameValueCollection" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.Object" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.Random" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.SqlCommand" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.SqlDataReader" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.String" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Extensions.TimeSpan" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.statics" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Tools.Types" isDocumented="True" xmlns="" /></NamespaceSummaries>
+    <PlugInConfigurations>
+      <PlugInConfig id="Wildcard Assembly References" enabled="True" xmlns="">
+        <configuration />
+      </PlugInConfig>
+    </PlugInConfigurations>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
@@ -96,6 +131,10 @@
     <Content Include="Images\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Images\Bitmap.bmp">
+      <ImageId>Bitmap</ImageId>
+      <AlternateText>Bitmap</AlternateText>
+    </Image>
     <Image Include="Images\SQLLogger.png">
       <ImageId>SQLLogger</ImageId>
       <AlternateText>SQLLogger</AlternateText>

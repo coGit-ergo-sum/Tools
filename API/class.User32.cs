@@ -8,6 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Vi.API
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class User32
     {
         /// <summary>

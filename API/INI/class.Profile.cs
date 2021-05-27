@@ -19,6 +19,7 @@ namespace Vi.Tools
 		/// <summary>
 		/// The full path of the INI file.
 		/// </summary>
+		/// <value>The full path of the INI file.</value>
 		public readonly string FileName;
 
 		/// <summary>
