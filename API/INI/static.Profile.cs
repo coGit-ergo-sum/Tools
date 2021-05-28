@@ -241,7 +241,7 @@ namespace Vi.Tools.statics
 		/// <summary>
 		/// This is the 'method' used by all the other version of the method 'Write'
 		/// </summary>
-		/// <typeparam name="T">Can by any type with the method 'ToString'.</typeparam>
+		/// <typeparam name="T">Can be any type with the method 'ToString'.</typeparam>
 		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
 		/// <param name="value">The value to write in the INI file.</param>
