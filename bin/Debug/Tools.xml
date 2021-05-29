@@ -481,9 +481,25 @@
             <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
             <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
             <param name="default">The return value in case something  goes wrong.</param>
-            <param name="fileName">The full path of the INI file from which read data.  If null the callback 'onWarning' will be called.</param>
-            <param name="onWarning">The callback used to manage exceptions.</param>
             <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
+        </member>
+        <member name="M:Vi.Tools.Profile.Read(System.String,System.String,System.Drawing.Point)">
+            <summary>
+            Reads a points.
+            </summary>
+            <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
+            <param name="default">The return value in case something  goes wrong.</param>
+            <returns>A System.Drawing.Point from the INI file, if possible. 'default' otherwise.</returns>
+        </member>
+        <member name="M:Vi.Tools.Profile.Read(System.String,System.String,System.Drawing.Size)">
+            <summary>
+            Reads s 'Size'
+            </summary>
+            <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
+            <param name="default"></param>
+            <returns>A System.Drawing.Size from the INI file, if possible. 'default' otherwise.</returns>
         </member>
         <member name="M:Vi.Tools.Profile.Write(System.String,System.String,System.String)">
             <summary>
@@ -541,9 +557,31 @@
             </summary>
             <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
             <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
-            <param name="value">The value to write in the INI file.</param>
-            <param name="fileName">The full path of the INI file where write data. If null the callback 'onWarning' will be called.</param>
-            <param name="onWarning">The callback used to manage exceptions.</param>
+            <param name="values">The array of integer to write in the INI file.</param>
+        </member>
+        <member name="M:Vi.Tools.Profile.Write(System.String,System.String,System.Boolean[])">
+            <summary>
+            Writes an array of boolean separated by ';' in the INI file.
+            </summary>
+            <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+            <param name="values">The array of booleans to write in the INI file.</param>
+        </member>
+        <member name="M:Vi.Tools.Profile.Write(System.String,System.String,System.Drawing.Point)">
+            <summary>
+            Writes a 'System.Drawing.Point' value (can store the form position when the form is closing.)
+            </summary>
+            <param name="section">The name of t/he section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data. If null the callback 'onWarning' will be called.</param>
+            <param name="point">A location object.</param>
+        </member>
+        <member name="M:Vi.Tools.Profile.Write(System.String,System.String,System.Drawing.Size)">
+            <summary>
+            Writes a 'System.Drawing.Size' value (Can store the form size when the form is closing.)
+            </summary>
+            <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data. If null the callback 'onWarning' will be called.</param>
+            <param name="size">A size object.</param>
         </member>
         <member name="M:Vi.Tools.Profile.DeleteKey(System.String,System.String)">
             <summary>
@@ -600,6 +638,12 @@
             <param name="parameter">The name of the parameter with something wrong.</param>
             <param name="message">The info about what went wrong.</param>
             <param name="fileName">The name of the INI file currently used.</param>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Create(System.String)">
+            <summary>
+            Creates the file INI If doesn't exist.
+            </summary>
+            <param name="filename"></param>
         </member>
         <member name="M:Vi.Tools.statics.Profile.Sections(System.Int32,System.String,Vi.Tools.statics.Profile.WarningDelegate)">
             <summary>
@@ -813,6 +857,81 @@
             <param name="onWarning">The callback used to manage exceptions.</param>
             <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
         </member>
+        <member name="M:Vi.Tools.statics.Profile.Read(System.String,System.String,System.String,System.String)">
+            <summary>
+            Reads a string from the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
+            <param name="default">The return value in case something  goes wrong.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Read(System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Reads a boolean from the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
+            <param name="default">The return value in case something  goes wrong.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Read(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Reads an integer from the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
+            <param name="default">The return value in case something  goes wrong.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Read(System.String,System.String,System.Int64,System.String)">
+            <summary>
+            Reads a long from the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
+            <param name="default">The return value in case something  goes wrong.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Read(System.String,System.String,System.Int32[],System.String)">
+            <summary>
+            Reads an array of integer from the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
+            <param name="default">The return value in case something  goes wrong.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Read(System.String,System.String,System.Drawing.Point,System.String)">
+            <summary>
+            Reads a points.
+            </summary>
+            <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+            <param name="default">The return value in case something  goes wrong.</param>
+            <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <returns>A System.Drawing.Point from the INI file, if possible. 'default' otherwise.</returns>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Read(System.String,System.String,System.Drawing.Size,System.String)">
+            <summary>
+            Reads s 'Size'
+            </summary>
+            <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+            <param name="default">The return value in case something  goes wrong.</param>
+            <param name="key">The name of the 'key' (in a 'section') from where read data. If null the callback 'onWarning' will be called.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <returns>A System.Drawing.Size from the INI file, if possible. 'default' otherwise.</returns>
+        </member>
         <member name="M:Vi.Tools.statics.Profile.Write(System.String,System.String,System.Int32,System.String,Vi.Tools.statics.Profile.WarningDelegate)">
             <summary>
             Writes an 'integer' in the INI file.
@@ -873,6 +992,84 @@
             <param name="fileName">The full path of the INI file where write data. If null the callback 'onWarning' will be called.</param>
             <param name="onWarning">The callback used to manage exceptions.</param>
         </member>
+        <member name="M:Vi.Tools.statics.Profile.Write(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Writes an 'integer' in the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+            <param name="value">The value to write in the INI file.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Write(System.String,System.String,System.Int64,System.String)">
+            <summary>
+            Writes a 'long' in the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section where the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+            <param name="value">The value to write in the INI file.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Write(System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Writes a 'boolean' in the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+            <param name="value">The value to write in the INI file.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Write(System.String,System.String,System.String,System.String)">
+            <summary>
+            Writes a 'string' in the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+            <param name="value">The value to write in the INI file.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Write(System.String,System.String,System.Int32[],System.String)">
+            <summary>
+            Writes an array of integer separated by ';' in the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+            <param name="values">The value to write in the INI file.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Write(System.String,System.String,System.Boolean[],System.String)">
+            <summary>
+            Writes an array of booleans separated by ';' in the INI file. (Any exception triggers the static event 'Profile.Worning')
+            </summary>
+            <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+            <param name="values">The value to write in the INI file.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+            <exception cref="T:System.Exception">If filename is null</exception>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Write(System.String,System.String,System.Drawing.Point,System.String)">
+            <summary>
+            Writes a 'System.Drawing.Point' value (can store the form position when the form is closing.)
+            </summary>
+            <param name="section">The name of t/he section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+            <param name="location">A 'point' object.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+        </member>
+        <member name="M:Vi.Tools.statics.Profile.Write(System.String,System.String,System.Drawing.Size,System.String)">
+            <summary>
+            Writes a 'System.Drawing.size' value (can store the form size when the form is closing.)
+            </summary>
+            <param name="section">The name of t/he section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+            <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+            <param name="size">A 'size' object.</param>
+            <param name="fileName">The full path of the INI file where write data.</param>
+        </member>
         <member name="T:Vi.Tools.Settings">
             <summary>
             
@@ -883,36 +1080,6 @@
             Main CTor: sets the fileName.
             </summary>
             <param name="fileName"></param>
-        </member>
-        <member name="M:Vi.Tools.Settings.Write(System.String,System.Drawing.Point)">
-            <summary>
-            
-            </summary>
-            <param name="section"></param>
-            <param name="location"></param>
-        </member>
-        <member name="M:Vi.Tools.Settings.Write(System.String,System.Drawing.Size)">
-            <summary>
-            
-            </summary>
-            <param name="section"></param>
-            <param name="size"></param>
-        </member>
-        <member name="M:Vi.Tools.Settings.ReadLocation(System.String,System.Drawing.Point)">
-            <summary>
-            
-            </summary>
-            <param name="section"></param>
-            <param name="default"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Vi.Tools.Settings.ReadSize(System.String,System.Drawing.Size)">
-            <summary>
-            
-            </summary>
-            <param name="section"></param>
-            <param name="default"></param>
-            <returns></returns>
         </member>
         <member name="T:Vi.Tools.Delegates.TraceDelegate">
             <summary>
@@ -996,11 +1163,21 @@
         </member>
         <member name="M:Vi.Tools.Extensions.Bool.Methods.ToConditional(System.Boolean,System.String,System.String)">
             <summary>
-            Converts 'DateTime.Ticks' to 'DateTime'.
+            checks the variable and returns one of the two provided parameters.
             </summary>
-            <param name="value">The vaalue to convert.</param>
-            <param name="default">Makes this method exception resislient.</param>
-            <returns>The DateTime associated to the value, @default otherwise.</returns>
+            <param name="value">The value to check.</param>
+            <param name="onTrue">The parameter to return if value is true.</param>
+            <param name="onFalse">The parameter to return if value is false.</param>
+            <returns>The parameter 'onTrue' if value is true.  'onFalse' otherwise.</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Bool.Methods.ToConditional(System.Boolean,System.Action,System.Action)">
+            <summary>
+            checks the variable and returns one of the two provided callback ('Action')
+            </summary>
+            <param name="value">The value to check.</param>
+            <param name="onTrue">The action to be executed if value is true.</param>
+            <param name="onFalse">The action to be executed if value is false.</param>
+            <returns></returns>
         </member>
         <member name="M:Vi.Tools.Extensions.Exception.Methods.Trace(System.Exception)">
             <summary>
@@ -1905,7 +2082,7 @@
         <member name="T:Vi.Tools.Watcher">
             <summary>
             Observes a Directory and it's subDirectories, waiting for changes.
-            If a change occours writes a copy (in a backup diretory) of the file before the change.
+            If a change occours writes a copy of the changed file (before the change) in a backup diretory.
             </summary>
         </member>
         <member name="T:Vi.Tools.Watcher.CopyDelegate">

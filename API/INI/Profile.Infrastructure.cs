@@ -69,7 +69,7 @@
 //////////////		/// <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
 //////////////		public static int[] Read(string section, string key, int[] @default, string fileName, Vi.Tools.statics.Profile.WarningDelegate onWarning)
 //////////////		{
-//////////////			return Vi.Tools.statics.Profile.Read(section, key, System.String.Empty, fileName, onWarning).ToInt(':', @default);
+//////////////			return Vi.Tools.statics.Profile.Read(section, key, System.String.Empty, fileName, onWarning).ToInt(';', @default);
 //////////////		}
 
 //////////////		#endregion

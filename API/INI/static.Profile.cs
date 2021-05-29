@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
-
-using Vi.Tools.Extensions.String;
 using Vi.Tools.Extensions.Long;
+using Vi.Tools.Extensions.String;
 
 
 
@@ -19,6 +17,9 @@ namespace Vi.Tools.statics
 	/// </summary>
 	public static partial class Profile
 	{
+		// this portion of the class on this file is the 'engine'. Here stands the implementations of all the functions.
+		// The other portion of this class on other files contain mainly overloads designed to improve the versatility
+		// (and why not, to make developer's life a little bit easier. ;-)
 
 		#region event 'Warning'
 
@@ -56,6 +57,14 @@ namespace Vi.Tools.statics
 		#endregion
 
 		#endregion
+
+		/// <summary>
+		/// Creates the file INI If doesn't exist.
+		/// </summary>
+		/// <param name="filename"></param>
+		public static void Create(string filename) {
+			if (!System.IO.File.Exists(filename)) { System.IO.File.Create(filename); }
+		}
 
 		#region Sections
 		/// <summary>
@@ -172,7 +181,9 @@ namespace Vi.Tools.statics
 				if (length == 0)
 				{
 					var lastError = Marshal.GetHRForLastWin32Error();
-					if (lastError == SUCCESS) { return System.String.Empty; }
+					if (lastError == SUCCESS) { 
+						return System.String.Empty; 
+					}
 					else
 					{
 						var message = System.String.Format("Error: {0} executing 'GetPrivateProfileString' for section = {1}, key {2}.", lastError, section, key);

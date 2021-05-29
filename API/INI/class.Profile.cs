@@ -181,12 +181,34 @@ namespace Vi.Tools
 		/// <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
 		/// <param name="default">The return value in case something  goes wrong.</param>
-		/// <param name="fileName">The full path of the INI file from which read data.  If null the callback 'onWarning' will be called.</param>
-		/// <param name="onWarning">The callback used to manage exceptions.</param>
 		/// <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
 		public int[] Read(string section, string key, int[] @default)
 		{
-			return this.Read(section, key, System.String.Empty).ToInt(':', @default);
+			return this.Read(section, key, System.String.Empty).ToInt(';', @default);
+		}
+
+		/// <summary>
+		/// Reads a points.
+		/// </summary>
+		/// <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+		/// <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
+		/// <param name="default">The return value in case something  goes wrong.</param>
+		/// <returns>A System.Drawing.Point from the INI file, if possible. 'default' otherwise.</returns>
+		public System.Drawing.Point Read(string section, string key, System.Drawing.Point @default)
+		{
+			return Vi.Tools.statics.Profile.Read(section, key, @default, this.FileName);
+		}
+
+		/// <summary>
+		/// Reads s 'Size'
+		/// </summary>
+		/// <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
+		/// <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
+		/// <param name="default"></param>
+		/// <returns>A System.Drawing.Size from the INI file, if possible. 'default' otherwise.</returns>
+		public System.Drawing.Size Read(string section, string key, System.Drawing.Size @default)
+		{
+			return Vi.Tools.statics.Profile.Read(section, key, @default, this.FileName);
 		}
 
 		/*
@@ -205,6 +227,7 @@ namespace Vi.Tools
 			return new System.Drawing.Point(values[0], values[1]);
 		}
 		*/
+		
 		/*
 		/// <summary>
 		/// Reads a 'System.Drawing.Point' from the INI file.
@@ -221,6 +244,7 @@ namespace Vi.Tools
 			return new System.Drawing.Size(values[0], values[1]);
 		}
 		*/
+
 		#endregion
 
 		#region Write
@@ -297,21 +321,51 @@ namespace Vi.Tools
 		/// </summary>
 		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
-		/// <param name="value">The value to write in the INI file.</param>
-		/// <param name="fileName">The full path of the INI file where write data. If null the callback 'onWarning' will be called.</param>
-		/// <param name="onWarning">The callback used to manage exceptions.</param>
+		/// <param name="values">The array of integer to write in the INI file.</param>
 		public void Write(string section, string key, int[] values)
 		{
 			Vi.Tools.statics.Profile.Write(section, key, values, this.FileName, this.OnWarning);
 		}
 
-
-        public void Write(string section, string key, bool[] values)
+		/// <summary>
+		/// Writes an array of boolean separated by ';' in the INI file.
+		/// </summary>
+		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+		/// <param name="values">The array of booleans to write in the INI file.</param>
+		public void Write(string section, string key, bool[] values)
         {
             Vi.Tools.statics.Profile.Write(section, key, values, this.FileName, this.OnWarning);
         }
 
-        /*
+
+
+		/////////////////////////////////////////////////////////////////////////
+
+		/// <summary>
+		/// Writes a 'System.Drawing.Point' value (can store the form position when the form is closing.)
+		/// </summary>
+		/// <param name="section">The name of t/he section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+		/// <param name="key">The name of the 'key' (in a 'section') where write data. If null the callback 'onWarning' will be called.</param>
+		/// <param name="point">A location object.</param>
+		public void Write(string section, string key, System.Drawing.Point point)
+		{
+			Vi.Tools.statics.Profile.Write(section, key, point, this.FileName);
+		}
+
+		/// <summary>
+		/// Writes a 'System.Drawing.Size' value (Can store the form size when the form is closing.)
+		/// </summary>
+		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+		/// <param name="key">The name of the 'key' (in a 'section') where write data. If null the callback 'onWarning' will be called.</param>
+		/// <param name="size">A size object.</param>
+		public void Write(string section, string key, System.Drawing.Size size)
+		{
+			Vi.Tools.statics.Profile.Write(section, key, size, this.FileName);
+		}
+
+
+		/*
 		/// <summary>
 		/// Writes a 'System.Drawing.Point' (as an array of integer) in the INI file.
 		/// </summary>
@@ -326,7 +380,7 @@ namespace Vi.Tools
 		}
 		*/
 
-        /*
+		/*
 		/// <summary>
 		/// Writes a 'System.Drawing.Size' (as an array of integer) in the INI file.
 		/// </summary>
@@ -340,15 +394,15 @@ namespace Vi.Tools
 			Vi.Tools.Profile.Write(section, key, value, this.FileName, this.OnWarning);
 		}
 		*/
-        #endregion
+		#endregion
 
-        #region Delete
-        /// <summary>
-        /// Deletes a 'Key' (and its value) from the INI file.
-        /// </summary>
-        /// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
-        /// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
-        public void DeleteKey(string section, string key)
+		#region Delete
+		/// <summary>
+		/// Deletes a 'Key' (and its value) from the INI file.
+		/// </summary>
+		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+		public void DeleteKey(string section, string key)
 		{
 			Vi.Tools.statics.Profile.DeleteKey(section, key, this.FileName, this.OnWarning);
 		}

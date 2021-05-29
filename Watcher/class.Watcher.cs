@@ -9,7 +9,7 @@ namespace Vi.Tools
 {
     /// <summary>
     /// Observes a Directory and it's subDirectories, waiting for changes.
-    /// If a change occours writes a copy (in a backup diretory) of the file before the change.
+    /// If a change occours writes a copy of the changed file (before the change) in a backup diretory.
     /// </summary>
     public class Watcher
     {
