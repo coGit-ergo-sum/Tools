@@ -5,17 +5,12 @@ using Vi.Tools.Extensions.String;
 namespace Vi.Tools
 {
 	/// <summary>
-	/// Collects a set of methods to manage an 'INI' file. (choose this class if you want manage more tha one 'INI' file.) 
-	/// The methods this class uses are implemented in 
-	/// </summary>
-	/// Provides methods to manipulate a 'INI' file. This class is only a wrapper around the static class: 'Profile' where methods are truly implemented.
+	/// Provides methods to manipulate a 'INI' file. This class is a wrapper around the static class: 'Vi.Tools.statics.Profile' where methods are truly implemented.
 	/// It provides an object oriented way to interact with the INI file. (for example: if your application needs more than one INI file, have many instances 
 	/// of this class is a good way to cope with this requirement.)
 	/// </summary>
 	public class Profile
 	{
-
-
 		/// <summary>
 		/// The full path of the INI file.
 		/// </summary>
@@ -23,7 +18,7 @@ namespace Vi.Tools
 		public readonly string FileName;
 
 		/// <summary>
-		/// Creates an object 'Profile' that doesn't send back any information on its flows.
+		/// Creates an object 'Profile'.
 		/// </summary>
 		/// <param name="fileName">The name of the INI file currently used.</param>
 		public Profile(string fileName)

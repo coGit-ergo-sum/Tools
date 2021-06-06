@@ -15,6 +15,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>Help\XMLs\Debug\Tools.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -57,19 +60,19 @@
     </Compile>
     <Compile Include="API\INI\class.Profile.cs" />
     <Compile Include="API\INI\static.Profile.cs" />
-	<Compile Include="API\INI\Profile.Infrastructure.cs"/>
     <Compile Include="API\INI\Infrastructure.cs">
-		<DependentUpon>static.Profile.cs</DependentUpon>
-	</Compile>
-	
+      <DependentUpon>static.Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="API\INI\Settings.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="Extensions\Extension.Array.cs" />
     <Compile Include="Extensions\Extension.Bool.cs" />
+    <Compile Include="Extensions\Extension.Numbers.cs" />
     <Compile Include="Extensions\Extension.DateTime.cs" />
     <Compile Include="Extensions\Extension.Enums.cs" />
     <Compile Include="Extensions\Extension.Exception.cs" />
     <Compile Include="Extensions\Extension.Byte.cs" />
+    <Compile Include="Extensions\Extension.decimal.cs" />
     <Compile Include="Extensions\Extension.float.cs" />
     <Compile Include="Extensions\Extension.NameValueCollection.cs" />
     <Compile Include="Extensions\Extension.Object.cs" />

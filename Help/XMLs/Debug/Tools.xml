@@ -201,29 +201,40 @@
             <param name="fileName">The name of the initialization file. (If the file was created using Unicode characters, the function writes Unicode characters to the file. Otherwise, the function writes ANSI characters.)</param>
             <returns>If the function successfully copies the string to the initialization file, the return value is nonzero. If the function fails, or if it flushes the cached version of the most recently accessed initialization file, the return value is zero.To get extended error information, call GetLastError.</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)" -->
+        <member name="M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)">
+            <summary>
+            Retrieves a string from the specified section in an initialization file.
+            </summary>
+            <param name="section">The name of the section to which the string will be copied. If the section does not exist, it is created. The name of the section is case-independent; the string can be any combination of uppercase and lowercase letters.</param>
+            <param name="key">The name of the key to be associated with a string. If the key does not exist in the specified section, it is created. If this parameter is NULL, the entire section, including all entries within the section, is deleted.</param>
+            <param name="default">The returnig value if enything goes wrong.</param>
+            <param name="sb">The string.Builder used to compose the resulting string.</param>
+            <param name="size">The dimension of the buffer.</param>
+            <param name="fileName">The name of the INI file.</param>
+            <returns>A number segnalating if the function succeded.</returns>
+        </member>
         <member name="M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Char[],System.Int32,System.String)">
             <summary>
-            
+            Retrieves an array of characters from the specified section in an initialization file.
             </summary>
-            <param name="section"></param>
-            <param name="key"></param>
-            <param name="default"></param>
-            <param name="characters"></param>
-            <param name="size"></param>
-            <param name="fileName"></param>
-            <returns></returns>
+            <param name="section">The name of the section to which the string will be copied. If the section does not exist, it is created. The name of the section is case-independent; the string can be any combination of uppercase and lowercase letters.</param>
+            <param name="key">The name of the key to be associated with a string. If the key does not exist in the specified section, it is created. If this parameter is NULL, the entire section, including all entries within the section, is deleted.</param>
+            <param name="default">The returnig value if enything goes wrong.</param>
+            <param name="characters">The container used to keep the result.</param>
+            <param name="size">The dimension of the buffer.</param>
+            <param name="fileName">The name of the INI file.</param>
+            <returns>A number segnalating if the function succeded.</returns>
         </member>
         <member name="M:Vi.API.Kernel32.GetPrivateProfileString(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)">
             <summary>
-            
+            Retrieves an array of bytes from the specified section in an initialization file
             </summary>
-            <param name="section"></param>
-            <param name="key"></param>
-            <param name="default"></param>
-            <param name="bytes"></param>
-            <param name="size"></param>
-            <param name="fileName"></param>
+            <param name="section">The name of the section to which the string will be copied. If the section does not exist, it is created. The name of the section is case-independent; the string can be any combination of uppercase and lowercase letters.</param>
+            <param name="key">The name of the key to be associated with a string. If the key does not exist in the specified section, it is created. If this parameter is NULL, the entire section, including all entries within the section, is deleted.</param>
+            <param name="default">The returnig value if enything goes wrong.</param>
+            <param name="bytes">The container used to keep the result.</param>
+            <param name="size">The dimension of the buffer.</param>
+            <param name="fileName">The name of the INI file.</param>
             <returns></returns>
         </member>
         <member name="M:Vi.API.Kernel32.GetPrivateProfileSectionNames(System.Char[],System.Int32,System.String)">
@@ -370,7 +381,13 @@
             <param name="WTSInfoClass">A value of the WTS_INFO_CLASS enumeration that indicates the type of session information to retrieve in a call to the WTSQuerySessionInformation function.</param>
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:Vi.Tools.Profile" -->
+        <member name="T:Vi.Tools.Profile">
+            <summary>
+            Provides methods to manipulate a 'INI' file. This class is a wrapper around the static class: 'Vi.Tools.statics.Profile' where methods are truly implemented.
+            It provides an object oriented way to interact with the INI file. (for example: if your application needs more than one INI file, have many instances 
+            of this class is a good way to cope with this requirement.)
+            </summary>
+        </member>
         <member name="F:Vi.Tools.Profile.FileName">
             <summary>
             The full path of the INI file.
@@ -379,7 +396,7 @@
         </member>
         <member name="M:Vi.Tools.Profile.#ctor(System.String)">
             <summary>
-            Creates an object 'Profile' that doesn't send back any information on its flows.
+            Creates an object 'Profile'.
             </summary>
             <param name="fileName">The name of the INI file currently used.</param>
         </member>
@@ -1099,7 +1116,7 @@
             <summary>
             Provides the max index for the array. Max index is (Length - 1) for zero based array.
             </summary>
-            <param name="value"></param>
+            <param name="value">The array object.</param>
             <returns>value.Length - 1.</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.Array.Methods.Last``1(``0[])">
@@ -1146,7 +1163,7 @@
         </member>
         <member name="M:Vi.Tools.Extensions.Array.Methods.Slice``1(``0[],System.Int32)">
             <summary>
-            Gets the array starting from the position 'Start' (included).
+            Gets the array starting from the position 'Start' (included), till the end.
             </summary>
             <typeparam name="T">The generic type</typeparam>
             <param name="source">The source array (the array from which 'cut the slice'.</param>
@@ -1161,6 +1178,11 @@
             <param name="separator">The separator used to join the array.</param>
             <returns>Null if null; empty if length = 0. Otherwise the array {1, 2, 3 4} become the string "1; 2; 3, 4".</returns>
         </member>
+        <member name="T:Vi.Tools.Extensions.Bool.Methods">
+            <summary>
+            Collection of 'extension methods' for boolean
+            </summary>
+        </member>
         <member name="M:Vi.Tools.Extensions.Bool.Methods.ToConditional(System.Boolean,System.String,System.String)">
             <summary>
             checks the variable and returns one of the two provided parameters.
@@ -1170,23 +1192,94 @@
             <param name="onFalse">The parameter to return if value is false.</param>
             <returns>The parameter 'onTrue' if value is true.  'onFalse' otherwise.</returns>
         </member>
+        <member name="M:Vi.Tools.Extensions.Bool.Methods.ToYN(System.Boolean)">
+            <summary>
+            Return "Y" or "N";
+            </summary>
+            <param name="value">The value to check.</param>
+            <returns>'Y' on true. 'N' otherwise.</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Bool.Methods.ToYesNo(System.Boolean)">
+            <summary>
+            Return "Yes" or "No";
+            </summary>
+            <param name="value">The value to check.</param>
+            <returns>'Yes' on true. 'No' otherwise.</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Bool.Methods.ToTF(System.Boolean)">
+            <summary>
+            Return "T" or "F";
+            </summary>
+            <param name="value">The value to check.</param>
+            <returns>'T' on true. 'F' otherwise.</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Bool.Methods.ToTrueFalse(System.Boolean)">
+            <summary>
+            Return the string: "True" or "False";
+            </summary>
+            <param name="value">The value to check.</param>
+            <returns>'True' on true. 'False' otherwise.</returns>
+        </member>
         <member name="M:Vi.Tools.Extensions.Bool.Methods.ToConditional(System.Boolean,System.Action,System.Action)">
             <summary>
-            checks the variable and returns one of the two provided callback ('Action')
+            checks the variable and executes one of the two provided callback ('Action')
             </summary>
             <param name="value">The value to check.</param>
             <param name="onTrue">The action to be executed if value is true.</param>
             <param name="onFalse">The action to be executed if value is false.</param>
             <returns></returns>
         </member>
+        <member name="T:Vi.Tools.Extensions.DateTime.Methods">
+            <summary>
+            Collection of 'extension methods' for DateTime
+            </summary>
+        </member>
+        <member name="T:Vi.Tools.Extensions.Enums.Methods">
+            <summary>
+            Collection of 'extension methods' for Enums
+            </summary>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Enums.Methods.ToInt``1(``0,System.Int32)">
+            <summary>
+            Casts the value 'source' into an integer.
+            </summary>
+            <typeparam name="T">Any type derived from 'IConvertible'.</typeparam>
+            <param name="source">The type we want to convert into aint value..</param>
+            <param name="default">The int obtained casting value. @default otherwise.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Enums.Methods.Count``1(``0)">
+            <summary>
+            Counts the number of element contained in any type derived from 'IConvertible'.
+            </summary>
+            <typeparam name="T">Any type derived from 'IConvertible'.</typeparam>
+            <param name="source">The type we want count how many elements it has.</param>
+            <returns>The number of elements the type has.</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Enums.Methods.Description``1(``0)">
+            <summary>
+            Gets the description (from the decorator) of the value.
+            </summary>
+            <typeparam name="T">Any type derived from 'IConvertible'.</typeparam>
+            <param name="value">The value from which we want to get its description (if any).</param>
+            <returns></returns>
+        </member>
+        <member name="T:Vi.Tools.Extensions.Exception.Methods">
+            <summary>
+            Collection of 'extension methods' for Exception
+            </summary>
+        </member>
         <member name="M:Vi.Tools.Extensions.Exception.Methods.Trace(System.Exception)">
             <summary>
             Calls 'System.Diagnostics.Trace.TraceError': Writes an error message to the trace listeners in the System.Diagnostics.Trace.Listeners collection using the specified message.
             </summary>
-            <param name="se"></param>
-            <param name="line"></param>
-            <param name="member"></param>
-            <param name="file"></param>
+            <param name="se">The instance of the exception.</param>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Exception.Methods.Log(System.Exception)">
+            <summary>
+            Logs the error calling 'Vi.Tools.Log.Error(se);'
+            </summary>
+            <param name="se">The system.Exception</param>
         </member>
         <member name="M:Vi.Tools.Extensions.Exception.Methods.Show(System.Exception)">
             <summary>
@@ -1201,7 +1294,12 @@
             </summary>
             <param name="se">L'exception alla quale aggiungere questo extension method.</param>
             <param name="caption">La caption della message box. (Il titolo.)</param>
-            <returns>MessageBoxButtons.OK (se viene premuto il tasto 'OK'; MessageBoxButtons.None Altrimenti.</returns>
+            <returns>MessageBoxButtons.OK (if 'OK' is clicked; MessageBoxButtons.None othrwise.</returns>
+        </member>
+        <member name="T:Vi.Tools.Extensions.Byte.Methods">
+            <summary>
+            Collection of 'extension methods' for byte
+            </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Extensions.Byte.Methods.IsEven(System.Byte)" -->
         <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Extensions.Byte.Methods.IsOdd(System.Byte)" -->
@@ -1215,6 +1313,42 @@
             <param name="max">Maximun value allowed.</param>
             <returns>Math.Min(Math.Max(value, min), max);</returns>
         </member>
+        <member name="T:Vi.Tools.Extensions.Decimal.Methods">
+            <summary>
+            Collection of 'extension methods' for decimal
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Extensions.Decimal.Methods.IsBetween(System.Decimal,System.Decimal,System.Decimal)" -->
+        <member name="M:Vi.Tools.Extensions.Decimal.Methods.Between(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Forces the value between 'min and 'max' (included
+            </summary>
+            <param name="value">The number to limit.</param>
+            <param name="min">Minimum value allowed.</param>
+            <param name="max">Maximun value allowed.</param>
+            <returns>Math.Min(Math.Max(value, min), max);</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Decimal.Methods.ToPercent(System.Decimal,System.SByte)">
+            <summary>
+            Converts a decimal (Percentage) in a string with a fixed number of decimals.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <param name="decimals">The number of decimals.</param>
+            <returns>Text representation of a Percentage with fixed number of decimal figures.</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Decimal.Methods.ToText(System.Decimal,System.Byte)">
+            <summary>
+            Converts a decimal in a string with a fixed number of decimals.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <param name="decimals">The number of decimals.</param>
+            <returns>text representation of a decimal with fixed number of decimal figures.</returns>
+        </member>
+        <member name="T:Vi.Tools.Extensions.Float.Methods">
+            <summary>
+            Collection of 'extension methods' for float
+            </summary>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Extensions.Float.Methods.IsBetween(System.Single,System.Single,System.Single)" -->
         <member name="M:Vi.Tools.Extensions.Float.Methods.Between(System.Single,System.Single,System.Single)">
             <summary>
@@ -1225,9 +1359,48 @@
             <param name="max">Maximun value allowed.</param>
             <returns>Math.Min(Math.Max(value, min), max);</returns>
         </member>
+        <member name="M:Vi.Tools.Extensions.Float.Methods.ToPercent(System.Single,System.SByte)">
+            <summary>
+            Converts a float in a string with a fixed number of decimals in the format used for percentages.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <param name="decimals">The number of decimals.</param>
+            <returns>Text representation of a Percentage with fixed number of decimal figures.</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.Float.Methods.ToText(System.Single,System.Byte)">
+            <summary>
+            Converts a float in a string with a fixed number of decimals.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <param name="decimals">The number of decimals.</param>
+            <returns>text representation of a decimal with fixed number of decimal figures.</returns>
+        </member>
         <member name="T:Vi.Tools.Extensions.NameValueCollection.Methods">
             <summary>
-            Descrizione di riepilogo per Extentions
+            Collection of 'extension methods' for NameValueCollection
+            </summary>
+        </member>
+        <member name="M:Vi.Tools.Extensions.NameValueCollection.Methods.ToInt(System.Collections.Specialized.NameValueCollection,System.String,System.Int32)">
+            <summary>
+            Reads the value of the itmem with the provided 'name' in the 'NameValueCollection'.
+            </summary>
+            <param name="nvc">The 'NameValueCollection'.</param>
+            <param name="name">The name of the item in the collection.</param>
+            <param name="default">The value to return if the reading fails.</param>
+            <returns>The value casted as 'int', of the item with the provided 'name' (nvc[name]). @default otherwise.</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.NameValueCollection.Methods.GetString(System.Collections.Specialized.NameValueCollection,System.String,System.String)">
+            <summary>
+            Reads the value of the itmem with the provided 'name' in the 'NameValueCollection'.
+            </summary>
+            <param name="nvc">The 'NameValueCollection'.</param>
+            <param name="name">The name of the item in the collection.</param>
+            <param name="default">The value to return if the reading fails.</param>
+            <returns>The value of the item with the provided 'name' (nvc[name]). @default otherwise.</returns>
+        </member>
+        <member name="T:Vi.Tools.Extensions.Object.Methods">
+            <summary>
+            Collection of 'extension methods' for Int
             </summary>
         </member>
         <member name="M:Vi.Tools.Extensions.Object.Methods.IsNull(System.Object)">
@@ -1245,6 +1418,11 @@
             <param name="default">Makes this method exception resislient.</param>
             <returns>Returns value != null;.</returns>
         </member>
+        <member name="T:Vi.Tools.Extensions.Int.Methods">
+            <summary>
+            Collection of 'extension methods' for Int
+            </summary>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Extensions.Int.Methods.IsEven(System.Int32)" -->
         <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Extensions.Int.Methods.IsOdd(System.Int32)" -->
         <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Extensions.Int.Methods.IsBetween(System.Int32,System.Int32,System.Int32)" -->
@@ -1257,6 +1435,13 @@
             <param name="max">Maximun value allowed.</param>
             <returns>Math.Min(Math.Max(value, min), max);</returns>
         </member>
+        <member name="T:Vi.Tools.Extensions.Long.Methods">
+            <summary>
+            Collection of 'extension methods' for Long
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Extensions.Long.Methods.IsEven(System.Byte)" -->
+        <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Extensions.Long.Methods.IsOdd(System.Byte)" -->
         <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Extensions.Long.Methods.IsBetween(System.Int64,System.Int64,System.Int64)" -->
         <member name="M:Vi.Tools.Extensions.Long.Methods.Between(System.Int64,System.Int64,System.Int64)">
             <summary>
@@ -1277,7 +1462,7 @@
         </member>
         <member name="T:Vi.Tools.Extensions.String.Methods">
             <summary>
-            Extention methods for the build in string
+            Collection of extention methods for 'string'
             </summary>
         </member>
         <member name="M:Vi.Tools.Extensions.String.Methods.ToInt(System.String,System.Nullable{System.Int32})">
@@ -1291,6 +1476,14 @@
         <member name="M:Vi.Tools.Extensions.String.Methods.ToFloat(System.String,System.Single)">
             <summary>
             Converts a string to 'float'
+            </summary>
+            <param name="value">the value to convert.</param>
+            <param name="default">The default value in case conversion fails.</param>
+            <returns>The float representation of the 'value' (if any). default otherwise.</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.String.Methods.ToDecimal(System.String,System.Decimal)">
+            <summary>
+            Converts a string to 'decimal'
             </summary>
             <param name="value">the value to convert.</param>
             <param name="default">The default value in case conversion fails.</param>
@@ -1319,6 +1512,14 @@
             <param name="value">The value to convert.</param>
             <param name="default">The result if 'tryParse' fails.</param>
             <returns>The boolean associated with the 'value', default otherwise.</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.String.Methods.ToPercentage(System.String,Vi.Types.Percentage)">
+            <summary>
+            Applies 'Vi.Types.Percentage.TryParse'
+            </summary>
+            <param name="value">The value to convert.</param>
+            <param name="default">The result if 'tryParse' fails.</param>
+            <returns>The percentage associated with the 'value', default otherwise.</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.String.Methods.ToInt(System.String,System.Char,System.Int32[])">
             <summary>
@@ -1409,95 +1610,104 @@
         </member>
         <member name="M:Vi.Tools.Extensions.String.Methods.IsSpaces(System.String)">
             <summary>
-            Check if the string is made of spaces.
+            Check if the string is made of zero or more spaces.
+            (Usually an input is not valid if made of any number of spaces, included 
+            the empty string. That's why this function is true also for the empty string.)
             </summary>
             <param name="value">The string to check.</param>
-            <returns>value.Trim().IsEmpty()</returns>
+            <returns>value.Trim().IsEmpty() (When value is not null). False otherwise.</returns>
         </member>
-        <member name="M:Vi.Tools.Extensions.String.Methods.IsEmptyOrSpaces(System.String)">
-            <summary>
-            Check if the string is 'empty' or made of spaces.
-            </summary>
-            <param name="value">The string to check.</param>
-            <returns>return value.IsEmpty() || value.IsSpaces()</returns>
-        </member>
-        <member name="M:Vi.Tools.Extensions.String.Methods.IsNullOrEmptyOrSpaces(System.String)">
+        <member name="M:Vi.Tools.Extensions.String.Methods.IsNullOrSpaces(System.String)">
             <summary>
             Check if the string is 'null', 'empty' or made of spaces.
             </summary>
             <param name="value">The string to check.</param>
-            <returns>return value.IsEmpty() || value.IsSpaces()</returns>
+            <returns>value.IsNull() || value.IsSpaces()</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.String.Methods.IsNumber(System.String)">
             <summary>
-            Checks if the string is a UInt64 number (postive 64 bit number).
+            Checks if the string can be converted to double (the numeric type with the wider range).
             </summary>
             <param name="value">The string to check.</param>
-            <returns>'value == String.Empty'.</returns>
+            <returns>System.Double.TryParse(value, out _)</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.String.Methods.Remove(System.String,System.String[])">
             <summary>
-            Removes all the occurrences of specified substrings ('items').
+            Removes from the string the occourrences of the items in 'oldValues'. Is the same of Replace(oldValues, String.Empty).
             </summary>
-            <param name="value">The string with the substring to remove.</param>
-            <param name="items">The list of item to remove from.</param>
-            <returns>The original string purged from the substring in 'items'</returns>
+            <param name="value">The string with the substrings to remove. (Runs: Replace(oldValues, String.Empty);)</param>
+            <param name="oldValues">The list of item to remove from the string.</param>
+            <returns>The original string purged from the substring in 'oldValues'</returns>
+        </member>
+        <member name="M:Vi.Tools.Extensions.String.Methods.Replace(System.String,System.String[],System.String)">
+            <summary>
+            Replaces each value in 'oldValues' with 'newValue'. (if newValue == String.Empty then use Replace(newValues);
+            </summary>
+            <param name="value">The string with the substrings to remove.</param>
+            <param name="oldValues">The list of item to replace from the string.</param>
+            <param name="newValue">The new value for all the items in 'oldValues'.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Vi.Tools.Extensions.DialogResult.Methods">
+            <summary>
+            Collection of 'extension methods' for DialogResult
+            </summary>
         </member>
         <member name="M:Vi.Tools.Extensions.DialogResult.Methods.IsOk(System.Windows.Forms.DialogResult)">
             <summary>
-            Controlla il valore della variabile 'DialogResult'
+            Checks the value of 'DialogResult'
             </summary>
             <param name="dr">True s è uguale a 'DialogResult.OK'. False altrimenti.</param>
-            <returns></returns>
+            <returns>True if dr == OK</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.DialogResult.Methods.IsAbort(System.Windows.Forms.DialogResult)">
             <summary>
-            Controlla il valore della variabile 'DialogResult'
+            Checks the value of 'DialogResult'
             </summary>
             <param name="dr">True s è uguale a 'DialogResult.Abort'. False altrimenti.</param>
-            <returns></returns>
+            <returns>True if dr == Abort</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.DialogResult.Methods.IsCancel(System.Windows.Forms.DialogResult)">
             <summary>
-            Controlla il valore della variabile 'DialogResult'
+            Checks the value of 'DialogResult'
             </summary>
             <param name="dr">True s è uguale a 'DialogResult.Cancel'. False altrimenti.</param>
-            <returns></returns>
+            <returns>True if dr == Cancel</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.DialogResult.Methods.IsIgnore(System.Windows.Forms.DialogResult)">
             <summary>
-            Controlla il valore della variabile 'DialogResult'
+            Checks the value of 'DialogResult'
             </summary>
             <param name="dr">True s è uguale a 'DialogResult.Ignore'. False altrimenti.</param>
-            <returns></returns>
+            <returns>True if dr == Ignore</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.DialogResult.Methods.IsNo(System.Windows.Forms.DialogResult)">
             <summary>
-            Controlla il valore della variabile 'DialogResult'
+            Checks the value of 'DialogResult'
             </summary>
             <param name="dr">True s è uguale a 'DialogResult.No'. False altrimenti.</param>
-            <returns></returns>
+            <returns>True if dr == No</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.DialogResult.Methods.IsNone(System.Windows.Forms.DialogResult)">
             <summary>
-            Controlla il valore della variabile 'DialogResult'
+            Checks the value of 'DialogResult'
             </summary>
             <param name="dr">True s è uguale a 'DialogResult.None'. False altrimenti.</param>
-            <returns></returns>
+            <returns>True if dr == None</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.DialogResult.Methods.IsRetry(System.Windows.Forms.DialogResult)">
             <summary>
-            Controlla il valore della variabile 'DialogResult'
+            Checks the value of 'DialogResult'
             </summary>
             <param name="dr">True s è uguale a 'DialogResult.Retry'. False altrimenti.</param>
-            <returns></returns>
+            <returns>True if dr == Retry</returns>
         </member>
         <member name="M:Vi.Tools.Extensions.DialogResult.Methods.IsYes(System.Windows.Forms.DialogResult)">
             <summary>
-            Controlla il valore della variabile 'DialogResult'
+            Checks the value of 'DialogResult'
             </summary>
             <param name="dr">True s è uguale a 'DialogResult.Yes'. False altrimenti.</param>
-            <returns></returns>
+            <returns>True if dr == Yes</returns>
         </member>
         <member name="T:Vi.Tools.Extensions.SqlDataReader.Methods">
             <summary>
@@ -1558,7 +1768,7 @@
         </member>
         <member name="T:Vi.Tools.Extensions.SqlCommand.Methods">
             <summary>
-            Pubblica degli 'Extension Methods' specializzati per la classe 'SqlClient.SqlCommand'.
+            Collection of 'extension methods' for 'SqlClient.SqlCommand'
             </summary>
         </member>
         <member name="M:Vi.Tools.Extensions.SqlCommand.Methods.ExecuteReader(System.Data.SqlClient.SqlCommand,System.Func{System.Data.SqlClient.SqlDataReader,System.Boolean})">
@@ -1586,7 +1796,7 @@
         </member>
         <member name="T:Vi.Tools.Extensions.TimeSpan.Methods">
             <summary>
-            TimeSpan Extention methods.
+            Collection of extention methods for TimeSpan
             </summary>
         </member>
         <member name="M:Vi.Tools.Extensions.TimeSpan.Methods.ToHHMM(System.TimeSpan)">
@@ -1618,7 +1828,7 @@
             <param name="iterations">Set the distribution 1: Linear (omogeneous) 2: Triangular; ... Gaussian</param>
             <returns>A  random value between min and max with a specified distribution.</returns>
         </member>
-        <member name="M:Vi.Tools.Extensions.Random.Methods.Bet(System.Random,System.Byte,Vi.Tools.Types.Percent)">
+        <member name="M:Vi.Tools.Extensions.Random.Methods.Bet(System.Random,System.Byte,Vi.Types.Percentage)">
             <summary>
             Compare a random value between 0 and 100 against the value of 'probability'
             </summary>
@@ -1627,7 +1837,7 @@
             <param name="probability">a number between 0 and 100. Grater becom 100 smallest becom 0</param>
             <returns>A true if 'brobability is grater than a random value (rnd.next > probability)(</returns>
         </member>
-        <member name="M:Vi.Tools.Extensions.Random.Methods.Bet(System.Random,Vi.Tools.Types.Percent)">
+        <member name="M:Vi.Tools.Extensions.Random.Methods.Bet(System.Random,Vi.Types.Percentage)">
             <summary>
             
             </summary>
@@ -1724,17 +1934,7 @@
             <param name="member">The name of the member where this method is called.</param>
             <param name="line">The Line of the file where this method is called.</param>
         </member>
-        <member name="M:Vi.Tools.Log.Warn(System.String,System.String[])">
-            <summary>
-            Warning is often used for handled 'exceptions' or other important log events. For example, if your application requires a 
-            configuration setting but has a default in case the setting is missing, then the Warning level should be used to log the
-            missing configuration setting.
-            </summary>
-            <param name="file">The name of the file from where this method is called.</param>
-            <param name="member">The name of the member where this method is called.</param>
-            <param name="line">The Line of the file where this method is called.</param>
-            <returns>An instance of 'FormatClass' with the method 'Format' used to compose the text to log like the 'String.Format'</returns>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:Vi.Tools.Log.Warn(System.String,System.String[])" -->
         <member name="M:Vi.Tools.Log.Error(System.Exception)">
             <summary>
             Error is used to log all unhandled exceptions. This is typically logged inside a catch block at the boundary of your application.
@@ -1761,9 +1961,8 @@
             be used early in an application's development. It's usually only with experience it is possible identify situations worthy of the FATAL
             moniker experience do specific events become worth of promotion to Fatal. After all, an error's an error.
             </summary>
-            <param name="file">The name of the file from where this method is called.</param>
-            <param name="member">The name of the member where this method is called.</param>
-            <param name="line">The Line of the file where this method is called.</param>
+            <param name="format">Like the 'format' parameter for the function string.format().</param>
+            <param name="values">The values to replace in the placeholder in the parameter 'format'.</param>
             <returns>An instance of 'FormatClass' with the method 'Format' used to compose the text to log like the 'String.Format'</returns>
         </member>
         <member name="T:Vi.Tools.Properties.Ico">
@@ -2042,36 +2241,6 @@
               Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
-        <member name="T:Vi.Tools.Types.Percent">
-            <summary>
-            The classical percent. (It's a number less equal 1).
-            </summary>
-        </member>
-        <member name="F:Vi.Tools.Types.Percent.Value">
-            <summary>
-            Float representation of the value (It's a number less-equal 1).
-            </summary>
-        </member>
-        <member name="M:Vi.Tools.Types.Percent.#ctor(System.Single)">
-            <summary>
-            Main Constructor.
-            </summary>
-            <param name="value">Il tipo della sede in formato stringa.</param>
-        </member>
-        <member name="M:Vi.Tools.Types.Percent.op_Implicit(Vi.Tools.Types.Percent)~System.Single">
-            <summary>
-            'Casts' the struct to its original type.
-            </summary>
-            <param name="percent">An instance of 'Percent'.</param>
-            <returns>The 'float' associated with this 'struct'. (percent.value</returns>
-        </member>
-        <member name="M:Vi.Tools.Types.Percent.op_Implicit(System.Single)~Vi.Tools.Types.Percent">
-            <summary>
-            'Casts' the float to Percent.
-            </summary>
-            <param name="value">The built in typy to cast to Percent.</param>
-            <returns>New instance of a 'percent' struct.</returns>
-        </member>
         <member name="M:Vi.Tools.Utilities.Join(System.Object[])">
             <summary>
             Una variante del Metodo 'String.Join' Converte il parametro 'value' in una stringa di valori separati da ';'  
@@ -2284,6 +2453,51 @@
       </para>
       
   </summary>
+        </member>
+        <member name="T:Vi.Types.Percentage">
+            <summary>
+            A number or ratio expressed as a fraction of 1 (internally represented using the built-in 'System.decimal'. 
+            
+            It is often denoted using the percent sign, "%", although the abbreviations "pct.", "pct" and sometimes "pc" are also used. 
+            A percentage is a dimensionless number; it has no unit of measurement. [Wikipedia]
+            </summary>
+        </member>
+        <member name="F:Vi.Types.Percentage.Value">
+            <summary>
+            Decimal representation of the value: a number less-equal 1.
+            </summary>
+        </member>
+        <member name="M:Vi.Types.Percentage.#ctor(System.Decimal)">
+            <summary>
+            Main Constructor.
+            </summary>
+            <param name="value">Il tipo della sede in formato stringa.</param>
+        </member>
+        <member name="M:Vi.Types.Percentage.TryParse(System.String,Vi.Types.Percentage@)">
+            <summary>
+            Converts the string representation of a number to its Decimal equivalent. A return value indicates whether the conversion succeeded or failed.
+            </summary>
+            <param name="value">The string representation of the number to convert.</param>
+            <param name="result">When this method returns, contains the Percentage number that is equivalent 
+            to the numeric value contained in the parameter 'value', if the conversion succeeded, or zero if the conversion failed. 
+            The conversion fails if the 'value' parameter is null or Empty, is not a number in a format compliant 
+            with style, or represents a number less than MinValue or greater than MaxValue. This parameter is 
+            passed uininitialized; any value originally supplied in result is overwritten.</param>
+            <returns>true if 'value' was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:Vi.Types.Percentage.op_Implicit(Vi.Types.Percentage)~System.Decimal">
+            <summary>
+            'Casts' the struct to its original type.
+            </summary>
+            <param name="percent">An instance of 'Percentage'.</param>
+            <returns>The 'decimal' associated with this 'struct'. (percent.value</returns>
+        </member>
+        <member name="M:Vi.Types.Percentage.op_Implicit(System.Decimal)~Vi.Types.Percentage">
+            <summary>
+            'Casts' the decimal to Percentage.
+            </summary>
+            <param name="value">The built in typy to cast to Percentage.</param>
+            <returns>New instance of a 'percent' struct.</returns>
         </member>
     </members>
 </doc>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Vi.Tools.Extensions.TimeSpan
 {
     /// <summary>
-    /// TimeSpan Extention methods.
+    /// Collection of extention methods for TimeSpan
     /// </summary>
     public static class Methods
     {

@@ -146,14 +146,23 @@ namespace Vi.Tools
         /// configuration setting but has a default in case the setting is missing, then the Warning level should be used to log the
         /// missing configuration setting.
         /// </summary>
-        /// <param name="file">The name of the file from where this method is called.</param>
-        /// <param name="member">The name of the member where this method is called.</param>
-        /// <param name="line">The Line of the file where this method is called.</param>
-        /// <returns>An instance of 'FormatClass' with the method 'Format' used to compose the text to log like the 'String.Format'</returns>
+        /// <param name="format">The same as the parameter 'format' in 'string.format'.</param>
+        /// <param name="values">the param array with the values for th string 'format'/param>
         [DebuggerStepThrough]
         public static void Warn(string format, params string[] values)
         {
             Log.Warn(String.Format(format, values));
+
+            //     Replaces the format item in a specified string with the string representation
+            //     of a corresponding object in a specified array.
+            //
+            // Parameters:
+            //   format:
+            //     A composite format string.
+            //
+            //   args:
+            //     An object array that contains zero or more objects to format.
+
         }
         #endregion
 
@@ -196,9 +205,8 @@ namespace Vi.Tools
         /// be used early in an application's development. It's usually only with experience it is possible identify situations worthy of the FATAL
         /// moniker experience do specific events become worth of promotion to Fatal. After all, an error's an error.
         /// </summary>
-        /// <param name="file">The name of the file from where this method is called.</param>
-        /// <param name="member">The name of the member where this method is called.</param>
-        /// <param name="line">The Line of the file where this method is called.</param>
+        /// <param name="format">Like the 'format' parameter for the function string.format().</param>
+        /// <param name="values">The values to replace in the placeholder in the parameter 'format'.</param>
         /// <returns>An instance of 'FormatClass' with the method 'Format' used to compose the text to log like the 'String.Format'</returns>
         [DebuggerStepThrough]
         public static void Fatal(string format, params string[] values)

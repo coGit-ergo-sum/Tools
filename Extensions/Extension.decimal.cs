@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Vi.Tools.Extensions.Float
+namespace Vi.Tools.Extensions.Decimal
 {
 
 	/// <summary>
-	/// Collection of 'extension methods' for float
+	/// Collection of 'extension methods' for decimal
 	/// </summary>
 	public static partial class Methods
 	{
@@ -16,7 +16,7 @@ namespace Vi.Tools.Extensions.Float
 		/// <param name="min">Minimum value allowed.</param>
 		/// <param name="max">Maximun value allowed.</param>
 		/// <returns>((value &gt;= min) && (value &lt;= max)</returns>
-		public static bool IsBetween(this float value, float min, float max)
+		public static bool IsBetween(this decimal value, decimal min, decimal max)
 		{
 			return (value >= min) && (value <= max);
 		}
@@ -28,30 +28,31 @@ namespace Vi.Tools.Extensions.Float
 		/// <param name="min">Minimum value allowed.</param>
 		/// <param name="max">Maximun value allowed.</param>
 		/// <returns>Math.Min(Math.Max(value, min), max);</returns>
-		public static float Between(this float value, float min, float max)
+		public static decimal Between(this decimal value, decimal min, decimal max)
 		{
 			return Math.Min(Math.Max(value, min), max);
 		}
 
+
 		/// <summary>
-		/// Converts a float in a string with a fixed number of decimals in the format used for percentages.
+		/// Converts a decimal (Percentage) in a string with a fixed number of decimals.
 		/// </summary>
 		/// <param name="value">The value to convert.</param>
 		/// <param name="decimals">The number of decimals.</param>
 		/// <returns>Text representation of a Percentage with fixed number of decimal figures.</returns>
-		public static string ToPercent(this float value, sbyte decimals)
+		public static string ToPercent(this decimal value, sbyte decimals)
 		{
 			string format = "P" + decimals.ToString();
 			return value.ToString(format).Replace("%", "");
 		}
 
 		/// <summary>
-		/// Converts a float in a string with a fixed number of decimals.
+		/// Converts a decimal in a string with a fixed number of decimals.
 		/// </summary>
 		/// <param name="value">The value to convert.</param>
 		/// <param name="decimals">The number of decimals.</param>
 		/// <returns>text representation of a decimal with fixed number of decimal figures.</returns>
-		public static string ToText(this float value, byte decimals)
+		public static string ToText(this decimal value, byte decimals)
 		{
 			var format = "#,##0" + ((decimals == 0) ? "" : "." + new string('0', decimals));
 			return value.ToString(format); 

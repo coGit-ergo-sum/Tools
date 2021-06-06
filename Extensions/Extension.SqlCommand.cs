@@ -9,7 +9,7 @@ using Vi.Tools.Extensions.Object;
 namespace Vi.Tools.Extensions.SqlCommand
 {
     /// <summary>
-    /// Pubblica degli 'Extension Methods' specializzati per la classe 'SqlClient.SqlCommand'.
+    /// Collection of 'extension methods' for 'SqlClient.SqlCommand'
     /// </summary>
     public static partial class Methods
     {

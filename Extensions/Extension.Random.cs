@@ -35,7 +35,7 @@ namespace Vi.Tools.Extensions.Random
 		/// <param name="grade">The grade of the polinomial distribution.</param>
 		/// <param name="probability">a number between 0 and 100. Grater becom 100 smallest becom 0</param>
 		/// <returns>A true if 'brobability is grater than a random value (rnd.next > probability)(</returns>
-		public static bool Bet(this System.Random rnd, byte grade, Vi.Tools.Types.Percent probability)
+		public static bool Bet(this System.Random rnd, byte grade, Vi.Types.Percentage probability)
 		{
 			return rnd.Next(0, 1, grade) > probability.Value;
 		}
@@ -46,7 +46,7 @@ namespace Vi.Tools.Extensions.Random
 		/// <param name="rnd">The current instance of the 'System.Random object.</param>
 		/// <param name="probability">A value between 0 and 100. The expected probability an event is successfull.</param>
 		/// <returns>A random value (rnd.next > probability)</returns>
-		public static bool Bet(this System.Random rnd, Vi.Tools.Types.Percent probability)
+		public static bool Bet(this System.Random rnd, Vi.Types.Percentage probability)
 		{
 			return rnd.Bet(1, probability);
 		}

@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 using Vi.Tools.Extensions.Object;
 
 
-/// <summary>
-/// Collection of extention methods for 'string'
-/// </summary>
-
 /// <include file='help/XMLs/Extensions/Extension.string.xml' path='Docs/namespace[@name="IsNull"]/*' />
 namespace Vi.Tools.Extensions.String
 {
     /// <summary>
-    /// Extention methods for the build in string
+    /// Collection of extention methods for 'string'
     /// </summary>
     public static partial class Methods
     {
@@ -44,6 +40,19 @@ namespace Vi.Tools.Extensions.String
         {
             float result = 0;
             var parseOk = float.TryParse(value, out result);
+            return parseOk ? result : @default;
+        }
+
+        /// <summary>
+        /// Converts a string to 'decimal'
+        /// </summary>
+        /// <param name="value">the value to convert.</param>
+        /// <param name="default">The default value in case conversion fails.</param>
+        /// <returns>The float representation of the 'value' (if any). default otherwise.</returns>
+        public static decimal ToDecimal(this string value, decimal @default)
+        {
+            decimal result = 0;
+            var parseOk = decimal.TryParse(value, out result);
             return parseOk ? result : @default;
         }
 
@@ -87,6 +96,19 @@ namespace Vi.Tools.Extensions.String
         {
             bool result = @default;
             var parseOk = bool.TryParse(value, out result);
+            return parseOk ? result : @default;
+        }
+
+        /// <summary>
+        /// Applies 'Vi.Types.Percentage.TryParse'
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <param name="default">The result if 'tryParse' fails.</param>
+        /// <returns>The percentage associated with the 'value', default otherwise.</returns>
+        public static Vi.Types.Percentage ToPercentage(string value, Vi.Types.Percentage @default)
+        {
+            Vi.Types.Percentage result = 0;
+            var parseOk = Vi.Types.Percentage.TryParse(value, out result);
             return parseOk ? result : @default;
         }
         #endregion
@@ -251,62 +273,65 @@ namespace Vi.Tools.Extensions.String
 
 
         /// <summary>
-        /// Check if the string is made of spaces.
+        /// Check if the string is made of zero or more spaces.
+        /// (Usually an input is not valid if made of any number of spaces, included 
+        /// the empty string. That's why this function is true also for the empty string.)
         /// </summary>
         /// <param name="value">The string to check.</param>
-        /// <returns>value.Trim().IsEmpty()</returns>
+        /// <returns>value.Trim().IsEmpty() (When value is not null). False otherwise.</returns>
         public static bool IsSpaces(this string value)
         {
-            return value.Trim().IsEmpty();
-        }
-
-        /// <summary>
-        /// Check if the string is 'empty' or made of spaces.
-        /// </summary>
-        /// <param name="value">The string to check.</param>
-        /// <returns>return value.IsEmpty() || value.IsSpaces()</returns>
-        public static bool IsEmptyOrSpaces(this string value)
-        {
-            return value.IsEmpty() || value.IsSpaces();
+            return value.IsNotNull() && value.Trim().IsEmpty();
         }
 
         /// <summary>
         /// Check if the string is 'null', 'empty' or made of spaces.
         /// </summary>
         /// <param name="value">The string to check.</param>
-        /// <returns>return value.IsEmpty() || value.IsSpaces()</returns>
-        public static bool IsNullOrEmptyOrSpaces(this string value)
+        /// <returns>value.IsNull() || value.IsSpaces()</returns>
+        public static bool IsNullOrSpaces(this string value)
         {
-            return value.IsNull() || value.IsEmpty() || value.IsSpaces();
+            return value.IsNull() || value.IsSpaces();
         }
 
 
         /// <summary>
-        /// Checks if the string is a UInt64 number (postive 64 bit number).
+        /// Checks if the string can be converted to double (the numeric type with the wider range).
         /// </summary>
         /// <param name="value">The string to check.</param>
-        /// <returns>'value == String.Empty'.</returns>
+        /// <returns>System.Double.TryParse(value, out _)</returns>
         public static bool IsNumber(this string value)
         {
-            UInt64 x = 0;
-            //return global::System.lon.TryParse(value, out x);
-            return System.UInt64.TryParse(value, out x);
+            return System.Double.TryParse(value, out _);
         }
 
         /// <summary>
-        /// Removes all the occurrences of specified substrings ('items').
+        /// Removes from the string the occourrences of the items in 'oldValues'. Is the same of Replace(oldValues, String.Empty).
         /// </summary>
-        /// <param name="value">The string with the substring to remove.</param>
-        /// <param name="items">The list of item to remove from.</param>
-        /// <returns>The original string purged from the substring in 'items'</returns>
-        public static string Remove(this string value, params string[] items)
+        /// <param name="value">The string with the substrings to remove. (Runs: Replace(oldValues, String.Empty);)</param>
+        /// <param name="oldValues">The list of item to remove from the string.</param>
+        /// <returns>The original string purged from the substring in 'oldValues'</returns>
+        public static string Remove(this string value, params string[] oldValues)
         {
-            foreach (string item in items)
+            return value.Replace(oldValues, global::System.String.Empty);
+        }
+
+        /// <summary>
+        /// Replaces each value in 'oldValues' with 'newValue'. (if newValue == String.Empty then use Replace(newValues);
+        /// </summary>
+        /// <param name="value">The string with the substrings to remove.</param>
+        /// <param name="oldValues">The list of item to replace from the string.</param>
+        /// <param name="newValue">The new value for all the items in 'oldValues'.</param>
+        /// <returns></returns>
+        public static string Replace(this string value, string[] oldValues, string newValue)
+        {
+            foreach (string oldValue in oldValues)
             {
-                value = value.Replace(item, global::System.String.Empty);
+                value = value.Replace(oldValue, global::System.String.Empty);
             }
             return value;
         }
+
         #endregion
     }
 

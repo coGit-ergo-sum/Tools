@@ -36,43 +36,43 @@ namespace Vi.API
 		public static extern long WritePrivateProfileString(string section, string key, string lpString, string fileName);
 
 
-		/// <summary
+		/// <summary>
 		/// Retrieves a string from the specified section in an initialization file.
 		/// </summary>
 		/// <param name="section">The name of the section to which the string will be copied. If the section does not exist, it is created. The name of the section is case-independent; the string can be any combination of uppercase and lowercase letters.</param>
 		/// <param name="key">The name of the key to be associated with a string. If the key does not exist in the specified section, it is created. If this parameter is NULL, the entire section, including all entries within the section, is deleted.</param>
-		/// <param name="@default"></param>
-		/// <param name="retVal"></param>
-		/// <param name="size"></param>
-		/// <param name="fileName"></param>
-		/// <returns></returns>
+		/// <param name="default">The returnig value if enything goes wrong.</param>
+		/// <param name="sb">The string.Builder used to compose the resulting string.</param>
+		/// <param name="size">The dimension of the buffer.</param>
+		/// <param name="fileName">The name of the INI file.</param>
+		/// <returns>A number segnalating if the function succeded.</returns>
 		[DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
 		[return: MarshalAs(UnmanagedType.I8)]
 		public static extern long GetPrivateProfileString(string section, string key, string @default, StringBuilder sb, int size, string fileName);
 
 		/// <summary>
-		/// 
+		/// Retrieves an array of characters from the specified section in an initialization file.
 		/// </summary>
-		/// <param name="section"></param>
-		/// <param name="key"></param>
-		/// <param name="default"></param>
-		/// <param name="characters"></param>
-		/// <param name="size"></param>
-		/// <param name="fileName"></param>
-		/// <returns></returns>
+		/// <param name="section">The name of the section to which the string will be copied. If the section does not exist, it is created. The name of the section is case-independent; the string can be any combination of uppercase and lowercase letters.</param>
+		/// <param name="key">The name of the key to be associated with a string. If the key does not exist in the specified section, it is created. If this parameter is NULL, the entire section, including all entries within the section, is deleted.</param>
+		/// <param name="default">The returnig value if enything goes wrong.</param>
+		/// <param name="characters">The container used to keep the result.</param>
+		/// <param name="size">The dimension of the buffer.</param>
+		/// <param name="fileName">The name of the INI file.</param>
+		/// <returns>A number segnalating if the function succeded.</returns>
 		[DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
 		[return: MarshalAs(UnmanagedType.I8)]
 		public static extern long GetPrivateProfileString(string section, string key, string @default, char[] characters, int size, string fileName);
 
 		/// <summary>
-		/// 
+		/// Retrieves an array of bytes from the specified section in an initialization file
 		/// </summary>
-		/// <param name="section"></param>
-		/// <param name="key"></param>
-		/// <param name="default"></param>
-		/// <param name="bytes"></param>
-		/// <param name="size"></param>
-		/// <param name="fileName"></param>
+		/// <param name="section">The name of the section to which the string will be copied. If the section does not exist, it is created. The name of the section is case-independent; the string can be any combination of uppercase and lowercase letters.</param>
+		/// <param name="key">The name of the key to be associated with a string. If the key does not exist in the specified section, it is created. If this parameter is NULL, the entire section, including all entries within the section, is deleted.</param>
+		/// <param name="default">The returnig value if enything goes wrong.</param>
+		/// <param name="bytes">The container used to keep the result.</param>
+		/// <param name="size">The dimension of the buffer.</param>
+		/// <param name="fileName">The name of the INI file.</param>
 		/// <returns></returns>
 		[DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
 		[return: MarshalAs(UnmanagedType.I8)]

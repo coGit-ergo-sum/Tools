@@ -3,6 +3,10 @@
 
 namespace Vi.Tools.Extensions.Int
 {
+
+    /// <summary>
+    /// Collection of 'extension methods' for Int
+    /// </summary>
     public static partial class Methods
     {
 

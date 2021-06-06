@@ -6,6 +6,9 @@ using Vi.Tools.Extensions.String;
 
 namespace Vi.Tools.Extensions.Object
 {
+    /// <summary>
+    /// Collection of 'extension methods' for Int
+    /// </summary>
     public static partial class Methods
     {
         /// <summary>

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Vi.Tools.Extensions.Array
 {
@@ -15,7 +11,7 @@ namespace Vi.Tools.Extensions.Array
         /// <summary>
         /// Provides the max index for the array. Max index is (Length - 1) for zero based array.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The array object.</param>
         /// <returns>value.Length - 1.</returns>
         public static int MaxIndex(this System.Array value)
         {
@@ -98,7 +94,7 @@ namespace Vi.Tools.Extensions.Array
         }
 
         /// <summary>
-        /// Gets the array starting from the position 'Start' (included).
+        /// Gets the array starting from the position 'Start' (included), till the end.
         /// </summary>
         /// <typeparam name="T">The generic type</typeparam>
         /// <param name="source">The source array (the array from which 'cut the slice'.</param>
@@ -121,21 +117,13 @@ namespace Vi.Tools.Extensions.Array
         public static string ToMessage(this System.Array value, string separator)
         {
             string result = "Unknown error.";
-
             try
             {
-                if (value == null)
-                {
-                    result = "null";
-                }
-                else if (value.Length == 0)
-                {
-                    result = "Empty";
-                }
-                else
-                {
-                    result = System.String.Join(separator, value);
-                }
+                result =
+                    (value == null) ? "null" :
+                    (value.Length == 0) ? "Empty" :
+                    // the single string text is obtainet calling the mothod 'ToString' for each item in the array.
+                    System.String.Join(separator, value);
             }
             catch (System.Exception se)
             {

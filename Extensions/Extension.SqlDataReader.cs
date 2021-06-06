@@ -7,7 +7,6 @@ using Vi.Tools.Extensions.String;
 
 namespace Vi.Tools.Extensions.SqlDataReader
 {
-
     /// <summary>
     /// Collection of extention methods for the SqlDataReader
     /// </summary>

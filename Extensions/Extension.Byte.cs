@@ -2,12 +2,15 @@
 
 namespace Vi.Tools.Extensions.Byte
 {
-	public static partial class Methods
+    /// <summary>
+    /// Collection of 'extension methods' for byte
+    /// </summary>
+    public static partial class Methods
 	{
         /// <summary>
         /// Check if the number is even (divisible by 2).
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value to check.</param>
         /// <returns>Returns '(value & 1) == 0'.</returns>
         public static bool IsEven(this byte value)
         {
@@ -17,7 +20,7 @@ namespace Vi.Tools.Extensions.Byte
         /// <summary>
         /// Check if the number is Odd (NOT divisible by 2).
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value to check.</param>
         /// <returns>Returns '(value & 1) == 1'.</returns>
         public static bool IsOdd(this byte value)
         {
@@ -47,5 +50,6 @@ namespace Vi.Tools.Extensions.Byte
         {
             return Math.Min(Math.Max(value, min), max);
         }
+
     }
 }

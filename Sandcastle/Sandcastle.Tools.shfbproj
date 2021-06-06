@@ -143,7 +143,7 @@ Button 'Edit Namespace Summaries'</NamespaceSummaryItem>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Contents\Content Layout.content">
-      <ImageId>Content Layout</ImageId>
+      <ImageId>SQLLogger</ImageId>
       <AlternateText>Content Layout</AlternateText>
     </Image>
   </ItemGroup>
