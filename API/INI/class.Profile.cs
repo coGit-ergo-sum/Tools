@@ -17,6 +17,18 @@ namespace Vi.Tools
 		/// <value>The full path of the INI file.</value>
 		public readonly string FileName;
 
+		/*
+		private static string GetFileName()
+		{
+			return System.AppDomain.CurrentDomain.BaseDirectory;
+		}
+
+		/// <summary>
+		/// Creates an object 'Profile' with a default fileName
+		/// </summary>
+		public Profile():this(Profile.GetFileName()) { }
+		*/
+
 		/// <summary>
 		/// Creates an object 'Profile'.
 		/// </summary>
@@ -36,6 +48,7 @@ namespace Vi.Tools
 		{
 			this.Warning += warning;
 		}
+
 
 		#region event 'Warning'
 
@@ -134,8 +147,6 @@ namespace Vi.Tools
 		/// <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
 		/// <param name="default">The return value in case something  goes wrong.</param>
-		/// <param name="fileName">The full path of the INI file from which read data.  If null the callback 'onWarning' will be called.</param>
-		/// <param name="onWarning">The callback used to manage exceptions.</param>
 		/// <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
 		public int Read(string section, string key, int @default)
 		{
@@ -148,8 +159,6 @@ namespace Vi.Tools
 		/// <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
 		/// <param name="default">The return value in case something  goes wrong.</param>
-		/// <param name="fileName">The full path of the INI file from which read data.  If null the callback 'onWarning' will be called.</param>
-		/// <param name="onWarning">The callback used to manage exceptions.</param>
 		/// <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
 		public long Read(string section, string key, long @default)
 		{
@@ -162,8 +171,6 @@ namespace Vi.Tools
 		/// <param name="section">The name of the section to which the string will be read. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') from where read data.  If null the callback 'onWarning' will be called.</param>
 		/// <param name="default">The return value in case something  goes wrong.</param>
-		/// <param name="fileName">The full path of the INI file from which read data.  If null the callback 'onWarning' will be called.</param>
-		/// <param name="onWarning">The callback used to manage exceptions.</param>
 		/// <returns>The data read from the INI file. '@default' if something  whent wrong. (This method should't raise any exception).</returns>
 		public System.DateTime Read(string section, string key, System.DateTime @default)
 		{
@@ -222,7 +229,7 @@ namespace Vi.Tools
 			return new System.Drawing.Point(values[0], values[1]);
 		}
 		*/
-		
+
 		/*
 		/// <summary>
 		/// Reads a 'System.Drawing.Point' from the INI file.
@@ -243,7 +250,16 @@ namespace Vi.Tools
 		#endregion
 
 		#region Write
-
+		/// <summary>
+		/// Writes a 'decimal' in the INI file.
+		/// </summary>
+		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+		/// <param name="value">The value to write in the INI file.</param>
+		public void Write(string section, string key, decimal value)
+		{
+			Vi.Tools.statics.Profile.Write(section, key, value, this.FileName, this.OnWarning);
+		}
 
 		/// <summary>
 		/// Writes a 'string' in the INI file.
@@ -251,8 +267,6 @@ namespace Vi.Tools
 		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
 		/// <param name="value">The value to write in the INI file.</param>
-		/// <param name="fileName">The full path of the INI file where write data. If null the callback 'onWarning' will be called.</param>
-		/// <param name="onWarning">The callback used to manage exceptions.</param>
 		public void Write(string section, string key, string value)
 		{
 			Vi.Tools.statics.Profile.Write(section, key, value, this.FileName, this.OnWarning);
@@ -278,8 +292,6 @@ namespace Vi.Tools
 		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
 		/// <param name="value">The value to write in the INI file.</param>
-		/// <param name="fileName">The full path of the INI file where write data. If null the callback 'onWarning' will be called.</param>
-		/// <param name="onWarning">The callback used to manage exceptions.</param>
 		public void Write(string section, string key, long value)
 		{
 			Vi.Tools.statics.Profile.Write(section, key, value, this.FileName, this.OnWarning);
@@ -291,8 +303,6 @@ namespace Vi.Tools
 		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
 		/// <param name="value">The value to write in the INI file.</param>
-		/// <param name="fileName">The full path of the INI file where write data. If null the callback 'onWarning' will be called.</param>
-		/// <param name="onWarning">The callback used to manage exceptions.</param>
 		public void Write(string section, string key, System.DateTime value)
 		{
 			Vi.Tools.statics.Profile.Write(section, key, value, this.FileName, this.OnWarning);
@@ -304,8 +314,6 @@ namespace Vi.Tools
 		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
 		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
 		/// <param name="value">The value to write in the INI file.</param>
-		/// <param name="fileName">The full path of the INI file where write data. If null the callback 'onWarning' will be called.</param>
-		/// <param name="onWarning">The callback used to manage exceptions.</param>
 		public void Write(string section, string key, bool value)
 		{
 			Vi.Tools.statics.Profile.Write(section, key, value, this.FileName, this.OnWarning);

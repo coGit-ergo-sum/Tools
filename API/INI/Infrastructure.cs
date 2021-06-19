@@ -234,6 +234,20 @@ namespace Vi.Tools.statics
 			Vi.Tools.statics.Profile.Write<bool>(section, key, value, fileName, onWarning);
 		}
 
+
+		/// <summary>
+		/// Writes a 'decimal' in the INI file.
+		/// </summary>
+		/// <param name="section">The name of the section to which the string will be writed. If null the callback 'onWarning' will be called.</param>
+		/// <param name="key">The name of the 'key' (in a 'section') where write data.  If null the callback 'onWarning' will be called.</param>
+		/// <param name="value">The value to write in the INI file.</param>
+		/// <param name="fileName">The full path of the INI file where write data. If null the callback 'onWarning' will be called.</param>
+		/// <param name="onWarning">The callback used to manage exceptions.</param>
+		public static void Write(string section, string key, decimal value, string fileName, Vi.Tools.statics.Profile.WarningDelegate onWarning)
+		{
+			Vi.Tools.statics.Profile.Write<decimal>(section, key, value, fileName, onWarning);
+		}
+
 		/// <summary>
 		/// Writes a 'string' in the INI file.
 		/// </summary>

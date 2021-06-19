@@ -71,6 +71,20 @@ namespace Vi.Tools.Extensions.String
         }
 
         /// <summary>
+        /// Applies 'byte.TryParse'
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <param name="default">The result if 'tryParse' fails.</param>
+        /// <returns>The int associated with the 'value', default otherwise.</returns>
+        public static byte ToByte(this string value, byte @default)
+        {
+            value = value.Remove(",", ".");
+            byte result = 0;
+            var parseOk = byte.TryParse(value, out result);
+            return parseOk ? result : @default;
+        }
+
+        /// <summary>
         /// Applies 'long.TryParse'
         /// </summary>
         /// <param name="value">The value to convert.</param>
@@ -105,7 +119,7 @@ namespace Vi.Tools.Extensions.String
         /// <param name="value">The value to convert.</param>
         /// <param name="default">The result if 'tryParse' fails.</param>
         /// <returns>The percentage associated with the 'value', default otherwise.</returns>
-        public static Vi.Types.Percentage ToPercentage(string value, Vi.Types.Percentage @default)
+        public static Vi.Types.Percentage ToPercentage(this string value, Vi.Types.Percentage @default)
         {
             Vi.Types.Percentage result = 0;
             var parseOk = Vi.Types.Percentage.TryParse(value, out result);
