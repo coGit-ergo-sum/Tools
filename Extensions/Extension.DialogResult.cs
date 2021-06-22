@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Vi.Tools.Extensions.DialogResult
+﻿namespace Vi.Tools.Extensions.DialogResult
 {
     /// <summary>
     /// Collection of 'extension methods' for DialogResult
