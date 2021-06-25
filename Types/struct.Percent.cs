@@ -30,6 +30,15 @@ namespace Vi.Types
             this.Value = value;
         }
 
+        /// <summary>
+        /// Returns the Value in the format "#0.00%"
+        /// </summary>
+        /// <returns></returns>
+        public string ToText()
+        {
+            return (this.Value).ToString("#0.00") + "%";
+        }
+
         // <remarks>
         // Why 'system.decimal 
         // The Decimal value type represents decimal numbers ranging from positive 79,228,162,514,264,337,593,543,950,335 
@@ -68,6 +77,8 @@ namespace Vi.Types
                 return false;
             }
         }
+
+
 
 
         /*
