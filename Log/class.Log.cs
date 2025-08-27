@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vi.Tools
+namespace Vi
 {
 
     /// <summary>
@@ -22,7 +22,7 @@ namespace Vi.Tools
         public static bool SkipFatal = false;
 
 		#region Events
-		public delegate void  WriteDelegate(string text, Vi.Tools.Log.Levels level, int line, string member, string file);
+		public delegate void  WriteDelegate(string text, Vi.Log.Levels level, int line, string member, string file);
         public static event Log.WriteDelegate Write;
         private static void OnWrite(string text, Levels level) 
         {
@@ -47,7 +47,7 @@ namespace Vi.Tools
 
         private static void OnWrite(string text, Levels level, int line, string member, string file)
         {
-            if (Vi.Tools.Log.Write != null) { Log.Write(text, level, line, member, file); }
+            if (Vi.Log.Write != null) { Log.Write(text, level, line, member, file); }
         }
 
 
@@ -56,7 +56,7 @@ namespace Vi.Tools
 
         private static void OnException(System.Exception se)
         {
-            if (Vi.Tools.Log.Write != null) { Log.Exception(se); }
+            if (Vi.Log.Write != null) { Log.Exception(se); }
         }
 
         // This page is only Infrastructural. Is made to present the Log object in the most structured way.
@@ -74,7 +74,7 @@ namespace Vi.Tools
         [DebuggerStepThrough]
         public static void Debug(string text)
         {
-            if (!Vi.Tools.Log.SkipDebug) { Log.OnWrite(text, Vi.Tools.Log.Levels.DEBUG); }
+            if (!Vi.Log.SkipDebug) { Log.OnWrite(text, Vi.Log.Levels.DEBUG); }
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Vi.Tools
         {
             //var x = System.Runtime.CompilerServices.CallerMemberNameAttribute.GetCustomAttribute();//   .Runtime.CompilerServices.CallerMemberName
             //[CallerLineNumber] int line = 0, [CallerMemberName] System.String member = "?", [CallerFilePath] System.String file = "?"
-            if (!Vi.Tools.Log.SkipInfo) { Log.OnWrite(text, Vi.Tools.Log.Levels.INFO, line, member, file); }
+            if (!Vi.Log.SkipInfo) { Log.OnWrite(text, Vi.Log.Levels.INFO, line, member, file); }
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Vi.Tools
         [DebuggerStepThrough]
         public static void Warn(string text)
         {
-            if (!Vi.Tools.Log.SkipWarn) { Log.OnWrite(text, Vi.Tools.Log.Levels.WARN); }
+            if (!Vi.Log.SkipWarn) { Log.OnWrite(text, Vi.Log.Levels.WARN); }
         }
 
 
@@ -177,7 +177,7 @@ namespace Vi.Tools
         [DebuggerStepThrough]
         public static void Error(System.Exception se)
         {
-            if (!Vi.Tools.Log.SkipError) { Log.OnException(se); }
+            if (!Vi.Log.SkipError) { Log.OnException(se); }
         }
 
 
@@ -196,7 +196,7 @@ namespace Vi.Tools
         [DebuggerStepThrough]
         public static void Fatal(string text)
         {
-            if (!Vi.Tools.Log.SkipFatal) { Log.OnWrite(text, Vi.Tools.Log.Levels.FATAL); }
+            if (!Vi.Log.SkipFatal) { Log.OnWrite(text, Vi.Log.Levels.FATAL); }
         }
 
 

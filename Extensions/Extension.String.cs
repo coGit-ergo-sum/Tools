@@ -1,19 +1,175 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Vi.Tools.Extensions.Object;
+using System.Windows.Markup;
+using Vi.Extensions.Object;
 
 
-/// <include file='help/XMLs/Extensions/Extension.string.xml' path='Docs/namespace[@name="IsNull"]/*' />
-namespace Vi.Tools.Extensions.String
+//// <include file='help/XMLs/Extensions/Extension.string.xml' path='Docs/namespace[@name="IsNull"]/*' />
+namespace Vi.Extensions.String
 {
     /// <summary>
     /// Collection of extention methods for 'string'
     /// </summary>
     public static partial class Methods
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="each"></param>
+        public static void ForEach(this string[] values, Action<string> each)
+        {
+            foreach (var value in values) {
+                each(value);
+            }
+            ;
+        }
+        /// <summary>
+        /// Like 'Split' this Extension Method splits a string. 
+        /// The difference are first applies trim to the parameter value and second 
+        /// returns '@default' if the string to split is null
+        /// </summary>
+        /// <param name="value">The string to split</param>
+        /// <param name="default">The returning value in case the splitting string is null.</param>
+        /// <param name="separator">The separator. The default is ';'</param>
+        /// <returns>value?.Trim(charArray)?.Split(charArray) ?? @default;</returns>//
+        public static string[] ToItems(this string value, string[] @default, char separator = ';')
+        {
+            //var charArray = separator.ToCharArray();
+            value = value?.Trim(separator) ?? string.Empty;
+
+            var values = (value.Length > 0) ? value.Split(separator) : @default;
+            return values;
+        }
+
+
+        /// <summary>
+        /// Splits a string into an array of strings using the specified separator.
+        /// </summary>
+        /// <param name="value">The string to split</param>
+        /// <param name="separator">The string used to split the main string</param>
+        /// <returns>an array made of the parts of the string once removed the separator</returns>
+        public static string[] ToItems(this string value, char separator)
+        {
+            var values = value.ToItems(new string[0], separator);
+            return values;
+        }
+
+        /// <summary>
+        /// Splits a string into an array of strings using the specified separator.
+        /// (the built-in method 'Split' splits the string using separator one character at the time)
+        /// </summary>
+        /// <param name="value">The string to split</param>
+        /// <param name="separator">The string used to split the main string</param>
+        /// <returns>an array made of the parts of the string once removed the separator</returns>
+        public static string[] ToItems(this string value, string separator)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrEmpty(separator))
+                {
+                    return new string[] { value };
+                }
+
+                if (separator.Length == 1)
+                {
+                    return value.ToItems(new string[0], separator[0]);
+                }
+
+                // remove leading and trailing separators
+                value = value.Trim(separator);
+
+                // 1. Efficiently count occurrences of the separator
+                int counter = 0;
+                int index = 0;
+                while ((index = value.IndexOf(separator, index)) != -1)
+                {
+                    counter++;
+                    index += separator.Length;
+                }
+
+                // 2. Dimension the resulting array
+                int length = counter + 1;
+                string[] result = new string[length];
+
+                // 3. Split the string using IndexOf and Substring
+                //int currentIndex = 0;
+                int startIndex = 0;
+                int separatorLength = separator.Length;
+
+                for (int i = 0; i < counter; i++)
+                {
+                    index = value.IndexOf(separator, startIndex);
+                    result[i] = value.Substring(startIndex, index - startIndex);
+                    startIndex = index + separatorLength;
+                }
+
+                // Add the last part of the string after the last separator
+                result[counter] = value.Substring(startIndex);
+
+                return result;
+            }
+            catch (System.Exception ex)
+            {
+                throw new System.Exception($"Error in ToItems: {ex.Message}", ex);
+            }
+        }
+        /// <summary>
+        /// Like 'Split' this Extension Method splits a string. 
+        /// The difference are first applies trim to the parameter value and second 
+        /// returns '@default' if the string to split is null
+        /// The default value is the empty array (a dimension 0 array, not null)
+        /// the Separator is ';'
+        /// </summary>
+        /// <param name="value">The string to split</param>
+        /// <returns>value?.Trim(charArray)?.Split(charArray) ?? @default;</returns>
+        public static string[] ToItems(this string value) 
+        {
+            var values = value.ToItems(new string[0], ';');
+            return values;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="subString"></param>
+        /// <returns></returns>
+        public static string Trim(this string value, string subString)
+        {
+            if (string.IsNullOrEmpty(value) || string.IsNullOrEmpty(subString))
+            {
+                return value;
+            }
+
+            if(subString.Length == 1)
+            {
+                return value.Trim(subString[0]);
+            }
+
+
+
+            string result = value;
+
+            if (result.StartsWith(subString))
+            {
+                result = result.Substring(subString.Length);
+            }
+
+            if (result.EndsWith(subString))
+            {
+                result = result.Substring(0, result.Length - subString.Length);
+            }
+
+            return result;
+        }
 
         #region ToXyz
 
@@ -197,6 +353,36 @@ namespace Vi.Tools.Extensions.String
             return value.ToBool(';', @default);
         }
 
+        /// <summary>
+        /// Converts a string to a Vi.Types.Directory object.
+        /// </summary>
+        /// <param name="value">The string to convert.</param>
+        /// <returns>A Directory object created from the string.</returns>
+        public static Vi.Types.Directory ToDirectory(this string value)
+        {
+            return new Vi.Types.Directory(value);
+        }
+
+        /// <summary>
+        /// Converts a string to a Vi.Types.File object.
+        /// </summary>
+        /// <param name="value">The string to convert.</param>
+        /// <returns>A File object created from the string.</returns>
+        public static Vi.Types.File ToFile(this string value)
+        {
+            return new Vi.Types.File(value);
+        }
+
+        /// <summary>
+        /// Converts a string to a Vi.Types.JSON object.
+        /// </summary>
+        /// <param name="value">The string to convert.</param>
+        /// <returns>A JSON object created from the string.</returns>
+        // [DebuggerStepThrough]
+        public static Vi.Types.JSON ToJSON(this string value)
+        {
+            return new Vi.Types.JSON(value);
+        }
 
         /// <summary>
         /// Applies 'T.ToXyz' to a 'separator' separated values. E.g. if T is bool applies ToBool to each value in the list of values.
@@ -242,7 +428,7 @@ namespace Vi.Tools.Extensions.String
                         for (int x = 0; x < xMax; x++) @default[x] = toT(values[x], @default[x]);
                         return @default;
                     }
-                    catch (System.Exception se)
+                    catch 
                     {
                         return @default;
                     }
@@ -268,7 +454,7 @@ namespace Vi.Tools.Extensions.String
         /// </summary>
         /// <param name="value">The string to check.</param>
         /// <returns>The result of this check: (value == null).</returns>
-        /// <include file='help/XMLs/Extensions/Extension.string.xml' path='Docs/method[@name="IsNull"]/*' />
+        //// <include file='help/XMLs/Extensions/Extension.string.xml' path='Docs/method[@name="IsNull"]/*' />
         public static bool IsNull(this string value)
         {
             return value == null;
@@ -345,6 +531,36 @@ namespace Vi.Tools.Extensions.String
             }
             return value;
         }
+
+        /// <summary>
+        /// Formats a string using the specified format and values.
+        /// </summary>
+        /// <param name="format">A composite format string.</param>
+        /// <param name="values">An array of strings to format.</param>
+        /// <returns>A formatted string.</returns>
+        public static string Format(this string format, params string[] values)
+        {
+            return string.Format(format, values);
+        }
+
+        /// <summary>
+        /// Checks if a string is in the format used by excel to denote a cell, with or without the '$' simbol (E.g.: A1, B2, C3, AA1, AB2, AZS342)
+        /// (This is the regex's pattern: ^(\$?[A-Z]{1,3}\$?[0-9]{1,4})$
+        /// </summary>
+        /// <param name="text">The text to check</param>
+        /// <returns>True if the text coul be a valid ecel coordinate. False otherwise.</returns>
+        public static bool IsExcelCoordinates(this string text)
+        {
+            // Defines the regex for the excel coordinates
+            string pattern = @"^(\$?[A-Z]{1,3}\$?[0-9]{1,4})$"; // @"^[A-Z]{1,3}[0-9]{1,4}$";
+
+            // creates the regex object
+            Regex regex = new Regex(pattern);
+
+            // verifies if the text is a valid excel coordinate
+            return regex.IsMatch(text);
+        }
+
 
         #endregion
     }

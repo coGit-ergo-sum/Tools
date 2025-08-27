@@ -1,12 +1,26 @@
 ﻿using System;
+using System.Linq;
 
-namespace Vi.Tools.Extensions.Array
+namespace Vi.Extensions.Array
 {
     /// <summary>
     /// Collection of Utility Extention methods
     /// </summary>
     public static partial class Methods
     {
+        /// <summary>
+        /// implements "string.Join(separator, value);"
+        /// </summary>
+        /// <param name="value">The array to join</param>
+        /// <param name="separator">the string used to keep separated the element from the original array in the resulting string.</param>
+        /// <returns>a string of all the element in 'value' separated by the 'separator'.</returns>
+        public static string Join<T>(this T[] value, string separator)
+        {
+            return string.Join(separator, value);
+        }
+
+
+
 
         /// <summary>
         /// Provides the max index for the array. Max index is (Length - 1) for zero based array.
@@ -106,6 +120,27 @@ namespace Vi.Tools.Extensions.Array
             return Slice<T>(source, start, length);
         }
 
+        /// <summary>
+        /// Sorts an array of integers.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns>'source' after apply "System.Array.Sort(source)"</returns>
+        public static int[] Sort(this int[] source)
+        {
+            System.Array.Sort(source);
+            return source;
+        }
+
+        /// <summary>
+        /// Sorts an array of strings.
+        /// </summary>
+        /// <param name="source">The array of strings to sort.</param>
+        /// <returns>The sorted array of strings.</returns>
+        public static string[] Sort(this string[] source)
+        {
+            System.Array.Sort(source);
+            return source;
+        }
 
 
         /// <summary>
@@ -130,6 +165,18 @@ namespace Vi.Tools.Extensions.Array
                 result = "Exception: " + se.Message;
             }
 
+            return result;
+        }
+
+        /// <summary>
+        /// Removes an item from a list
+        /// </summary>
+        /// <param name="values">The original list</param>
+        /// <param name="value">the item to remove</param>
+        public static string[] Remove(this string[] values, string value)
+        {
+            string[] result = values.Where(f => f.ToLower() != value.ToLower()).ToArray();
+            values = result;
             return result;
         }
 

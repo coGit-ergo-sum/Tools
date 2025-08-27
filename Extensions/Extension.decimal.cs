@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vi.Tools.Extensions.Decimal
+namespace Vi.Extensions.Decimal
 {
 
 	/// <summary>
@@ -15,7 +15,7 @@ namespace Vi.Tools.Extensions.Decimal
 		/// <param name="value">The number to check.</param>
 		/// <param name="min">Minimum value allowed.</param>
 		/// <param name="max">Maximun value allowed.</param>
-		/// <returns>((value &gt;= min) && (value &lt;= max)</returns>
+		/// <returns>((value &gt;= min) AND (value &lt;= max)</returns>
 		public static bool IsBetween(this decimal value, decimal min, decimal max)
 		{
 			return (value >= min) && (value <= max);

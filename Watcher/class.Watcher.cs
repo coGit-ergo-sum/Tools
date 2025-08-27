@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vi.Extensions.String;
 
 namespace Vi.Tools
 {
@@ -100,7 +101,7 @@ namespace Vi.Tools
 
             this.FSW.Renamed += new RenamedEventHandler((sender, e) => { this.Store(e); }); 
 
-            this.FSW.Error += new ErrorEventHandler((sender, e) => { Console.WriteLine("Error"); }); ;
+            this.FSW.Error += new ErrorEventHandler((sender, e) => { System.Console.WriteLine("Error"); }); ;
 
             var directories = path.Split(System.IO.Path.DirectorySeparatorChar);
             var root = directories[directories.Length - 1];
@@ -150,7 +151,7 @@ namespace Vi.Tools
                     }
                     // Tries to avoid name collision: 
                     // if the file already exists tries again with a new HHmmss
-                    while (System.IO.File.Exists(destFileName));
+                    while (destFileName.ToFile().Exists);
 
                     System.IO.Directory.CreateDirectory(destinationPath);
 

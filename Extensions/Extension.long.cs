@@ -1,28 +1,28 @@
 ﻿using System;
 
-namespace Vi.Tools.Extensions.Long
+namespace Vi.Extensions.Long
 {
 	/// <summary>
 	/// Collection of 'extension methods' for Long
 	/// </summary>
 	public static partial class Methods
 	{
-		/// <summary>
-		/// Check if the number is even (divisible by 2).
-		/// </summary>
-		/// <param name="value">The value to check.</param>
-		/// <returns>Returns '(value & 1) == 0'.</returns>
-		public static bool IsEven(this byte value)
+        /// <summary>
+        /// Check if the number is even (divisible by 2).
+        /// </summary>
+        /// <param name="value">The value to check.</param>
+        /// <returns>Returns '(value AND 1) == 0'.</returns>
+        public static bool IsEven(this byte value)
 		{
 			return (value & 1) == 0;
 		}
 
-		/// <summary>
-		/// Check if the number is Odd (NOT divisible by 2).
-		/// </summary>
-		/// <param name="value">The value to check.</param>
-		/// <returns>Returns '(value & 1) == 1'.</returns>
-		public static bool IsOdd(this byte value)
+        /// <summary>
+        /// Check if the number is Odd (NOT divisible by 2).
+        /// </summary>
+        /// <param name="value">The value to check.</param>
+        /// <returns>Returns '(value AND 1) == 1'.</returns>
+        public static bool IsOdd(this byte value)
 		{
 			return (value & 1) == 1;
 		}
@@ -33,7 +33,7 @@ namespace Vi.Tools.Extensions.Long
 		/// <param name="value">The number to check.</param>
 		/// <param name="min">Minimum value allowed.</param>
 		/// <param name="max">Maximun value allowed.</param>
-		/// <returns>((value &gt;= min) && (value &lt;= max)</returns>
+		/// <returns>((value &gt;= min) AND (value &lt;= max)</returns>
 		public static bool IsBetween(this long value, long min, long max)
 		{
 			return (value >= min) && (value <= max);

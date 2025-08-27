@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vi.Tools.Extensions.Bool
+namespace Vi.Extensions.Bool
 {
 	/// <summary>
 	/// Collection of 'extension methods' for boolean

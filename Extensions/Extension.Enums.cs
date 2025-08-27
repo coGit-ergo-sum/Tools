@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vi.Tools.Extensions.Enums
+namespace Vi.Extensions.Enums
 {
     /// <summary>
     /// Collection of 'extension methods' for Enums

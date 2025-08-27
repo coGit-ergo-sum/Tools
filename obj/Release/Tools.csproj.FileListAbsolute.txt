@@ -1,0 +1,14 @@
+C:\Vi\Dakar\Code\CS\Tools\bin\Release\Tools.dll
+C:\Vi\Dakar\Code\CS\Tools\bin\Release\Tools.pdb
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Tools.csproj.AssemblyReference.cache
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Vi.List4Log.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Vi.Tools.Properties.Ico.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Vi.Tools.Properties.Images3D.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Vi.Tools.Properties.ImagesDFlat.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Vi.Tools.Properties.ImagesRFlat.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Vi.Tools.Properties.Resource.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Vi.Tools.Properties.Resources.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Tools.csproj.GenerateResource.cache
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Tools.csproj.CoreCompileInputs.cache
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Tools.dll
+C:\Vi\Dakar\Code\CS\Tools\obj\Release\Tools.pdb

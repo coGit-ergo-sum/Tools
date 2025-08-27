@@ -4,13 +4,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vi.Tools.Extensions.DateTime
+namespace Vi.Extensions.DateTime
 {
     /// <summary>
     /// Collection of 'extension methods' for DateTime
     /// </summary>
     public static partial class Methods
 	{
+        /// <summary>
+        /// Converts a DateTime in the format 'yyyy-MM-dd hh:mm:ss fff'
+        /// </summary>
+        /// <param name="value">The datetime to convert.</param>
+        /// <returns>the datetime in the format 'yyyy-MM-dd hh:mm:ss fff'</returns>
+        public static string ToYyyyMMddhhmmssfff(this System.DateTime value) { return value.ToString("yyyy-MM-dd hh:mm:ss fff"); }
+        public static string ToYyyyMMdd(this System.DateTime value) { return value.ToString("yyyy-MM-dd"); }
+
+
+        public static string ToHhmmss(this System.DateTime value) { return value.ToString("hh:mm:ss"); }
+
+        /// <summary>
+        /// Converts a DateTime in the format 'hh:mm:ss fff'
+        /// </summary>
+        /// <param name="value">The datetime to convert.</param>
+        /// <returns>the datetime in the format 'hh:mm:ss fff'</returns>
+        public static string ToHhmmssfff(this System.DateTime value) { return value.ToString("hh:mm:ss fff"); }
+
+        //public static string ToMySQLDMAhms(this System.DateTime? value, System.DateTime @default)
+        //{
+        //    try
+        //    {
+        //        return value.HasValue ? (System.DateTime)value.Value : @default;
+        //    }
+        //    catch (System.Exception)
+        //    {
+        //        return @default;
+        //    }
+        //}
+
+
         /*
         /// <summary>
         /// Converts a long into a 'DateTime'

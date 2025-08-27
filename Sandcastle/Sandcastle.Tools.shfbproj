@@ -58,26 +58,26 @@ Button 'Edit Namespace Summaries'</NamespaceSummaryItem>
 <NamespaceSummaryItem name="Vi.API" isDocumented="True" xmlns="" />
 <NamespaceSummaryItem name="Vi.API.CS" isDocumented="True" xmlns="" />
 <NamespaceSummaryItem name="Vi.Tools" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Delegates" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.Array" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.Bool" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.Byte" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.DateTime" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.DialogResult" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.Enums" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.Exception" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.Float" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.Int" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.Long" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.NameValueCollection" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.Object" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.Random" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.SqlCommand" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.SqlDataReader" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.String" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Extensions.TimeSpan" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.statics" isDocumented="True" xmlns="" />
-<NamespaceSummaryItem name="Vi.Tools.Types" isDocumented="True" xmlns="" /></NamespaceSummaries>
+<NamespaceSummaryItem name="Vi.Delegates" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.Array" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.Bool" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.Byte" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.DateTime" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.DialogResult" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.Enums" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.Exception" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.Float" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.Int" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.Long" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.NameValueCollection" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.Object" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.Random" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.SqlCommand" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.SqlDataReader" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.String" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Extensions.TimeSpan" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.statics" isDocumented="True" xmlns="" />
+<NamespaceSummaryItem name="Vi.Types" isDocumented="True" xmlns="" /></NamespaceSummaries>
     <PlugInConfigurations>
       <PlugInConfig id="Wildcard Assembly References" enabled="True" xmlns="">
         <configuration />

@@ -1,4 +1,4 @@
-﻿namespace Vi.Tools.Extensions.DialogResult
+﻿namespace Vi.Extensions.DialogResult
 {
     /// <summary>
     /// Collection of 'extension methods' for DialogResult

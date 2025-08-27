@@ -4,9 +4,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using Vi.Tools.Extensions.Object;
+using Vi.Extensions.Object;
 
-namespace Vi.Tools.Extensions.SqlCommand
+namespace Vi.Extensions.SqlCommand
 {
     /// <summary>
     /// Collection of 'extension methods' for 'SqlClient.SqlCommand'

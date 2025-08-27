@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vi.Tools.Extensions.String;
+using Vi.Extensions.String;
 
-namespace Vi.Tools.Extensions.SqlDataReader
+namespace Vi.Extensions.SqlDataReader
 {
     /// <summary>
     /// Collection of extention methods for the SqlDataReader

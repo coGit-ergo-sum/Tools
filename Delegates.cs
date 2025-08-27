@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vi.Tools.Delegates
+namespace Vi.Delegates
 {
 	/// <summary>
 	/// Da utilizzare nei log destinati ai tecnici.
@@ -16,9 +16,17 @@ namespace Vi.Tools.Delegates
 	/// <param name="file"></param>
 	public delegate void TraceDelegate(string messaggio, int line = 0, string member = "?", string file = "?");
 
-	// Da utilizzare nelle richieste di scelta da parte dell'utilizzatore dell'applicativo. (Le 'message box' Si-No)
-	public delegate bool ConfirmDelegate(string messaggio);
+    /// <summary>
+    /// Delegate to handle confirmation requests from the user.
+    /// </summary>
+    /// <param name="messaggio">The message to display in the confirmation request.</param>
+    /// <returns>True if the user confirms, otherwise false.</returns>
+    public delegate bool ConfirmDelegate(string messaggio);
 
-	// Da utilizzare per le comunicazioni dello stato della applicazione all'utilizzatore.
-	public delegate void InfoDelegate(string messaggio);
+    /// <summary>
+    /// Delegate to communicate application state information to the user.
+    /// </summary>
+    /// <param name="messaggio">The message to be communicated.</param>
+    public delegate void InfoDelegate(string messaggio);
+
 }

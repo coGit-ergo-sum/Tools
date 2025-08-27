@@ -1,0 +1,291 @@
+
+
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Tiger logger</title>
+    <meta name="description" content="Our first page">
+    <meta name="keywords" content="html tutorial template">
+	<style>
+	
+		body{
+			font-family: verdana;
+			font-size: 12px;
+			line-height: 24px;
+			padding:20px;
+			overflow: scroll;
+		}
+		
+		.body{
+			width:650px;
+			margin:auto;
+		}
+
+		
+		
+		
+		.tblLogN{		
+			width:648px;
+			border: solid 1px #ccc;
+			font-family: verdana;
+			font-size: 10px;
+			background-color: #eee;
+
+		}
+		
+		.tblLogN th{
+			background-color: #ddd;
+		}
+		
+		.tblLogN td, .tblLogN th{
+			border: solid 1px #ddd;
+			padding: 2px 5px 2px 5px;
+		}
+		
+		.strong{
+			color: #C44;
+		}
+		
+		.code{
+			width:628px;
+			background-color: #222;
+			color:#eee;
+			padding:10px 10px 10px 10px;
+			border-radius:5px;
+		}
+		
+		.comment{
+			color: #5F5;
+		}
+		.number{
+			font-family: courier new;
+			text-align:right;
+			color:maroon;
+		}
+		
+		.detail th, .detail{
+			/* color:red; */
+			font-size:1em;
+			opacity:1;
+			font-weight:normal;
+		}
+		
+		.opacity085{
+			opacity:0.85;
+			/* color:red; */
+		}
+		
+		.opacity075{
+			opacity:0.75;
+			/* color:red; */
+		}
+		.opacity05{
+			opacity:0.5;
+			/* ; */
+		}
+		
+		.em08{
+			font-size:0.8em;
+			/* color:red */
+		}
+	</style>
+	
+</head>
+
+<body>
+	<div class="body">
+		<h1 id="tigre">TIGER</h1>
+		<h2 id="_log-writer_"><em>Log writer</em></h2>
+		<p>Tiger is a light-weight, fast &amp; easy log tool</p>
+		<hr>
+		<h2 id="features">Features</h2>
+		<ul>
+			<li><span class="strong">100,000</span> queued log entries per second</li>
+			<li><span class="strong">4.000</span> logEntry printed on file per second</li>
+			<li><span class="strong">Minimal Overhead</span> adds the least possible overhead to any application's performance</li>
+			<li><span class="strong">Dual Log Files:</span> Utilises two distinct log files:
+				<ul>
+					<li>A <span class="strong">Normal</span> log file for standard operational data.</li>
+					<li>An <span class="strong">Exception</span> log file dedicated to capturing extended exception details.</li>
+				</ul>
+			</li>
+			<li><span class="strong">Asynchronous</span> &amp; <span class="strong">Thread-Safe</span> Operation: ensuring robust, thread-safe asynchronous logging.</li>
+			<li>Automatic <span class="strong">data rolling</span></li>
+			<li>Automatic <span class="strong">rolling</span> on write exceptions</li>
+			<li><span class="strong">500 line of code</span> (comments included)</li>
+			<li>&#39;<span class="strong">Write</span>&#39; the only public method with 4 overloads</li>
+		</ul>
+		
+		<hr>
+		<h2>Methods</h2>
+		
+		<p>
+			Tiger exposes only one method "<b>Write</b>" with 4 overloads
+		</p>
+		<div class="code">
+		<code>
+			<span class="comment">// writes on 2 files: a &#39;Normal&#39; log and an &#39;Exception&#39; log</span><br>
+			Vi.Statics.Tiger.Write(indentation: 0, new System.Exception(&quot;message&quot;));
+		</code>
+		</div>	
+		
+		<br>
+		
+		<div class="code">
+		<code>
+			<span class="comment">// writes on 2 files: a &#39;Normal&#39; log and an &#39;Exception&#39; log</span><br>
+			Vi.Statics.Tiger.Write(new System.Exception(&quot;message&quot;));
+		</code>
+		</div>	
+		
+		<br>
+		
+		<div class="code">
+		<code>
+			<span class="comment">// writes a &#39;Normal&#39; log</span><br>
+			Vi.Statics.Tiger.Write(indentation: 0, level, &quot;message&quot;);
+		</code>
+		</div>
+		
+		<br>
+		
+		<div class="code">
+		<code>
+			<span class="comment">// writes a &#39;Normal&#39; log</span><br>
+			Vi.Statics.Tiger.Write(level, &quot;message&quot;);
+		</code>
+		</div>
+			
+		<br>
+		<p>
+			It is strongly recommended <b>not to use this directly</b> for writing application logs.
+		</p>
+		<p>
+			INSTEAD It is <b>strongly recommended</b> to use <span class="strong">Vi.Logger.Debug</span> (or any other logging method from this static) to write logs in code.
+		</p>
+		
+		<br>
+		
+		<hr>
+		<h2>Line Format <span style="font-weight:Normal;opacity:0.7;">Normal</span></h2>
+
+		<p>
+			The format of each line in the 'Normal' file:
+		</p>
+		<p style="font-family:'courier new';font-size:13px;">
+			DE,09:11:34.203,11:11:34.203,369,3975,52,button1_Click,C:\Vi\Form1.cs,message 1
+		</p>
+		
+		
+		
+		<p>
+			And this is the header of the line:
+		</p>
+		<table class="tblLogN" align="center">
+			<tr class="detail">
+				<th style="background-color:transparent;border:none;"></th>
+				<th colspan="2">Queuing </th>
+				<th>queuing-printing</th>
+				<th style="background-color:transparent;border:none;"></th>
+				<th colspan="3">Caller</th>
+				<th style="background-color:transparent;border:none;"></th>
+			</tr>
+			<tr>
+				<th>Type</th>
+				<th>UTCNow</th>
+				<th>Now</th>
+				<th>elapsed  <span class="detail">[ms]</span></th>
+				<th>Counter</th>
+				<th>Line</th>
+				<th>Member</th>
+				<th>File</th>
+				<th>Message</th>
+			</tr>
+			
+			<tr>
+				<td>DE</td>
+				<td>09:11:34.203</td>
+				<td>11:11:34.203</td>
+				<td class="number">369</td>
+				<td class="number">3975</td>
+				<td class="number">52</td>
+				<td>button1_Click</td>
+				<td>C:\Vi\Form1.cs</td>
+				<td> message 1</td>
+			</tr>
+		</table>
+		
+		
+		<br>
+		
+		<ul>
+			<li>
+				<span class="strong">Type</span> 
+				the type of the entry one of 
+				DE<span class="opacity05">BUG</span>, 
+				IN<span class="opacity05">FO</span>, 
+				WA<span class="opacity05">RN</span>, 
+				ER<span class="opacity05">ROR</span>, 
+				EX<span class="opacity05">CEPTION</span>
+			</li>
+			<li>
+				<span class="strong">UTCNow</span> 
+				The moment when the entry was added to the queue. 
+				<span class="opacity085 em08">
+					This marks the precise moment an entry was added to the queue. Using UTC time is crucial to avoid 
+					issues caused by Daylight Saving Time, particularly at the end of October when clocks go back, 
+					causing the hour between 2 AM and 3 AM to occur twice. The filename, which must be unique, 
+					is generated directly from this exact timestamp.
+				</span>
+			</li>
+			<li>
+				<span class="strong">Now</span> 
+				The <b>local time</b> when the entry was added to the queue. 
+			</li>
+			<li>
+				<span class="strong">Elapsed</span> 
+				The time elapsed from the Enty's queuing and the Entry's printing
+				<span class="opacity085 em08">
+					This refers to the duration between an entry being queued and its subsequent printing. 
+					It serves as an indicator of the processor's overall overhead.
+				</span>
+			</li>
+			<li>
+				<span class="strong">Counter</span> 
+				This is a progressive number
+				<span class="opacity085 em08">
+					It is used as a check to detect any missed logs. A gap in the enumeration will signal that a log entry has been missed.
+				</span>
+			</li>
+			
+			<li>
+				<span class="strong">Line, Member, File</span> 
+				These indicate the exact position in the code from which the log was invoked.
+			</li>
+			<li>
+				<span class="strong">Message</span> 
+				This is simply the message to be displayed.
+			</li>
+			
+			
+		</ul>
+		
+		<hr>
+		<h2>Line Format <span style="font-weight:Normal;opacity:0.7;">Exception</span></h2>
+
+
+<!--
+<pre>
+<div class="code">
+<code>
+
+</code>
+</div>
+</pre>
+</div>
+-->
+</body>
+
+</html>

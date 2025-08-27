@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Vi.Tools.Extensions.Float;
+using Vi.Extensions.Float;
 
-namespace Vi.Tools.Extensions.Random
+namespace Vi.Extensions.Random
 {
 	/// <summary>
 	/// Collection of extention methods for the 'System.Random' Object.

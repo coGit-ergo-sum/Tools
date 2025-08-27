@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vi.Tools.Extensions.TimeSpan
+namespace Vi.Extensions.TimeSpan
 {
     /// <summary>
     /// Collection of extention methods for TimeSpan

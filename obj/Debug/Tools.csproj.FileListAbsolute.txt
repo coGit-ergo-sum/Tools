@@ -112,3 +112,17 @@ C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Vi.Tools.Properties.Resources.resource
 C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Tools.csproj.GenerateResource.cache
 C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Tools.dll
 C:\Vi\Code\coGit-ergo-sum\Tools\obj\Debug\Tools.pdb
+C:\Vi\Dakar\Code\CS\Tools\bin\Debug\Tools.dll
+C:\Vi\Dakar\Code\CS\Tools\bin\Debug\Tools.pdb
+C:\Vi\Dakar\Code\CS\Tools\bin\Debug\Tools.xml
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Tools.csproj.AssemblyReference.cache
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Vi.Tools.Properties.Ico.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Vi.Tools.Properties.Images3D.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Vi.Tools.Properties.ImagesDFlat.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Vi.Tools.Properties.ImagesRFlat.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Vi.Tools.Properties.Resource.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Vi.Tools.Properties.Resources.resources
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Tools.csproj.GenerateResource.cache
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Tools.csproj.CoreCompileInputs.cache
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Tools.dll
+C:\Vi\Dakar\Code\CS\Tools\obj\Debug\Tools.pdb

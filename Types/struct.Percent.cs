@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vi.Tools.Extensions.String;
+using Vi.Extensions.String;
 
 namespace Vi.Types
 {
@@ -88,7 +88,7 @@ namespace Vi.Types
         /// <returns></returns>
         public override string ToString()
         {
-            return Vi.Tools.Utilities.Join(this.Value);
+            return Vi.Utilities.Join(this.Value);
         }
         */
 
@@ -99,7 +99,7 @@ namespace Vi.Types
         /// </summary>
         /// <param name="percent">An instance of 'Percentage'.</param>
         /// <returns>The 'decimal' associated with this 'struct'. (percent.value</returns>
-        [DebuggerStepThrough]
+        // [DebuggerStepThrough]
         public static implicit operator decimal(Percentage percent)
         {
             return percent.Value;
@@ -110,7 +110,7 @@ namespace Vi.Types
         /// </summary>
         /// <param name="value">The built in typy to cast to Percentage.</param>
         /// <returns>New instance of a 'percent' struct.</returns>
-        [DebuggerStepThrough]
+        // [DebuggerStepThrough]
         public static implicit operator Percentage(decimal value)
         {
             return new Percentage(value);

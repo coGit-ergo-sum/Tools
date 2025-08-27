@@ -1,2 +1,2 @@
 # Tools
- Collection of code tools
+Collection of standard functionalities

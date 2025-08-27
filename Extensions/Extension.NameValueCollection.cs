@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-using Vi.Tools.Extensions.Object;
-using Vi.Tools.Extensions.String;
+using Vi.Extensions.Object;
+using Vi.Extensions.String;
 
 
-namespace Vi.Tools.Extensions.NameValueCollection
+namespace Vi.Extensions.NameValueCollection
 {
 
     /// <summary>

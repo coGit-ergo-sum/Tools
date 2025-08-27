@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vi.Tools.Extensions.Float
+namespace Vi.Extensions.Float
 {
 
 	/// <summary>
@@ -9,14 +9,14 @@ namespace Vi.Tools.Extensions.Float
 	public static partial class Methods
 	{
 
-		/// <summary>
-		/// Checks if a number is between min and max (included)
-		/// </summary>
-		/// <param name="value">The number to check.</param>
-		/// <param name="min">Minimum value allowed.</param>
-		/// <param name="max">Maximun value allowed.</param>
-		/// <returns>((value &gt;= min) && (value &lt;= max)</returns>
-		public static bool IsBetween(this float value, float min, float max)
+        /// <summary>
+        /// Checks if a number is between min and max (included)
+        /// </summary>
+        /// <param name="value">The number to check.</param>
+        /// <param name="min">Minimum value allowed.</param>
+        /// <param name="max">Maximun value allowed.</param>
+        /// <returns>((value &gt;= min) AND (value &lt;= max)</returns>
+        public static bool IsBetween(this float value, float min, float max)
 		{
 			return (value >= min) && (value <= max);
 		}

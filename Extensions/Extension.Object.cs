@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Vi.Tools.Extensions.String;
+using Vi.Extensions.String;
 
-namespace Vi.Tools.Extensions.Object
+namespace Vi.Extensions.Object
 {
     /// <summary>
     /// Collection of 'extension methods' for Int
@@ -16,7 +16,7 @@ namespace Vi.Tools.Extensions.Object
         /// </summary>
         /// <param name="value">The to check.</param>
         /// <returns>Returns value == null;.</returns>
-        [DebuggerStepThrough]
+        // [DebuggerStepThrough]
         public static bool IsNull(this object value)
         {
             return value == null;
@@ -26,20 +26,18 @@ namespace Vi.Tools.Extensions.Object
         /// Checks if an instance of an object is NOT null.
         /// </summary>
         /// <param name="value">The value to convert.</param>
-        /// <param name="default">Makes this method exception resislient.</param>
         /// <returns>Returns value != null;.</returns>
-        [DebuggerStepThrough]
+        // [DebuggerStepThrough]
         public static bool IsNotNull(this object value)
         {
             return value != null;
         }
 
-        ////////public static bool ToBool(this object value, bool @default)
-        ////////{
-        ////////    return value == null ? @default : value.ToString().ToBool(@default);
-        ////////}
-
-
+        /// <summary>
+        /// Converts an object to a byte array using binary serialization.
+        /// </summary>
+        /// <param name="value">The object to convert to a byte array.</param>
+        /// <returns>A byte array representation of the object, or null if the object is null.</returns>
         public static byte[] ToBytes(this object value)
         {
             byte[] result = null;
@@ -55,6 +53,12 @@ namespace Vi.Tools.Extensions.Object
             return result;
         }
 
+        /// <summary>
+        /// Deserializes a byte array into an object of type T.
+        /// </summary>
+        /// <typeparam name="T">The type of the object to deserialize to. Must be a reference type.</typeparam>
+        /// <param name="bytes">The byte array to deserialize.</param>
+        /// <returns>The deserialized object of type T, or null if the byte array is null.</returns>
         public static T Deserialize<T>(this byte[] bytes) where T : class
         {
             T result = null;

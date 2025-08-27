@@ -1,7 +1,7 @@
 ﻿/*
 using System;
 
-namespace Vi.Tools.Extensions.Byte
+namespace Vi.Extensions.Byte
 {
     /// <summary>
     /// Collection of 'extension methods' for byte

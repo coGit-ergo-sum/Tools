@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Vi.Tools.Extensions.String;
+using Vi.Extensions.String;
 
-namespace Vi.Tools
+namespace Vi
 {
     /// <summary>
     /// 
     /// </summary>
-    public class Settings: Vi.Tools.Profile
+    public class Settings: Vi.Types.Profile
     {
         /// <summary>
         /// Main CTor: sets the fileName.
