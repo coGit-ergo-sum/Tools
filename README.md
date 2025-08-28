@@ -29,7 +29,16 @@ Tiger is designed to handle up to 100,000 logs added to the queue per second and
 
 </details>
 
-### Key Features
+
+
+
+
+
+
+<details>
+  <summary><strong>Key Features</strong></summary>
+
+
 
 - **Three Log Types:**  
   - **Normal logs:** For general messages and information.
@@ -50,7 +59,7 @@ Tiger is designed to handle up to 100,000 logs added to the queue per second and
 
 - **Event-Driven:**  
   - Tiger exposes events for log processing, emergency situations, and data loss, allowing your application to react or notify users as needed.
-
+</details>
 ### Typical Usage
 
 > **Important:**  
@@ -67,7 +76,17 @@ should be preferred against the generic `Tiger.Write(...)` .
 These methods automatically include: the caller's context **class name, method name, line number** in the log entry, enhancing traceability and debugging.
 
 
-## Tiger Logging System – Design Q&A
+
+
+
+
+
+
+<details>
+  <summary><strong>Tiger Logging System – Design Q&A</summary>
+
+
+
 
 ### 1. Intended Use Cases
 Tiger belongs to Tools: a set of functionalities based on a minimal set of C# libraries, intended for any kind of .NET project.
@@ -103,12 +122,24 @@ No additional limitations or edge cases have been documented yet.
 ### 10. Future Plans
 No specific plans for additional features, platforms, or integrations at this time.
 
+  
+</details>
 
 
 
 ### Known Limitations and Areas for Improvement
 Section of ToDos actions to improve the application
-## Tiger Logging System – Points of Weakness
+
+
+
+
+
+
+<details>
+  <summary><strong>Tiger Logging System – Points of Weakness
+  
+  ## Tiger Logging System – Points of Weakness
+  </strong></summary>
 
 1. **Recursive Calls in `SetLogFiles`**
    - The method uses recursion to handle file name conflicts and midnight rollovers. If the system clock does not advance as expected, this could theoretically lead to a stack overflow.
@@ -136,3 +167,14 @@ Section of ToDos actions to improve the application
 
 9. **No Configuration for Log Paths**
    - Log file paths are hardcoded to a "Logs" subdirectory under the base directory. There’s no support for custom paths or configuration.
+</details>
+
+
+
+
+
+
+
+
+## Tiger Logging System – Points of Weakness
+
