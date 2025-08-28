@@ -29,7 +29,7 @@
 </details>
 
 <details>
-  <summary><strong>Tiger Logging System – Design Q&A</strong></summary>
+  <summary><strong>Design Q&A</strong></summary>
 
 ### 1. Intended Use Cases
 Tiger belongs to Tools: a set of functionalities based on a minimal set of C# libraries, intended for any kind of .NET project.
@@ -42,7 +42,7 @@ Tiger is designed to handle up to 100,000 logs added to the queue per second and
 </details>
 
 <details>
-  <summary><strong>Tiger Logging System – Points of Weakness</strong></summary>
+  <summary><strong>Points of Weakness</strong></summary>
 
 1. **Recursive Calls in `SetLogFiles`**
    - The method uses recursion to handle file name conflicts and midnight rollovers. If the system clock does not advance as expected, this could theoretically lead to a stack overflow.
