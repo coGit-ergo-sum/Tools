@@ -173,6 +173,7 @@
     <None Include="Diagrams\Kernel32.cd" />
     <None Include="Diagrams\SQLLogger.cd" />
     <None Include="Images\Underline.png" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\3D\Piu.12x12.png" />

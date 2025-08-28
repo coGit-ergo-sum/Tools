@@ -2,6 +2,33 @@
 
 **Tiger** is a static, asynchronous logging utility designed for .NET Framework applications. Its main purpose is to reliably record application events, errors, and exceptions to log files, even in challenging scenarios.
 
+
+<details>
+  <summary><strong>Tiger Logging System – Design Q&A</strong></summary>
+
+### 1. Intended Use Cases
+Tiger belongs to Tools: a set of functionalities based on a minimal set of C# libraries, intended for any kind of .NET project.
+
+### 2. Performance Expectations
+Tiger is designed to handle up to 100,000 logs added to the queue per second and 8,000 logs written to file per second.
+
+<!-- ...other Q&A items... -->
+
+</details>
+
+<details>
+  <summary><strong>Tiger Logging System – Points of Weakness</strong></summary>
+
+1. **Recursive Calls in `SetLogFiles`**
+   - The method uses recursion to handle file name conflicts and midnight rollovers. If the system clock does not advance as expected, this could theoretically lead to a stack overflow.
+
+2. **Thread Shutdown Handling**
+   - On application exit, the code waits up to 5 seconds for log writer threads to finish. If threads are blocked or the queue is large, some logs may not be flushed or could be lost.
+
+<!-- ...other points... -->
+
+</details>
+
 ### Key Features
 
 - **Three Log Types:**  
