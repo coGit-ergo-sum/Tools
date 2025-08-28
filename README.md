@@ -33,9 +33,13 @@
 - Tiger.Warn; 
 - Tiger.Error; 
 - Tiger.Exception;
+
 should be preferred against the generic `Tiger.Write(...)` .  
 
 
+These methods automatically include: the caller's context **class name, method name, line number** in the log entry, enhancing traceability and debugging.
+
+### Known Limitations and Areas for Improvement
 Section of ToDos actions to improve the application
 ## Tiger Logging System – Points of Weakness
 
