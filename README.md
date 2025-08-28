@@ -39,6 +39,46 @@ should be preferred against the generic `Tiger.Write(...)` .
 
 These methods automatically include: the caller's context **class name, method name, line number** in the log entry, enhancing traceability and debugging.
 
+
+## Tiger Logging System – Design Q&A
+
+### 1. Intended Use Cases
+Tiger belongs to Tools: a set of functionalities based on a minimal set of C# libraries, intended for any kind of .NET project.
+
+### 2. Performance Expectations
+Tiger is designed to handle up to 100,000 logs added to the queue per second and 8,000 logs written to file per second.
+
+### 3. Thread Safety Guarantees
+No specific guarantees or known limitations regarding thread safety have been documented yet.
+
+### 4. Error Recovery Philosophy
+- Normal log messages are managed by the developer and written to 'N' files.
+- Exception log messages are automatically managed from the exception object and written to 'E' files.
+- If an issue occurs while writing an N log, an E log is created.
+- If an issue occurs while writing an E log, an X log is created.
+- If writing an X log fails, an event is raised with relevant info; after that, data is considered lost.
+
+### 5. Customization and Extensibility
+Tiger is open source, so it is up to the developer to customize the tool as needed.
+
+### 6. Security Considerations
+There are no built-in mechanisms for handling sensitive data in logs (e.g., masking, encryption); this is left to the developer.
+
+### 7. Configuration Management
+There is no recommended way to configure Tiger (e.g., log retention, file paths, log levels) beyond what is hardcoded. It is open source and can be modified as needed.
+
+### 8. Testing and Validation
+No specific strategies or tools have been used to test Tiger’s reliability, especially in failure scenarios.
+
+### 9. Known Limitations
+No additional limitations or edge cases have been documented yet.
+
+### 10. Future Plans
+No specific plans for additional features, platforms, or integrations at this time.
+
+
+
+
 ### Known Limitations and Areas for Improvement
 Section of ToDos actions to improve the application
 ## Tiger Logging System – Points of Weakness
