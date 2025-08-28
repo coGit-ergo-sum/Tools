@@ -2,6 +2,24 @@
 
 **Tiger** is a static, asynchronous logging utility designed for .NET Framework applications. Its main purpose is to reliably record application events, errors, and exceptions to log files, even in challenging scenarios.
 
+
+
+### Typical Usage
+
+> **Important:**  
+> The specialized logging methods: 
+- Tiger.Debug;
+- Tiger.Info; 
+- Tiger.Warn; 
+- Tiger.Error; 
+- Tiger.Exception;
+
+should be preferred against the generic `Tiger.Write(...)` .  
+
+
+These methods automatically include: the caller's context **class name, method name, line number** in the log entry, enhancing traceability and debugging.
+
+
 <details>
   <summary><strong>Key Features</strong></summary>
 
@@ -53,34 +71,6 @@ Tiger is designed to handle up to 100,000 logs added to the queue per second and
 <!-- ...other points... -->
 
 </details>
-
-
-
-
-
-
-
-
-### Typical Usage
-
-> **Important:**  
-> The specialized logging methods: 
-- Tiger.Debug;
-- Tiger.Info; 
-- Tiger.Warn; 
-- Tiger.Error; 
-- Tiger.Exception;
-
-should be preferred against the generic `Tiger.Write(...)` .  
-
-
-These methods automatically include: the caller's context **class name, method name, line number** in the log entry, enhancing traceability and debugging.
-
-
-
-
-
-
 
 
 <details>
