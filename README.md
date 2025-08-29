@@ -1,6 +1,9 @@
-## Tiger Logging Tool – Overview
+## Tiger - Logging Tool
 
-**Tiger** is a static, asynchronous logging utility designed for .NET Framework applications. Its main purpose is to reliably record application events, errors, and exceptions to log files, even in challenging scenarios.
+### Overview
+
+**Tiger** is a static, asynchronous logging utility designed for .NET Framework applications. 
+Its main purpose is to reliably record application events, errors, and exceptions to log files, even in challenging scenarios.
 
 
 
@@ -8,11 +11,11 @@
 
 > **Important:**  
 > The specialized logging methods: 
-- Tiger.Debug;
-- Tiger.Info; 
-- Tiger.Warn; 
-- Tiger.Error; 
-- Tiger.Exception;
+- `Tiger.Debug(...)`;
+- `Tiger.Info(...)`; 
+- `Tiger.Warn(...)`; 
+- `Tiger.Error(...)`; 
+- `Tiger.Exception(...)`;
 
 should be preferred against the generic `Tiger.Write(...)` .  
 
@@ -43,6 +46,40 @@ These methods automatically include: the caller's context **class name, method n
   - Tiger exposes events for log processing, emergency situations, and data loss, allowing your application to react or notify users as needed.
 </details>
 
+
+<details>
+  <summary><strong>Quick Start Examples</summary>	
+</details>
+
+
+<details>
+<summary><strong>Contribution Guidelines</strong></summary>
+
+How to Contribute
+We welcome contributions from everyone! To ensure a smooth process, please follow these guidelines:
+
+Fork the repository and clone it to your local machine.
+
+Create a new branch for your feature or bug fix.
+
+Make your changes and write clear, concise commit messages.
+
+Open a pull request from your branch to the main branch of this repository.
+
+Please provide a clear description of your changes in the pull request. Thank you for helping to improve Tiger!
+
+</details>
+
+
+<details>
+  <summary><strong>License Information</summary>	
+</details>
+
+
+
+<details>
+  <summary><strong>Contact/Support</summary>	
+</details>
 
 <details>
   <summary><strong>Design Q&A</summary>
