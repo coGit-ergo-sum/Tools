@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Vi\\Dakar\\Code\\CS\\Tools\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8C4A272A-375E-4615-BD00-E1E3633A25AE}|Tools.csproj|c:\\vi\\dakar\\code\\cs\\tools\\extensions\\extension.string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C4A272A-375E-4615-BD00-E1E3633A25AE}|Tools.csproj|solutionrelative:extensions\\extension.string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8C4A272A-375E-4615-BD00-E1E3633A25AE}|Tools.csproj|c:\\vi\\dakar\\code\\cs\\tools\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{8C4A272A-375E-4615-BD00-E1E3633A25AE}|Tools.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Extension.String.cs",
+              "DocumentMoniker": "C:\\Vi\\Dakar\\Code\\CS\\Tools\\Extensions\\Extension.String.cs",
+              "RelativeDocumentMoniker": "Extensions\\Extension.String.cs",
+              "ToolTip": "C:\\Vi\\Dakar\\Code\\CS\\Tools\\Extensions\\Extension.String.cs",
+              "RelativeToolTip": "Extensions\\Extension.String.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAKBmwI8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T09:57:16.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Vi\\Dakar\\Code\\CS\\Tools\\README.md",
               "RelativeDocumentMoniker": "README.md",

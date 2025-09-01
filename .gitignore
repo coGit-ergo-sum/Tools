@@ -1,0 +1,35 @@
+# Visual Studio cache and workspace
+.vs/
+*.vsidx
+*.suo
+*.user
+*.db
+*.shm
+*.wal
+
+# Build output
+bin/
+obj/
+
+# Test results and coverage
+TestResults/
+*.coverage
+*.coveragexml
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Rider/VSCode/JetBrains/other IDEs
+.idea/
+.vscode/
+*.swp
+
+# Log and temp files
+*.log
+*.tmp
+
+# (Opzionale) File JSON generati da tool/estensioni, se non sono parte del progetto
+# *.json

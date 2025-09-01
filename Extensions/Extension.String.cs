@@ -19,10 +19,10 @@ namespace Vi.Extensions.String
     public static partial class Methods
     {
         /// <summary>
-        /// 
+        /// Performs the callback 'each' for each item in the array 'values'.
         /// </summary>
-        /// <param name="values"></param>
-        /// <param name="each"></param>
+        /// <param name="values">The array of strings</param>
+        /// <param name="each">the action to perform over each item in values</param>
         public static void ForEach(this string[] values, Action<string> each)
         {
             foreach (var value in values) {
@@ -137,19 +137,22 @@ namespace Vi.Extensions.String
 
 
         /// <summary>
-        /// 
+        /// The built-in trim can trim just one character only. This method trims a substring.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="subString"></param>
+        /// <param name="value">The string to trim</param>
+        /// <param name="subString">The value to remove</param>
         /// <returns></returns>
+
         public static string Trim(this string value, string subString)
         {
+            // if the value or the subString are null or empty return the value
             if (string.IsNullOrEmpty(value) || string.IsNullOrEmpty(subString))
             {
                 return value;
             }
 
-            if(subString.Length == 1)
+            // if the subString is made of one character use the built-in trim  
+            if (subString.Length == 1)
             {
                 return value.Trim(subString[0]);
             }
