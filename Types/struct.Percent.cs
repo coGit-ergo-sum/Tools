@@ -81,17 +81,6 @@ namespace Vi.Types
 
 
 
-        /*
-        /// <summary>
-        /// A
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-            return Vi.Utilities.Join(this.Value);
-        }
-        */
-
 
         #region Operatori impliciti
         /// <summary>
@@ -121,3 +110,15 @@ namespace Vi.Types
     }
 }
 
+
+
+/*
+/// <summary>
+/// A
+/// </summary>
+/// <returns></returns>
+public override string ToString()
+{
+    return Vi.Utilities.Join(this.Value);
+}
+*/

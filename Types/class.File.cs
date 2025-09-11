@@ -16,6 +16,24 @@ namespace Vi.Types
     public class File
     {
 
+        /// <summary>
+        /// The System.IO.FileInfo object related to this file (lazily instantiated).
+        /// </summary>
+        private FileInfo _FileInfo = null;
+
+        /// <summary>
+        /// The System.IO.FileInfo object related to this file (lazily instantiated).
+        /// </summary>
+        public FileInfo FileInfo
+        {
+            get { 
+                if (this._FileInfo is null) { 
+                    this._FileInfo = new System.IO.FileInfo(this.FullFileName); 
+                } 
+                return this._FileInfo; 
+            }
+        }
+
 
         /// <summary>
         /// Collector of the most common function around a 'File'
