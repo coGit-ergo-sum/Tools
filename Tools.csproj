@@ -1,295 +1,36 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8C4A272A-375E-4615-BD00-E1E3633A25AE}</ProjectGuid>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Vi.Tools</RootNamespace>
-    <AssemblyName>Tools</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <TargetFrameworkProfile />
     <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <DocumentationFile>Help\XMLs\Debug\Tools.xml</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="API\API.Wtsapi32.cs">
+    <Compile Update="API\API.Wtsapi32.cs">
       <DependentUpon>class.Wtsapi32.cs</DependentUpon>
     </Compile>
-    <Compile Include="API\class.Kernel32.cs" />
-    <Compile Include="API\class.User32.cs" />
-    <Compile Include="API\class.Wtsapi32.cs" />
-    <Compile Include="API\enum.WTS_INFO_CLASS.cs">
+    <Compile Update="API\enum.WTS_INFO_CLASS.cs">
       <DependentUpon>class.Wtsapi32.cs</DependentUpon>
     </Compile>
-    <Compile Include="Extensions\Extension.Double.cs" />
-    <Compile Include="Tiger\Code\Class.LogEntry.cs" />
-    <Compile Include="Tiger\Code\Class.LogEntryE.cs" />
-    <Compile Include="Tiger\Code\Class.LogEntryN.cs" />
-    <Compile Include="Tiger\Code\Class.Logger.cs" />
-    <Compile Include="Tiger\Code\Class.Tiger.cs" />
-    <Compile Include="Tiger\Code\Interface.ILog.cs" />
-    <Compile Include="Types\class.Profile.cs" />
-    <Compile Include="Types\class.json.cs" />
-    <Compile Include="Types\class.Facility.cs" />
-    <Compile Include="Types\class.Severity.cs" />
-    <Compile Include="Types\class.HResult.cs" />
-    <Compile Include="Types\static.Console.cs" />
-    <Compile Include="Types\static.Profile.cs" />
-    <Compile Include="Types\Xi.static.Profile.cs" />
-    <Compile Include="Types\Infrastructure.cs">
+    <Compile Update="Types\Infrastructure.cs">
       <DependentUpon>Xi.static.Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Delegates.cs" />
-    <Compile Include="Extensions\Extension.Array.cs" />
-    <Compile Include="Extensions\Extension.Bool.cs" />
-    <Compile Include="Extensions\Extension.Numbers.cs" />
-    <Compile Include="Extensions\Extension.DateTime.cs" />
-    <Compile Include="Extensions\Extension.Enums.cs" />
-    <Compile Include="Extensions\Extension.Exception.cs" />
-    <Compile Include="Extensions\Extension.Byte.cs" />
-    <Compile Include="Extensions\Extension.decimal.cs" />
-    <Compile Include="Extensions\Extension.float.cs" />
-    <Compile Include="Extensions\Extension.NameValueCollection.cs" />
-    <Compile Include="Extensions\Extension.Object.cs" />
-    <Compile Include="Extensions\Extension.Int.cs" />
-    <Compile Include="Extensions\Extension.long.cs" />
-    <Compile Include="Extensions\Extension.String.cs" />
-    <Compile Include="Extensions\Extension.DialogResult.cs" />
-    <Compile Include="Extensions\Extension.SqlDataReader.cs" />
-    <Compile Include="Extensions\Extension.SqlCommand.cs" />
-    <Compile Include="Extensions\Extension.TimeSpan.cs" />
-    <Compile Include="Extensions\Extension.Random.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Ico.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Ico.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Images3D.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Images3D.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\ImagesDFlat.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ImagesDFlat.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\ImagesRFlat.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ImagesRFlat.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Types\class.Error.cs" />
-    <Compile Include="Types\class.Directory.cs" />
-    <Compile Include="Types\class.File.cs" />
-    <Compile Include="Types\struct.Percent.cs" />
-    <Compile Include="Types\class.Utilities.cs" />
-    <Compile Include="Utilities.cs" />
-    <Compile Include="Watcher\class.Watcher.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Ico.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Ico.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Images3D.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Images3D.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\ImagesDFlat.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ImagesDFlat.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\ImagesRFlat.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ImagesRFlat.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Diagrams\Extension.String.cd" />
-    <None Include="Diagrams\Kernel32.cd" />
-    <None Include="Diagrams\SQLLogger.cd" />
-    <None Include="Images\Underline.png" />
-    <None Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\3D\Piu.12x12.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\3D\Piu.16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\3D\Piu.20x20.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\3D\Piu.25x25.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\3D\Piu.32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\Piu.Verde.25x25.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\Piu.Rosso.20x20.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Piu.Verde.18x18.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Piu.Verde.20x20.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Right.Green.27x27.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Up.Green.27x27.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Down.Green.27x27.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Left.Green.27x27.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Piu.Verde.14x14.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\Operatore.Verde.25x25.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\Progettazione.Verde.25x25.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\Responsabile.Verde.25x25.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\SMS.Verde.25x25.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\Configurazione.Verde.25x25.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\Piu.Verde.16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Bin.Rosso.16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\Home.Verde.30x30.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\elimina.Verde.30x30.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\save.Verde.30x30.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\elimina.Rosso.30x30.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\elimina.Rosso.16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\DFlat\Modifica.Verde.25x25.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Pancil.Gray.32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Pancil.Gray.16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Bin.Gray.16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Pencil.Gray.16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\Piu.Gray.20x20.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\RFlat\QuestionMark.Orange.32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\Ico\Logo.16x16.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\Dotted.png" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.9" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\INI\" />
     <Folder Include="Tiger\Help\" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

@@ -1,11 +1,13 @@
-﻿namespace Vi.Extensions.DialogResult
+﻿
+
+/*
+namespace Vi.Extensions.DialogResult
 {
     /// <summary>
     /// Collection of 'extension methods' for DialogResult
     /// </summary>
     public static partial class Methods
     {
-
         /// <summary>
         /// Checks the value of 'DialogResult'
         /// </summary>
@@ -26,7 +28,6 @@
             return (dr == System.Windows.Forms.DialogResult.Abort);
         }
 
-
         /// <summary>
         /// Checks the value of 'DialogResult'
         /// </summary>
@@ -37,7 +38,6 @@
             return (dr == System.Windows.Forms.DialogResult.Cancel);
         }
 
-
         /// <summary>
         /// Checks the value of 'DialogResult'
         /// </summary>
@@ -47,7 +47,6 @@
         {
             return (dr == System.Windows.Forms.DialogResult.Ignore);
         }
-
 
         /// <summary>
         /// Checks the value of 'DialogResult'
@@ -79,8 +78,6 @@
             return (dr == System.Windows.Forms.DialogResult.Retry);
         }
 
-
-
         /// <summary>
         /// Checks the value of 'DialogResult'
         /// </summary>
@@ -90,9 +87,7 @@
         {
             return (dr == System.Windows.Forms.DialogResult.Yes);
         }
-
     }
-
 }
-
+*/
 

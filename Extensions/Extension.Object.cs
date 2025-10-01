@@ -75,5 +75,31 @@ namespace Vi.Extensions.Object
             }
             return result;
         }
+
+
+        /// <summary>
+        /// shorthand for "System.Array.IndexOf(values, column)"
+        /// </summary>
+        /// <param name="values">the object array to browse</param>
+        /// <param name="column">the name of the column we are interested at</param>
+        /// <returns></returns>
+        public static int indexOf(this object[] values, string column)
+        {
+            return System.Array.IndexOf(values, column); ;
+        }
+
+        /// <summary>
+        /// return directly the value at column 'column' in values
+        /// </summary>
+        /// <param name="values">the object array to browse</param>
+        /// <param name="column">the name of the column we are interested at</param>
+        /// <returns></returns>
+        public static object valueAt(this object[] values, string column)
+        {
+            int index = values.indexOf(column);
+            return values[index]; ;
+        }
+
+
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows.Markup;
+//using System.Windows.Markup;
 using Vi.Extensions.Object;
 
 
@@ -135,6 +135,23 @@ namespace Vi.Extensions.String
             return values;
         }
 
+        /// <summary>
+        /// Converts the first character of the string to lowercase.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string ToCamelCase(this string value) 
+        {
+            if (value == null) return value;
+            if (value.Trim() == "") return value;
+
+            // Achronimous (all letter capital) are full low case (USA => usa)
+            if (value.ToUpper() == value) return value.ToLower();
+
+            // Convert the first character to lowercase
+            return char.ToLowerInvariant(value[0]) + value.Substring(1);
+
+        }
 
         /// <summary>
         /// The built-in trim can trim just one character only. This method trims a substring.
@@ -172,6 +189,24 @@ namespace Vi.Extensions.String
             }
 
             return result;
+        }
+
+        public static string[] Split(this string value, char separator = ';')
+        {
+            var values = value.ToItems(new string[0], separator);
+            return values;
+        }
+
+        /// <summary>
+        /// Joins the items in a string using the specified separator.
+        /// </summary>
+        /// <param name="value">the values to join</param>
+        /// <param name="separator">the separator between values</param>
+        /// <returns></returns>
+        public static string Join(this string[] values, string separator = ";")
+        {
+            var value = string.Join(separator, values);
+            return value;
         }
 
         #region ToXyz

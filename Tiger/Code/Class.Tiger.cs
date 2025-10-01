@@ -6,12 +6,10 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using Vi.Extensions.String;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Vi.Statics
 {
-
-
     /// <summary>
     /// Provides a static, asynchronous logging utility for handling normal, error, and emergency logs.
     /// <para>Normal logs consist of simple text messages, while error logs are used for exceptions and managed errors.</para>
@@ -42,6 +40,11 @@ namespace Vi.Statics
         /// Counter for normal log entries. Useful for detecting sequence gaps, which might indicate data loss.
         /// </summary>
         private static int CounterN = 0;
+
+        /// <summary>
+        /// Gets the "AppContext.BaseDirectory;", which is the base directory of the application.
+        /// </summary>
+        public static string BaseDirectory { get; } = AppContext.BaseDirectory;
 
         /*
         public static string LogRoot{ get; private set; }
@@ -362,9 +365,6 @@ namespace Vi.Statics
         /// </remarks>
         private static void SetLogFiles()
         {
-
-            var baseDirectory = AppContext.BaseDirectory;
-
             var utcNow = System.DateTime.UtcNow;
             int milliseconds = 100;
             var utcNowPlus = utcNow.AddMilliseconds(milliseconds);
@@ -391,6 +391,10 @@ namespace Vi.Statics
                     return System.IO.Path.Combine(path, fileName);
                 };
 
+
+                var baseDirectory = Tiger.BaseDirectory;
+
+                // Ensure the base directory exists, creating it if necessary.
                 // Generate base file name for the current UTC date
                 string logFileN = getLogFile(baseDirectory, LogType.N);
                 string logFileE = getLogFile(baseDirectory, LogType.E);
@@ -409,7 +413,7 @@ namespace Vi.Statics
                     // A minimal sleep is used to wait for the system clock to advance.
                     do { System.Threading.Thread.Sleep(1); }
                     while (System.DateTime.UtcNow > utcNow); // Continues as long as current UTC time hasn't advanced past the initial 'utcNow'
-                    SetLogFiles(); // Recursive call to generate new file names based on the advanced time.
+                    Tiger.SetLogFiles(); // Recursive call to generate new file names based on the advanced time.
                 }
                 else
                 {
@@ -567,7 +571,7 @@ namespace Vi.Statics
         /// <param name="member">Automatically populated with the name of the calling member (method, property, etc.).</param>
         /// <param name="file">Automatically populated with the full path of the source file where this method is called.</param>
         public static void Write(Vi.Logger.Levels level, string message, [CallerLineNumber] int line = 0, [CallerMemberName] string member = "?", [CallerFilePath] string file = "?")
-            => Write(indentation: 0, level, message, line, member, file);
+            => Tiger.Write(indentation: 0, level, message, line, member, file);
 
         /// <summary>
         /// Writes an exception log entry to both the normal log file (<see cref="LogFileN"/>) (as a message)
@@ -592,7 +596,7 @@ namespace Vi.Statics
             // Log to error queue with full exception details
             Tiger.LogQueueE.Add(new LogEntryE(indentation, _counterE, _count, se, line, member, file));
 
-            Write(indentation, Vi.Logger.Levels.EXCEPTION, se.Message, line, member, file);
+            Tiger.Write(indentation, Vi.Logger.Levels.EXCEPTION, se.Message, line, member, file);
         }
 
         /// <summary>
@@ -604,7 +608,7 @@ namespace Vi.Statics
         /// <param name="member">Automatically populated with the name of the calling member.</param>
         /// <param name="file">Automatically populated with the full path of the source file.</param>
         public static void Write(System.Exception se, [CallerLineNumber] int line = 0, [CallerMemberName] string member = "?", [CallerFilePath] string file = "?")
-            => Write(indentation: 0, se, line, member, file);
+            => Tiger.Write(indentation: 0, se, line, member, file);
 
         #endregion
     }

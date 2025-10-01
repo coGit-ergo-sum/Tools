@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.VisualStyles;
-using static System.Net.Mime.MediaTypeNames;
+
 
 namespace Vi
 {
@@ -613,6 +609,17 @@ namespace Vi
         // // [DebuggerStepThrough]
         public static void Exception(int indentation, System.Exception se, [CallerLineNumber] int line = 0, [CallerMemberName] System.String caller = "?", [CallerFilePath] System.String file = "?")
         {
+            // fNeedFileInfo 'true' to get info on file & line.
+            var st = new StackTrace(se,fNeedFileInfo: true);
+
+            var frame = st.GetFrame(0);
+            if (frame != null)
+            {
+                // var type = se.GetType().Name;
+                file = frame.GetFileName();
+                line = frame.GetFileLineNumber();
+            }
+
             Vi.Logger._Implementation.Exception(se, line, caller, file);
             Vi.Logger.OnLogE?.Invoke(se, line, caller, file);
             Vi.Logger.OnLogN?.Invoke(indentation, Vi.Logger.Levels.EXCEPTION, se.Message, line, caller, file);

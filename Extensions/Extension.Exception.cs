@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace Vi.Extensions.Exception
 {

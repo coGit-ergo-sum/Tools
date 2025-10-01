@@ -556,7 +556,7 @@ namespace Vi
             }
         }
 
-
+        /*
         /// <summary>
         /// Retrieves the associated icon for a given file extension from the Windows registry.
         /// </summary>
@@ -567,7 +567,8 @@ namespace Vi
             string iconPath = string.Empty;
 
             // Accedi alla chiave di registro per l'estensione del file
-            using (RegistryKey key = Registry.ClassesRoot.OpenSubKey(fileExtension))
+            //using (RegistryKey key = Registry.ClassesRoot.OpenSubKey(fileExtension))
+            using (RegistryKey key = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(fileExtension))
             {
                 if (key != null)
                 {
@@ -590,7 +591,7 @@ namespace Vi
 
             return null; // Returns null there isn't any icon associated to the extension or the extension is not valid.
         }
-
+        */
 
         /// <summary>
         /// Generates a transparent bitmap containing a red dot in the bottom right corner.

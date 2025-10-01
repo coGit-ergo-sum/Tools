@@ -429,17 +429,27 @@
             <param name="WTSInfoClass">A value of the WTS_INFO_CLASS enumeration that indicates the type of session information to retrieve in a call to the WTSQuerySessionInformation function.</param>
             <returns></returns>
         </member>
-        <member name="T:Vi.Extensions.Double.Methods">
+        <member name="T:Vi.Delegates.TraceDelegate">
             <summary>
-            Collection of 'extension methods' for decimal
+            Da utilizzare nei log destinati ai tecnici.
             </summary>
+            <param name="messaggio">il messaggio da registrare.</param>
+            <param name="line">La linea del codice dove il metodo Trace è stato chiamato.</param>
+            <param name="member">Il ni dove il metodo Trace è stato chiamato.</param>
+            <param name="file"></param>
         </member>
-        <member name="M:Vi.Extensions.Double.Methods.ToText(System.Double)">
+        <member name="T:Vi.Delegates.ConfirmDelegate">
             <summary>
-            Converts a decimal in a string with a fixed number of decimals.
+            Delegate to handle confirmation requests from the user.
             </summary>
-            <param name="value">The value to convert.</param>
-            <returns>text representation of a decimal with fixed number of decimal figures.</returns>
+            <param name="messaggio">The message to display in the confirmation request.</param>
+            <returns>True if the user confirms, otherwise false.</returns>
+        </member>
+        <member name="T:Vi.Delegates.InfoDelegate">
+            <summary>
+            Delegate to communicate application state information to the user.
+            </summary>
+            <param name="messaggio">The message to be communicated.</param>
         </member>
         <member name="T:Vi.Extensions.Array.Methods">
             <summary>
@@ -592,6 +602,43 @@
             <param name="onFalse">The action to be executed if value is false.</param>
             <returns></returns>
         </member>
+        <member name="T:Vi.Extensions.Byte.Methods">
+            <summary>
+            Collection of 'extension methods' for byte
+            </summary>
+        </member>
+        <member name="M:Vi.Extensions.Byte.Methods.IsEven(System.Byte)">
+            <summary>
+            Check if the number is even (divisible by 2).
+            </summary>
+            <param name="value">The value to check.</param>
+            <returns>Returns '(value AND 1) == 0'.</returns>
+        </member>
+        <member name="M:Vi.Extensions.Byte.Methods.IsOdd(System.Byte)">
+            <summary>
+            Check if the number is Odd (NOT divisible by 2).
+            </summary>
+            <param name="value">The value to check.</param>
+            <returns>Returns '(value AND 1) == 1'.</returns>
+        </member>
+        <member name="M:Vi.Extensions.Byte.Methods.IsBetween(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Checks if a number is between min and max (included)
+            </summary>
+            <param name="value">The number to check.</param>
+            <param name="min">Minimum value allowed.</param>
+            <param name="max">Maximun value allowed.</param>
+            <returns>((value &gt;= min) AND (value &lt;= max)</returns>
+        </member>
+        <member name="M:Vi.Extensions.Byte.Methods.Between(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Forces the value between 'min and 'max' (included)
+            </summary>
+            <param name="value">The number to limit.</param>
+            <param name="min">Minimum value allowed.</param>
+            <param name="max">Maximun value allowed.</param>
+            <returns>Math.Min(Math.Max(value, min), max);</returns>
+        </member>
         <member name="T:Vi.Extensions.DateTime.Methods">
             <summary>
             Collection of 'extension methods' for DateTime
@@ -610,6 +657,57 @@
             </summary>
             <param name="value">The datetime to convert.</param>
             <returns>the datetime in the format 'hh:mm:ss fff'</returns>
+        </member>
+        <member name="T:Vi.Extensions.Decimal.Methods">
+            <summary>
+            Collection of 'extension methods' for decimal
+            </summary>
+        </member>
+        <member name="M:Vi.Extensions.Decimal.Methods.IsBetween(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Checks if a number is between min and max (included)
+            </summary>
+            <param name="value">The number to check.</param>
+            <param name="min">Minimum value allowed.</param>
+            <param name="max">Maximun value allowed.</param>
+            <returns>((value &gt;= min) AND (value &lt;= max)</returns>
+        </member>
+        <member name="M:Vi.Extensions.Decimal.Methods.Between(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Forces the value between 'min and 'max' (included
+            </summary>
+            <param name="value">The number to limit.</param>
+            <param name="min">Minimum value allowed.</param>
+            <param name="max">Maximun value allowed.</param>
+            <returns>Math.Min(Math.Max(value, min), max);</returns>
+        </member>
+        <member name="M:Vi.Extensions.Decimal.Methods.ToPercent(System.Decimal,System.SByte)">
+            <summary>
+            Converts a decimal (Percentage) in a string with a fixed number of decimals.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <param name="decimals">The number of decimals.</param>
+            <returns>Text representation of a Percentage with fixed number of decimal figures.</returns>
+        </member>
+        <member name="M:Vi.Extensions.Decimal.Methods.ToText(System.Decimal,System.Byte)">
+            <summary>
+            Converts a decimal in a string with a fixed number of decimals.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <param name="decimals">The number of decimals.</param>
+            <returns>text representation of a decimal with fixed number of decimal figures.</returns>
+        </member>
+        <member name="T:Vi.Extensions.Double.Methods">
+            <summary>
+            Collection of 'extension methods' for decimal
+            </summary>
+        </member>
+        <member name="M:Vi.Extensions.Double.Methods.ToText(System.Double)">
+            <summary>
+            Converts a decimal in a string with a fixed number of decimals.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <returns>text representation of a decimal with fixed number of decimal figures.</returns>
         </member>
         <member name="T:Vi.Extensions.Enums.Methods">
             <summary>
@@ -691,82 +789,6 @@
             <param name="member">The name of the member where the exception occurred. Default is "?"</param>
             <param name="file">The full path of the source file where the exception occurred. Default is "?"</param>
         </member>
-        <member name="T:Vi.Extensions.Byte.Methods">
-            <summary>
-            Collection of 'extension methods' for byte
-            </summary>
-        </member>
-        <member name="M:Vi.Extensions.Byte.Methods.IsEven(System.Byte)">
-            <summary>
-            Check if the number is even (divisible by 2).
-            </summary>
-            <param name="value">The value to check.</param>
-            <returns>Returns '(value AND 1) == 0'.</returns>
-        </member>
-        <member name="M:Vi.Extensions.Byte.Methods.IsOdd(System.Byte)">
-            <summary>
-            Check if the number is Odd (NOT divisible by 2).
-            </summary>
-            <param name="value">The value to check.</param>
-            <returns>Returns '(value AND 1) == 1'.</returns>
-        </member>
-        <member name="M:Vi.Extensions.Byte.Methods.IsBetween(System.Byte,System.Byte,System.Byte)">
-            <summary>
-            Checks if a number is between min and max (included)
-            </summary>
-            <param name="value">The number to check.</param>
-            <param name="min">Minimum value allowed.</param>
-            <param name="max">Maximun value allowed.</param>
-            <returns>((value &gt;= min) AND (value &lt;= max)</returns>
-        </member>
-        <member name="M:Vi.Extensions.Byte.Methods.Between(System.Byte,System.Byte,System.Byte)">
-            <summary>
-            Forces the value between 'min and 'max' (included)
-            </summary>
-            <param name="value">The number to limit.</param>
-            <param name="min">Minimum value allowed.</param>
-            <param name="max">Maximun value allowed.</param>
-            <returns>Math.Min(Math.Max(value, min), max);</returns>
-        </member>
-        <member name="T:Vi.Extensions.Decimal.Methods">
-            <summary>
-            Collection of 'extension methods' for decimal
-            </summary>
-        </member>
-        <member name="M:Vi.Extensions.Decimal.Methods.IsBetween(System.Decimal,System.Decimal,System.Decimal)">
-            <summary>
-            Checks if a number is between min and max (included)
-            </summary>
-            <param name="value">The number to check.</param>
-            <param name="min">Minimum value allowed.</param>
-            <param name="max">Maximun value allowed.</param>
-            <returns>((value &gt;= min) AND (value &lt;= max)</returns>
-        </member>
-        <member name="M:Vi.Extensions.Decimal.Methods.Between(System.Decimal,System.Decimal,System.Decimal)">
-            <summary>
-            Forces the value between 'min and 'max' (included
-            </summary>
-            <param name="value">The number to limit.</param>
-            <param name="min">Minimum value allowed.</param>
-            <param name="max">Maximun value allowed.</param>
-            <returns>Math.Min(Math.Max(value, min), max);</returns>
-        </member>
-        <member name="M:Vi.Extensions.Decimal.Methods.ToPercent(System.Decimal,System.SByte)">
-            <summary>
-            Converts a decimal (Percentage) in a string with a fixed number of decimals.
-            </summary>
-            <param name="value">The value to convert.</param>
-            <param name="decimals">The number of decimals.</param>
-            <returns>Text representation of a Percentage with fixed number of decimal figures.</returns>
-        </member>
-        <member name="M:Vi.Extensions.Decimal.Methods.ToText(System.Decimal,System.Byte)">
-            <summary>
-            Converts a decimal in a string with a fixed number of decimals.
-            </summary>
-            <param name="value">The value to convert.</param>
-            <param name="decimals">The number of decimals.</param>
-            <returns>text representation of a decimal with fixed number of decimal figures.</returns>
-        </member>
         <member name="T:Vi.Extensions.Float.Methods">
             <summary>
             Collection of 'extension methods' for float
@@ -805,63 +827,6 @@
             <param name="value">The value to convert.</param>
             <param name="decimals">The number of decimals.</param>
             <returns>text representation of a decimal with fixed number of decimal figures.</returns>
-        </member>
-        <member name="T:Vi.Extensions.NameValueCollection.Methods">
-            <summary>
-            Collection of 'extension methods' for NameValueCollection
-            </summary>
-        </member>
-        <member name="M:Vi.Extensions.NameValueCollection.Methods.ToInt(System.Collections.Specialized.NameValueCollection,System.String,System.Int32)">
-            <summary>
-            Reads the value of the itmem with the provided 'name' in the 'NameValueCollection'.
-            </summary>
-            <param name="nvc">The 'NameValueCollection'.</param>
-            <param name="name">The name of the item in the collection.</param>
-            <param name="default">The value to return if the reading fails.</param>
-            <returns>The value casted as 'int', of the item with the provided 'name' (nvc[name]). @default otherwise.</returns>
-        </member>
-        <member name="M:Vi.Extensions.NameValueCollection.Methods.GetString(System.Collections.Specialized.NameValueCollection,System.String,System.String)">
-            <summary>
-            Reads the value of the itmem with the provided 'name' in the 'NameValueCollection'.
-            </summary>
-            <param name="nvc">The 'NameValueCollection'.</param>
-            <param name="name">The name of the item in the collection.</param>
-            <param name="default">The value to return if the reading fails.</param>
-            <returns>The value of the item with the provided 'name' (nvc[name]). @default otherwise.</returns>
-        </member>
-        <member name="T:Vi.Extensions.Object.Methods">
-            <summary>
-            Collection of 'extension methods' for Int
-            </summary>
-        </member>
-        <member name="M:Vi.Extensions.Object.Methods.IsNull(System.Object)">
-            <summary>
-            Checks if an instance of an object is null.
-            </summary>
-            <param name="value">The to check.</param>
-            <returns>Returns value == null;.</returns>
-        </member>
-        <member name="M:Vi.Extensions.Object.Methods.IsNotNull(System.Object)">
-            <summary>
-            Checks if an instance of an object is NOT null.
-            </summary>
-            <param name="value">The value to convert.</param>
-            <returns>Returns value != null;.</returns>
-        </member>
-        <member name="M:Vi.Extensions.Object.Methods.ToBytes(System.Object)">
-            <summary>
-            Converts an object to a byte array using binary serialization.
-            </summary>
-            <param name="value">The object to convert to a byte array.</param>
-            <returns>A byte array representation of the object, or null if the object is null.</returns>
-        </member>
-        <member name="M:Vi.Extensions.Object.Methods.Deserialize``1(System.Byte[])">
-            <summary>
-            Deserializes a byte array into an object of type T.
-            </summary>
-            <typeparam name="T">The type of the object to deserialize to. Must be a reference type.</typeparam>
-            <param name="bytes">The byte array to deserialize.</param>
-            <returns>The deserialized object of type T, or null if the byte array is null.</returns>
         </member>
         <member name="T:Vi.Extensions.Int.Methods">
             <summary>
@@ -952,6 +917,196 @@
             <param name="default">Makes this method exception resislient.</param>
             <returns>The DateTime associated to the value, @default otherwise.</returns>
         </member>
+        <member name="T:Vi.Extensions.NameValueCollection.Methods">
+            <summary>
+            Collection of 'extension methods' for NameValueCollection
+            </summary>
+        </member>
+        <member name="M:Vi.Extensions.NameValueCollection.Methods.ToInt(System.Collections.Specialized.NameValueCollection,System.String,System.Int32)">
+            <summary>
+            Reads the value of the itmem with the provided 'name' in the 'NameValueCollection'.
+            </summary>
+            <param name="nvc">The 'NameValueCollection'.</param>
+            <param name="name">The name of the item in the collection.</param>
+            <param name="default">The value to return if the reading fails.</param>
+            <returns>The value casted as 'int', of the item with the provided 'name' (nvc[name]). @default otherwise.</returns>
+        </member>
+        <member name="M:Vi.Extensions.NameValueCollection.Methods.GetString(System.Collections.Specialized.NameValueCollection,System.String,System.String)">
+            <summary>
+            Reads the value of the itmem with the provided 'name' in the 'NameValueCollection'.
+            </summary>
+            <param name="nvc">The 'NameValueCollection'.</param>
+            <param name="name">The name of the item in the collection.</param>
+            <param name="default">The value to return if the reading fails.</param>
+            <returns>The value of the item with the provided 'name' (nvc[name]). @default otherwise.</returns>
+        </member>
+        <member name="T:Vi.Extensions.Object.Methods">
+            <summary>
+            Collection of 'extension methods' for Int
+            </summary>
+        </member>
+        <member name="M:Vi.Extensions.Object.Methods.IsNull(System.Object)">
+            <summary>
+            Checks if an instance of an object is null.
+            </summary>
+            <param name="value">The to check.</param>
+            <returns>Returns value == null;.</returns>
+        </member>
+        <member name="M:Vi.Extensions.Object.Methods.IsNotNull(System.Object)">
+            <summary>
+            Checks if an instance of an object is NOT null.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <returns>Returns value != null;.</returns>
+        </member>
+        <member name="M:Vi.Extensions.Object.Methods.ToBytes(System.Object)">
+            <summary>
+            Converts an object to a byte array using binary serialization.
+            </summary>
+            <param name="value">The object to convert to a byte array.</param>
+            <returns>A byte array representation of the object, or null if the object is null.</returns>
+        </member>
+        <member name="M:Vi.Extensions.Object.Methods.Deserialize``1(System.Byte[])">
+            <summary>
+            Deserializes a byte array into an object of type T.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize to. Must be a reference type.</typeparam>
+            <param name="bytes">The byte array to deserialize.</param>
+            <returns>The deserialized object of type T, or null if the byte array is null.</returns>
+        </member>
+        <member name="M:Vi.Extensions.Object.Methods.indexOf(System.Object[],System.String)">
+            <summary>
+            shorthand for "System.Array.IndexOf(values, column)"
+            </summary>
+            <param name="values">the object array to browse</param>
+            <param name="column">the name of the column we are interested at</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Extensions.Object.Methods.valueAt(System.Object[],System.String)">
+            <summary>
+            return directly the value at column 'column' in values
+            </summary>
+            <param name="values">the object array to browse</param>
+            <param name="column">the name of the column we are interested at</param>
+            <returns></returns>
+        </member>
+        <member name="T:Vi.Extensions.Random.Methods">
+            <summary>
+            Collection of extention methods for the 'System.Random' Object.
+            </summary>
+        </member>
+        <member name="M:Vi.Extensions.Random.Methods.Next(System.Random,System.Int32,System.Int32,System.Byte)">
+            <summary>
+            Returns a non-negative random integer between 'min' and 'max'.
+            </summary>
+            <param name="rnd">The current instance of the 'System.Random' object.</param>
+            <param name="min">The min value for the resulting value.</param>
+            <param name="max">The max value for the resulting value.</param>
+            <param name="iterations">Set the distribution 1: Linear (omogeneous) 2: Triangular; ... Gaussian</param>
+            <returns>A  random value between min and max with a specified distribution.</returns>
+        </member>
+        <member name="M:Vi.Extensions.Random.Methods.Bet(System.Random,System.Byte,Vi.Types.Percentage)">
+            <summary>
+            Compare a random value between 0 and 100 against the value of 'probability'
+            </summary>
+            <param name="rnd"></param>
+            <param name="grade">The grade of the polinomial distribution.</param>
+            <param name="probability">a number between 0 and 100. Grater becom 100 smallest becom 0</param>
+            <returns>A true if 'brobability is grater than a random value (rnd.next > probability)(</returns>
+        </member>
+        <member name="M:Vi.Extensions.Random.Methods.Bet(System.Random,Vi.Types.Percentage)">
+            <summary>
+            
+            </summary>
+            <param name="rnd">The current instance of the 'System.Random object.</param>
+            <param name="probability">A value between 0 and 100. The expected probability an event is successfull.</param>
+            <returns>A random value (rnd.next > probability)</returns>
+        </member>
+        <member name="T:Vi.Extensions.SqlCommand.Methods">
+            <summary>
+            Collection of 'extension methods' for 'SqlClient.SqlCommand'
+            </summary>
+        </member>
+        <member name="M:Vi.Extensions.SqlCommand.Methods.ExecuteReader(System.Data.SqlClient.SqlCommand,System.Func{System.Data.SqlClient.SqlDataReader,System.Boolean})">
+            <summary>
+            Esegue il command ottenendo un 'DataReader'. Se per il 'DataReader', 'HasRows = true' e 'dr.Read = true' cicla sul 'DataReader' ed evoca la 'callBack' ad ogni iterazione.
+            </summary>
+            <param name="command">Il command da eseguire.</param>
+            <param name="row">La callback da eseguire su ogni singola riga dati del 'DataReader'.</param>
+        </member>
+        <member name="M:Vi.Extensions.SqlCommand.Methods.ExecuteReader(System.Data.SqlClient.SqlCommand,System.Action{System.Data.SqlClient.SqlDataReader},System.Func{System.Data.SqlClient.SqlDataReader,System.Boolean})">
+            <summary>
+            Esegue il command ottenendo un 'DataReader'. Se per il 'DataReader', 'HasRows = true' e 'dr.Read = true' cicla sul 'DataReader' ed evoca la 'callBack' ad ogni iterazione.
+            </summary>
+            <param name="command">Il command da eseguire.</param>
+            <param name="header">La callback da eseguire per realizzare una intestazione di tabelle dal 'DataReader'.</param>
+            <param name="row">La callback da eseguire su ogni singola riga dati del 'DataReader'.</param>
+        </member>
+        <member name="M:Vi.Extensions.SqlCommand.Methods.ExecuteReaderAsync(System.Data.SqlClient.SqlCommand,System.Action{System.Data.SqlClient.SqlDataReader},System.Func{System.Data.SqlClient.SqlDataReader,System.Boolean})">
+            <summary>
+            Implementazione asincrona (semplificata) del metodo executeReader
+            </summary>
+            <param name="command">L'oggetto con le 'istruzioni' per interrogare il DB.</param>
+            <param name="header">CallBack da eseguire non appena ricevuto il dataReader. Dovrebbe contenere i comandi per manipolare le colonne.</param>
+            <param name="row">CallBack che viene chiamata iterativamente (ad ogni esecuzione di dr.HasRows). Per terminare il loop sul DataReader è sufficiente che il return sia false.</param>
+        </member>
+        <member name="T:Vi.Extensions.SqlDataReader.Methods">
+            <summary>
+            Collection of extention methods for the SqlDataReader
+            </summary>
+        </member>
+        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetInt32(System.Data.SqlClient.SqlDataReader,System.String)">
+            <summary>
+            Converts value in column 'name' to 'Int32?'.
+            </summary>
+            <param name="dataReader">The 'DataReader' containing the data.</param>
+            <param name="name">The name of the column to convert to 'Int32'.</param>
+            <returns>dataReader.GetInt32(name) if possible, 'null' otherwise ('System.Exception' included).</returns>
+        </member>
+        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetInt32(System.Data.SqlClient.SqlDataReader,System.String,System.Int32)">
+            <summary>
+            Converts value in column 'name' to 'Int32?'. 
+            </summary>
+            <param name="dataReader">The 'DataReader' containing the data.</param>
+            <param name="name">The name of the column to convert to 'Int32'.</param>
+            <param name="default">The returning valu is when the cast in not possible.</param>
+            <returns>dataReader.GetInt32(name) if possible, 'default' otherwise ('System.Exception' included).</returns>
+        </member>
+        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetInt32(System.Data.SqlClient.SqlDataReader,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Converts value in column 'name' to 'Int32?'. 
+            </summary>
+            <param name="dataReader">The 'DataReader' containing the data.</param>
+            <param name="name">The name of the column to convert to 'Int32'.</param>
+            <param name="default">The returning valu is when the cast in not possible.</param>
+            <returns>dataReader.GetInt32(name) if possible, 'default' otherwise ('System.Exception' included).</returns>
+        </member>
+        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetString(System.Data.SqlClient.SqlDataReader,System.String)">
+            <summary>
+            Converts value in column 'name' to 'string?'.
+            </summary>
+            <param name="dataReader">The 'DataReader' containing the data.</param>
+            <param name="name">The name of the column to convert to 'string'.</param>
+            <returns>dataReader.GetString(name) if possible, 'null' otherwise ('System.Exception' included).</returns>
+        </member>
+        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetString(System.Data.SqlClient.SqlDataReader,System.String,System.String)">
+            <summary>
+            Converts value in column 'name' to 'string?'. 
+            </summary>
+            <param name="dataReader">The 'DataReader' containing the data.</param>
+            <param name="name">The name of the column to convert to 'string'.</param>
+            <param name="default">The returning value default when the cast in not possible.</param>
+            <returns>dataReader.GetString(name) if possible, 'default' otherwise ('System.Exception' included).</returns>
+        </member>
+        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetDateTime(System.Data.SqlClient.SqlDataReader,System.String,System.DateTime)">
+            <summary>
+            Converts value in column 'name' to 'DateTime?'.
+            </summary>
+            <param name="dataReader">The 'DataReader' containing the data.</param>
+            <param name="name">The name of the column to convert to 'string'.</param>
+            <param name="default">The returning value when the cast in not possible.</param>
+            <returns>dataReader.GetDateTime(name) if possible, 'null' otherwise ('System.Exception' included).</returns>
+        </member>
         <member name="T:Vi.Extensions.String.Methods">
             <summary>
             Collection of extention methods for 'string'
@@ -1003,12 +1158,27 @@
             <param name="value">The string to split</param>
             <returns>value?.Trim(charArray)?.Split(charArray) ?? @default;</returns>
         </member>
+        <member name="M:Vi.Extensions.String.Methods.ToCamelCase(System.String)">
+            <summary>
+            Converts the first character of the string to lowercase.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
         <member name="M:Vi.Extensions.String.Methods.Trim(System.String,System.String)">
             <summary>
             The built-in trim can trim just one character only. This method trims a substring.
             </summary>
             <param name="value">The string to trim</param>
             <param name="subString">The value to remove</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Extensions.String.Methods.Join(System.String[],System.String)">
+            <summary>
+            Joins the items in a string using the specified separator.
+            </summary>
+            <param name="value">the values to join</param>
+            <param name="separator">the separator between values</param>
             <returns></returns>
         </member>
         <member name="M:Vi.Extensions.String.Methods.ToInt(System.String,System.Nullable{System.Int32})">
@@ -1238,152 +1408,6 @@
             <param name="text">The text to check</param>
             <returns>True if the text coul be a valid ecel coordinate. False otherwise.</returns>
         </member>
-        <member name="T:Vi.Extensions.DialogResult.Methods">
-            <summary>
-            Collection of 'extension methods' for DialogResult
-            </summary>
-        </member>
-        <member name="M:Vi.Extensions.DialogResult.Methods.IsOk(System.Windows.Forms.DialogResult)">
-            <summary>
-            Checks the value of 'DialogResult'
-            </summary>
-            <param name="dr">True s è uguale a 'DialogResult.OK'. False altrimenti.</param>
-            <returns>True if dr == OK</returns>
-        </member>
-        <member name="M:Vi.Extensions.DialogResult.Methods.IsAbort(System.Windows.Forms.DialogResult)">
-            <summary>
-            Checks the value of 'DialogResult'
-            </summary>
-            <param name="dr">True s è uguale a 'DialogResult.Abort'. False altrimenti.</param>
-            <returns>True if dr == Abort</returns>
-        </member>
-        <member name="M:Vi.Extensions.DialogResult.Methods.IsCancel(System.Windows.Forms.DialogResult)">
-            <summary>
-            Checks the value of 'DialogResult'
-            </summary>
-            <param name="dr">True s è uguale a 'DialogResult.Cancel'. False altrimenti.</param>
-            <returns>True if dr == Cancel</returns>
-        </member>
-        <member name="M:Vi.Extensions.DialogResult.Methods.IsIgnore(System.Windows.Forms.DialogResult)">
-            <summary>
-            Checks the value of 'DialogResult'
-            </summary>
-            <param name="dr">True s è uguale a 'DialogResult.Ignore'. False altrimenti.</param>
-            <returns>True if dr == Ignore</returns>
-        </member>
-        <member name="M:Vi.Extensions.DialogResult.Methods.IsNo(System.Windows.Forms.DialogResult)">
-            <summary>
-            Checks the value of 'DialogResult'
-            </summary>
-            <param name="dr">True s è uguale a 'DialogResult.No'. False altrimenti.</param>
-            <returns>True if dr == No</returns>
-        </member>
-        <member name="M:Vi.Extensions.DialogResult.Methods.IsNone(System.Windows.Forms.DialogResult)">
-            <summary>
-            Checks the value of 'DialogResult'
-            </summary>
-            <param name="dr">True s è uguale a 'DialogResult.None'. False altrimenti.</param>
-            <returns>True if dr == None</returns>
-        </member>
-        <member name="M:Vi.Extensions.DialogResult.Methods.IsRetry(System.Windows.Forms.DialogResult)">
-            <summary>
-            Checks the value of 'DialogResult'
-            </summary>
-            <param name="dr">True s è uguale a 'DialogResult.Retry'. False altrimenti.</param>
-            <returns>True if dr == Retry</returns>
-        </member>
-        <member name="M:Vi.Extensions.DialogResult.Methods.IsYes(System.Windows.Forms.DialogResult)">
-            <summary>
-            Checks the value of 'DialogResult'
-            </summary>
-            <param name="dr">True s è uguale a 'DialogResult.Yes'. False altrimenti.</param>
-            <returns>True if dr == Yes</returns>
-        </member>
-        <member name="T:Vi.Extensions.SqlDataReader.Methods">
-            <summary>
-            Collection of extention methods for the SqlDataReader
-            </summary>
-        </member>
-        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetInt32(System.Data.SqlClient.SqlDataReader,System.String)">
-            <summary>
-            Converts value in column 'name' to 'Int32?'.
-            </summary>
-            <param name="dataReader">The 'DataReader' containing the data.</param>
-            <param name="name">The name of the column to convert to 'Int32'.</param>
-            <returns>dataReader.GetInt32(name) if possible, 'null' otherwise ('System.Exception' included).</returns>
-        </member>
-        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetInt32(System.Data.SqlClient.SqlDataReader,System.String,System.Int32)">
-            <summary>
-            Converts value in column 'name' to 'Int32?'. 
-            </summary>
-            <param name="dataReader">The 'DataReader' containing the data.</param>
-            <param name="name">The name of the column to convert to 'Int32'.</param>
-            <param name="default">The returning valu is when the cast in not possible.</param>
-            <returns>dataReader.GetInt32(name) if possible, 'default' otherwise ('System.Exception' included).</returns>
-        </member>
-        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetInt32(System.Data.SqlClient.SqlDataReader,System.String,System.Nullable{System.Int32})">
-            <summary>
-            Converts value in column 'name' to 'Int32?'. 
-            </summary>
-            <param name="dataReader">The 'DataReader' containing the data.</param>
-            <param name="name">The name of the column to convert to 'Int32'.</param>
-            <param name="default">The returning valu is when the cast in not possible.</param>
-            <returns>dataReader.GetInt32(name) if possible, 'default' otherwise ('System.Exception' included).</returns>
-        </member>
-        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetString(System.Data.SqlClient.SqlDataReader,System.String)">
-            <summary>
-            Converts value in column 'name' to 'string?'.
-            </summary>
-            <param name="dataReader">The 'DataReader' containing the data.</param>
-            <param name="name">The name of the column to convert to 'string'.</param>
-            <returns>dataReader.GetString(name) if possible, 'null' otherwise ('System.Exception' included).</returns>
-        </member>
-        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetString(System.Data.SqlClient.SqlDataReader,System.String,System.String)">
-            <summary>
-            Converts value in column 'name' to 'string?'. 
-            </summary>
-            <param name="dataReader">The 'DataReader' containing the data.</param>
-            <param name="name">The name of the column to convert to 'string'.</param>
-            <param name="default">The returning value default when the cast in not possible.</param>
-            <returns>dataReader.GetString(name) if possible, 'default' otherwise ('System.Exception' included).</returns>
-        </member>
-        <member name="M:Vi.Extensions.SqlDataReader.Methods.GetDateTime(System.Data.SqlClient.SqlDataReader,System.String,System.DateTime)">
-            <summary>
-            Converts value in column 'name' to 'DateTime?'.
-            </summary>
-            <param name="dataReader">The 'DataReader' containing the data.</param>
-            <param name="name">The name of the column to convert to 'string'.</param>
-            <param name="default">The returning value when the cast in not possible.</param>
-            <returns>dataReader.GetDateTime(name) if possible, 'null' otherwise ('System.Exception' included).</returns>
-        </member>
-        <member name="T:Vi.Extensions.SqlCommand.Methods">
-            <summary>
-            Collection of 'extension methods' for 'SqlClient.SqlCommand'
-            </summary>
-        </member>
-        <member name="M:Vi.Extensions.SqlCommand.Methods.ExecuteReader(System.Data.SqlClient.SqlCommand,System.Func{System.Data.SqlClient.SqlDataReader,System.Boolean})">
-            <summary>
-            Esegue il command ottenendo un 'DataReader'. Se per il 'DataReader', 'HasRows = true' e 'dr.Read = true' cicla sul 'DataReader' ed evoca la 'callBack' ad ogni iterazione.
-            </summary>
-            <param name="command">Il command da eseguire.</param>
-            <param name="row">La callback da eseguire su ogni singola riga dati del 'DataReader'.</param>
-        </member>
-        <member name="M:Vi.Extensions.SqlCommand.Methods.ExecuteReader(System.Data.SqlClient.SqlCommand,System.Action{System.Data.SqlClient.SqlDataReader},System.Func{System.Data.SqlClient.SqlDataReader,System.Boolean})">
-            <summary>
-            Esegue il command ottenendo un 'DataReader'. Se per il 'DataReader', 'HasRows = true' e 'dr.Read = true' cicla sul 'DataReader' ed evoca la 'callBack' ad ogni iterazione.
-            </summary>
-            <param name="command">Il command da eseguire.</param>
-            <param name="header">La callback da eseguire per realizzare una intestazione di tabelle dal 'DataReader'.</param>
-            <param name="row">La callback da eseguire su ogni singola riga dati del 'DataReader'.</param>
-        </member>
-        <member name="M:Vi.Extensions.SqlCommand.Methods.ExecuteReaderAsync(System.Data.SqlClient.SqlCommand,System.Action{System.Data.SqlClient.SqlDataReader},System.Func{System.Data.SqlClient.SqlDataReader,System.Boolean})">
-            <summary>
-            Implementazione asincrona (semplificata) del metodo executeReader
-            </summary>
-            <param name="command">L'oggetto con le 'istruzioni' per interrogare il DB.</param>
-            <param name="header">CallBack da eseguire non appena ricevuto il dataReader. Dovrebbe contenere i comandi per manipolare le colonne.</param>
-            <param name="row">CallBack che viene chiamata iterativamente (ad ogni esecuzione di dr.HasRows). Per terminare il loop sul DataReader è sufficiente che il return sia false.</param>
-        </member>
         <member name="T:Vi.Extensions.TimeSpan.Methods">
             <summary>
             Collection of extention methods for TimeSpan
@@ -1403,37 +1427,491 @@
             <param name="value">Il timespan da convertire.</param>
             <returns>Una stringa nel formato 'HH:MM' se il TimeSpan e not null, empty altrimenti.</returns>
         </member>
-        <member name="T:Vi.Extensions.Random.Methods">
+        <member name="T:Vi.MySQL.Types.Column.Types">
             <summary>
-            Collection of extention methods for the 'System.Random' Object.
+            List of native types defined in MySQL.
+            The values assigned to the items are the same as those assigned to the MySqlTypes elements, making it easy and straightforward to cast between the two types.
             </summary>
         </member>
-        <member name="M:Vi.Extensions.Random.Methods.Next(System.Random,System.Int32,System.Int32,System.Byte)">
+        <member name="F:Vi.MySQL.Types.Column.Types.DECIMAL">
             <summary>
-            Returns a non-negative random integer between 'min' and 'max'.
+            (NUMERIC) Decimal number with exact precision (specify precision and scale, e.g. DECIMAL(10,2)).
             </summary>
-            <param name="rnd">The current instance of the 'System.Random' object.</param>
-            <param name="min">The min value for the resulting value.</param>
-            <param name="max">The max value for the resulting value.</param>
-            <param name="iterations">Set the distribution 1: Linear (omogeneous) 2: Triangular; ... Gaussian</param>
-            <returns>A  random value between min and max with a specified distribution.</returns>
         </member>
-        <member name="M:Vi.Extensions.Random.Methods.Bet(System.Random,System.Byte,Vi.Types.Percentage)">
+        <member name="F:Vi.MySQL.Types.Column.Types.TINYINT">
             <summary>
-            Compare a random value between 0 and 100 against the value of 'probability'
+            Very small integer (from -128 to 127 or from 0 to 255).
             </summary>
-            <param name="rnd"></param>
-            <param name="grade">The grade of the polinomial distribution.</param>
-            <param name="probability">a number between 0 and 100. Grater becom 100 smallest becom 0</param>
-            <returns>A true if 'brobability is grater than a random value (rnd.next > probability)(</returns>
         </member>
-        <member name="M:Vi.Extensions.Random.Methods.Bet(System.Random,Vi.Types.Percentage)">
+        <member name="F:Vi.MySQL.Types.Column.Types.SMALLINT">
             <summary>
-            
+            Small integer (from -32,768 to 32,767 or from 0 to 65,535).
             </summary>
-            <param name="rnd">The current instance of the 'System.Random object.</param>
-            <param name="probability">A value between 0 and 100. The expected probability an event is successfull.</param>
-            <returns>A random value (rnd.next > probability)</returns>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.INTEGER">
+            <summary>
+             (INT) Standard integer (from -2,147,483,648 to 2,147,483,647 or from 0 to 4,294,967,295).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.FLOAT">
+            <summary>
+            Floating-point number (approximate precision).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.DOUBLE">
+            <summary>
+            Double-precision floating-point number (approximate precision).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.BIGINT">
+            <summary>
+            Large integer (from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 or from 0 to 18,446,744,073,709,551,615).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.MEDIUMINT">
+            <summary>
+            Medium integer (from -8,388,608 to 8,388,607 or from 0 to 16,777,215).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.DATE">
+            <summary>
+            Date (format YYYY-MM-DD).
+            Date The supported range is '1000-01-01' to '9999-12-31'.
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.TIME">
+            <summary>
+            Time (format HH:MM:SS).
+            The range is '-838:59:59' to '838:59:59'.
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.DATETIME">
+            <summary>
+            Date and time (format YYYY-MM-DD HH:MM:SS).
+            DateTime The supported range is '1000-01-01 00:00:00' to '9999-12-31 23:59:59'.
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.YEAR">
+            <summary>
+            Year (format YYYY).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.TINYBLOB">
+            <summary>
+            Very small binary blob (up to 255 bytes).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.MEDIUMBLOB">
+            <summary>
+            Medium-sized binary blob (up to 16,777,215 bytes).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.LONGBLOB">
+            <summary>
+            Very large binary blob (up to 4,294,967,295 bytes).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.BLOB">
+            <summary>
+            Binary blob (up to 65,535 bytes).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.VARCHAR">
+            <summary>
+            Variable-length string (up to n characters).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.TINYTEXT">
+            <summary>
+            Very small text string (up to 255 characters).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.MEDIUMTEXT">
+            <summary>
+            Medium-sized text string (up to 16,777,215 characters).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.LONGTEXT">
+            <summary>
+            Very large text string (up to 4,294,967,295 characters).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.TEXT">
+            <summary>
+            Text string (up to 65,535 characters).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.VARBINARY">
+            <summary>
+            Variable-length binary string (up to n bytes).
+            </summary>
+        </member>
+        <member name="F:Vi.MySQL.Types.Column.Types.BINARY">
+            <summary>
+            Fixed-length binary string (n bytes).
+            </summary>
+        </member>
+        <member name="M:Vi.MySQL.Types.Column.Parse(System.String)">
+            <summary>
+            Casts 'value' to the correct type.
+            </summary>
+            <param name="value">The value to cast</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.MySQL.Types.Column.Parse(System.String,System.Nullable{Vi.MySQL.Types.Column.Types})">
+            <summary>
+            Casts 'value' to the correct type.
+            </summary>
+            <param name="value">The value to cast</param>
+            <returns></returns>
+        </member>
+        <member name="T:Vi.Tools.Properties.Ico">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Ico.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Ico.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Ico.Logo_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+            </summary>
+        </member>
+        <member name="T:Vi.Tools.Properties.Images3D">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Images3D.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Images3D.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Images3D.Piu_12x12">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Images3D.Piu_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Images3D.Piu_20x20">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Images3D.Piu_25x25">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Images3D.Piu_32x32">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:Vi.Tools.Properties.ImagesDFlat">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.Configurazione_Verde_25x25">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.elimina_Rosso_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.elimina_Rosso_30x30">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.elimina_Verde_30x30">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.Home_Verde_30x30">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.Modifica_Verde_25x25">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.Operatore_Verde_25x25">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.Piu_Rosso_20x20">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.Piu_Verde_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.Piu_Verde_25x25">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.Progettazione_Verde_25x25">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.Responsabile_Verde_25x25">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.save_Verde_30x30">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesDFlat.SMS_Verde_25x25">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:Vi.Tools.Properties.ImagesRFlat">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Bin_Gray_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Bin_Rosso_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Down_Green_27x27">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Left_Green_27x27">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Pencil_Gray_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Piu_Gray_20x20">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Piu_Verde_14x14">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Piu_Verde_18x18">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Piu_Verde_20x20">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.QuestionMark_Orange_32x32">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Right_Green_27x27">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.ImagesRFlat.Up_Green_27x27">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:Vi.Tools.Properties.Resource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Resource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Resource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Resource.Dotted">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Resource.Underline">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:Vi.Tools.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Resources.Dotted">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Properties.Resources.Underline">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:Vi.Tools.Watcher">
+            <summary>
+            Observes a Directory and it's subDirectories, waiting for changes.
+            If a change occours writes a copy of the changed file (before the change) in a backup diretory.
+            </summary>
+        </member>
+        <member name="T:Vi.Tools.Watcher.CopyDelegate">
+            <summary>
+            It's 'boilerplate code': the delegate for the event 'Copy'
+            </summary>
+            <param name="changeType">Changes that might occur to a file or directory.</param>
+            <param name="subPath">The sub path where the file is stored (relative to the root path from where this watching is 'observing')</param>
+            <param name="fileName">The name of the file copied.</param>
+        </member>
+        <member name="F:Vi.Tools.Watcher.Copy">
+            <summary>
+            Notifies the ouside world that a backup copy was created.
+            </summary>
+        </member>
+        <member name="T:Vi.Tools.Watcher.ExceptionDelegate">
+            <summary>
+            It's 'boilerplate code': the delegate for the event 'Exception'
+            </summary>
+            <param name="se"></param>
+        </member>
+        <member name="F:Vi.Tools.Watcher.Exception">
+            <summary>
+             Notifies the ouside world that an exception occurren in this class.
+            </summary>
+        </member>
+        <member name="M:Vi.Tools.Watcher.OnException(System.Exception)">
+            <summary>
+            It's 'boilerplate code', but this method should be called instead of 'this.Exception'.
+            </summary>
+        </member>
+        <member name="F:Vi.Tools.Watcher.FSW">
+            <summary>
+            The 'pointer' to the watcher!
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Watcher.Path">
+            <summary>
+            The directory to monitor, in standard or Universal Naming Convention (UNC) notation.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Watcher.Filter">
+            <summary>
+            The type of files to watch. For example, "*.txt" watches for changes to all 'txt' files.
+            </summary>
+        </member>
+        <member name="P:Vi.Tools.Watcher.Backup">
+            <summary>
+            The full path of the backup directory, in standard or Universal Naming Convention (UNC) notation.
+            </summary>
+        </member>
+        <member name="M:Vi.Tools.Watcher.#ctor(System.String,System.String,System.IO.NotifyFilters,System.String)">
+            <summary>
+            Initialize a FileSystemWatcher.
+            </summary>
+            <param name="backup">The full path of the backup directory, in standard or Universal Naming Convention (UNC) notation.</param>
+            <param name="path">The directory to monitor, in standard or Universal Naming Convention (UNC) notation.</param>
+            <param name="notifyFilters">Specifies changes to watch for in a file or folder.</param>
+            <param name="filter">The type of files to watch. For example, "*.txt" watches for changes to all 'txt' files.</param>
+        </member>
+        <member name="M:Vi.Tools.Watcher.Store(System.IO.FileSystemEventArgs)">
+            <summary>
+            Creates a copy of the modified file in the backup directory. 
+            The backup directory is a 'mirror' of the original directory. 
+            Each day there is a new backup diretory under the root folder.
+            </summary>
+            <param name="e">the parameter provided by all the managed events:{Changed, Created, Deleted, Renamed}</param>
         </member>
         <member name="T:Vi.Statics.Tiger">
             <summary>
@@ -1626,6 +2104,11 @@
         <member name="F:Vi.Statics.Tiger.CounterN">
             <summary>
             Counter for normal log entries. Useful for detecting sequence gaps, which might indicate data loss.
+            </summary>
+        </member>
+        <member name="P:Vi.Statics.Tiger.BaseDirectory">
+            <summary>
+            Gets the "AppContext.BaseDirectory;", which is the base directory of the application.
             </summary>
         </member>
         <member name="P:Vi.Statics.Tiger.LogFileN">
@@ -2639,6 +3122,412 @@
             <param name="file">The file from where this method was called.</param>
             <!-- Failed to insert some or all of included XML --><include file="Logger/XMLs/ILog.xml" path="Docs/method[@name=&quot;Error&quot;]/*" />
         </member>
+        <member name="T:Vi.Types.Directory">
+            <summary>
+            Collect some of the most common function on a string representing a Directory
+            
+            </summary>
+        </member>
+        <member name="F:Vi.Types.Directory.Path">
+            <summary>
+            The path in the string format.
+            </summary>
+        </member>
+        <member name="P:Vi.Types.Directory.Exists">
+            <summary>
+            Determines whether the given path refers to an existing directory on disk.
+            Uses 'System.IO.Directory.Exists'
+            </summary>
+        </member>
+        <member name="M:Vi.Types.Directory.#ctor(System.String)">
+            <summary>
+            Main CTor (assigns the path)
+            </summary>
+            <param name="path">The path in the string format.</param>
+        </member>
+        <member name="P:Vi.Types.Directory.Name">
+            <summary>
+            The name of the directory (without the path)
+            </summary>
+        </member>
+        <member name="P:Vi.Types.Directory.IsAccessDenied">
+            <summary>
+            checks if the access to the directory is denied!
+            </summary>
+        </member>
+        <member name="P:Vi.Types.Directory.IsValid">
+            <summary>
+            Determines whether the specified path is valid.
+            A valid path is defined as one that:
+            - Is not null or whitespace,
+            - Does not contain invalid path characters,
+            - Is rooted (i.e., has a valid drive or network location),
+            - Does not exceed the maximum length of 260 characters.
+            </summary>
+            <returns>
+            True if the path is valid; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Vi.Types.Directory.op_Implicit(Vi.Types.Directory)~System.String">
+            <summary>
+            Implements a kind of 'implicit' cast to make this type interchangeable between 'string' and 'Vi.Types.Directory'
+            </summary>
+            <param name="directory">The instance of a 'Directory' to cast as string.</param>
+        </member>
+        <member name="M:Vi.Types.Directory.op_Implicit(System.String)~Vi.Types.Directory">
+            <summary>
+            Implements a kind of 'implicit' cast to make this type interchangeable between 'string' and 'Vi.Types.Directory'
+            </summary>
+            <param name="path">The string to 'cast'  into 'Vi.Types.Directory'.</param>
+        </member>
+        <member name="M:Vi.Types.Directory.ToDirectory(Vi.Types.Directory)">
+            <summary>
+            Do Nothing. Returns the parameter.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Types.Directory.ToDirectory(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Types.Directory.Create">
+            <summary>
+            Creates a new directory if not already existing
+            </summary>
+        </member>
+        <member name="M:Vi.Types.Directory.ToString">
+            <summary>
+            Returns the Path (defined just for DEBUGGIN pourposes).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Types.Directory.SubDirectories">
+            <summary>
+            Returns the subdirectories of the specified path.
+            </summary>
+            <param name="path">The path to check.</param>
+            <returns>The  array of subDirectories, Empty array otherwise</returns>
+        </member>
+        <member name="M:Vi.Types.Directory.HasSubDirectories">
+            <summary>
+            Checks if the directory has subdirectories.
+            </summary>
+            <param name="path">The path to check.</param>
+            <returns>the number of sub directories, 0 otherwise.</returns>
+        </member>
+        <member name="T:Vi.Types.Error">
+            <summary>
+            Light version of the Exception should (must) be used each time the flow must be interrupted
+            Very usefull to break nested control
+            </summary>
+        </member>
+        <member name="F:Vi.Types.Error.Line">
+            <summary>
+            the line number where the Error arosen
+            </summary>
+        </member>
+        <member name="F:Vi.Types.Error.Member">
+            <summary>
+            The member from where the Error arosen
+            </summary>
+        </member>
+        <member name="F:Vi.Types.Error.File">
+            <summary>
+            The file where the Error arosen
+            </summary>
+        </member>
+        <member name="F:Vi.Types.Error.CustomMessage">
+            <summary>
+            Customer should never be promped with the Exception Message. This is the default message to the customer.
+            </summary>
+        </member>
+        <member name="M:Vi.Types.Error.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Vi.Types.Error"/> class with a default message.
+            </summary>
+        </member>
+        <member name="M:Vi.Types.Error.#ctor(System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Create a new instance of the Error object with a message for the customer
+            </summary>
+            <param name="message">This message will be assigned to the base Exception.Message</param>
+            <param name="customMessage">The message for the customer.</param>
+        </member>
+        <member name="M:Vi.Types.Error.#ctor(System.Exception,System.Int32,System.String,System.String)">
+            <summary>
+            Create a new instance of 'Error' from a previous instance of System.Exception that is passed to the 'InnerException' parameter.
+            </summary>
+            <param name="se"></param>
+            <param name="line"></param>
+            <param name="member"></param>
+            <param name="file"></param>
+        </member>
+        <member name="M:Vi.Types.Error.#ctor(System.String,System.Exception,System.Int32,System.String,System.String)">
+            <summary>
+            Create a new instance of 'Error' from a previous instance of System.Exception that is passed to the 'InnerException' parameter.
+            </summary>
+            <param name="message">the message to show for this instance</param>
+            <param name="se"></param>
+            <param name="line"></param>
+            <param name="member"></param>
+            <param name="file"></param>
+        </member>
+        <member name="M:Vi.Types.Error.Throw(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Trows an Error (inconditionally) adding Line, member and file where the request was made;
+            </summary>
+            <param name="message"></param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+            <exception cref="T:Vi.Types.Error"></exception>
+        </member>
+        <member name="M:Vi.Types.Error.Throw(System.Boolean,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an Error if the condition is true.
+            </summary>
+            <param name="condition"></param>
+            <param name="message"></param>
+            <param name="line"></param>
+            <param name="member"></param>
+            <param name="file"></param>
+            <exception cref="T:Vi.Types.Error"></exception>
+        </member>
+        <member name="M:Vi.Types.Error.IfTrue(System.Boolean,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an error if the condition is true.
+            </summary>
+            <param name="condition">The contition to check.</param>
+            <param name="message"></param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+            <exception cref="T:Vi.Types.Error">The message to sent to the user.</exception>
+        </member>
+        <member name="M:Vi.Types.Error.IfEmpty(System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an error if and only if the string is the string.Empty.
+            </summary>
+            <param name="text">The text to check</param>
+            <param name="message">The text to send.</param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+            <exception cref="T:Vi.Types.Error"></exception>
+        </member>
+        <member name="M:Vi.Types.Error.IfSpaces(System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an error if and only if the string is the made of spaces (blanks).
+            </summary>
+            <param name="text">The text to check</param>
+            <param name="message">The text to send.</param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+            <exception cref="T:Vi.Types.Error"></exception>
+        </member>
+        <member name="M:Vi.Types.Error.IfFalse(System.Boolean,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an error if the condition is false.
+            </summary>
+            <param name="condition">The contition to check.</param>
+            <param name="message"></param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+            <exception cref="T:Vi.Types.Error">The message to sent to the user.</exception>
+        </member>
+        <member name="M:Vi.Types.Error.IfNull(System.Object,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an error if the item is null. Uses the method ErrorIfTrue where condition is (item is null).
+            </summary>
+            <param name="entity">The entity to check</param>
+            <param name="message">The message to sent to the user.</param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+        </member>
+        <member name="M:Vi.Types.Error.ToString">
+            <summary>
+            Defined for debug pourposes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Types.Error.Log(System.Int32,System.String,System.String)">
+            <summary>
+            Logs the current error instance using the Vi.Logger.
+            </summary>
+        </member>
+        <member name="T:Vi.Types.File">
+            <summary>
+            Represents a file and provides utility methods for file operations.
+            It also create a Type (for a string representing a file) used to 
+            enforce method overload 
+            </summary>
+        </member>
+        <member name="F:Vi.Types.File._FileInfo">
+            <summary>
+            The System.IO.FileInfo object related to this file (lazily instantiated).
+            </summary>
+        </member>
+        <member name="P:Vi.Types.File.FileInfo">
+            <summary>
+            The System.IO.FileInfo object related to this file (lazily instantiated).
+            </summary>
+        </member>
+        <member name="F:Vi.Types.File.FullFileName">
+            <summary>
+            Collector of the most common function around a 'File'
+            </summary>
+        </member>
+        <member name="P:Vi.Types.File.Exists">
+            <summary>
+            Determines if the file exists (applies 'System.IO.File.Exists')
+            </summary>
+        </member>
+        <member name="P:Vi.Types.File.Extention">
+            <summary>
+            The LONG version of the extension WITH the dot.
+            </summary>
+        </member>
+        <member name="P:Vi.Types.File.Ext">
+            <summary>
+            The SHORT version of the extension WITHOUT the dot.
+            </summary>
+        </member>
+        <member name="P:Vi.Types.File.IsValidPath">
+            <summary>
+            Determines whether the specified file path is valid.
+            A valid path is defined as one that:
+            - Is not null or whitespace,
+            - Does not contain invalid path characters,
+            - Is rooted (i.e., has a valid drive or network location),
+            - Does not exceed the maximum length of 260 characters.
+            </summary>
+            <returns>
+            True if the file path is valid; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Vi.Types.File.IsAccessDenied">
+            <summary>
+            Checks if the file is 'protected' against any kind of reading
+            </summary>
+        </member>
+        <member name="P:Vi.Types.File.IsEmpty">
+            <summary>
+            Determines if 'FullFileName' is empty (returns: ("" + this.FullFileName).Trim().Length == 0;)
+            </summary>
+        </member>
+        <member name="P:Vi.Types.File.FullName">
+            <summary>
+            Returns the File Name WITH the extention. Applies 'System.IO.Path.GetFileName'
+            </summary>
+        </member>
+        <member name="P:Vi.Types.File.FileName">
+            <summary>
+            Returns the file name without the extension. 
+            Applies 'System.IO.Path.GetFileNameWithoutExtension'.
+            </summary>
+        </member>
+        <member name="P:Vi.Types.File.Path">
+            <summary>
+            The File's 'full path'. (Applies 'System.IO.Path.GetDirectoryName')
+            </summary>
+        </member>
+        <member name="M:Vi.Types.File.#ctor(System.String)">
+            <summary>
+            Main CTor. Trims the parameter and Assigns it the value 'fullFileName' to 'this.FullFIleName'. (this.FullFileName = fullFileName?.Trim() ?? "";)
+            </summary>
+            <param name="fullFileName"></param>
+        </member>
+        <member name="M:Vi.Types.File.op_Implicit(Vi.Types.File)~System.String">
+            <summary>
+            Casting 'on the fly' to 'string' of the parameter
+            </summary>
+            <param name="file">The instance to be converted in 'string'.</param>
+        </member>
+        <member name="M:Vi.Types.File.op_Implicit(System.String)~Vi.Types.File">
+            <summary>
+            Casting 'on the fly' to 'File' of the parameter
+            </summary>
+            <param name="fullFileName">the fully qualified file nane to be converted in 'Vi.Types.File'</param>
+        </member>
+        <member name="M:Vi.Types.File.ToFile(System.String)">
+            <summary>
+            Performs an explicit casting from string to 'Vi.Types.File'.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Types.File.ToString">
+            <summary>
+            Returns the FullFileName (defined just for DEBUGGING pourposes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Types.HResult.GetCode(System.Int32)">
+            <summary>
+            Returns the specific error code from an HResult.
+            </summary>
+            <param name="hresult">The HResult to analize.</param>
+            <returns>The error code number aqssociated with the HResult</returns>
+        </member>
+        <member name="M:Vi.Types.HResult.GetDescription(System.Int32)">
+            <summary>
+            Gets a descriptive string for a given HResult value.
+            This tries to match the full HResult first, then falls back to combining facility and code.
+            </summary>
+        </member>
+        <member name="T:Vi.Types.JSON">
+            <summary>
+            Represents a JSON text and provides utility methods for working with it.
+            </summary>
+        </member>
+        <member name="F:Vi.Types.JSON.Text">
+            <summary>
+            Collector of the most common function around a 'JSON' text
+            </summary>
+        </member>
+        <member name="P:Vi.Types.JSON.IsEmpty">
+            <summary>
+            Determines if 'Text' is empty (returns: ("" + this.Text).Trim().Length == 0;)
+            </summary>
+        </member>
+        <member name="M:Vi.Types.JSON.#ctor(System.String)">
+            <summary>
+            Main CTor. Trims the parameter and Assigns it the value 'text' to 'this.Text'. (this.Text = text?.Trim() ?? "";)
+            </summary>
+            <param name="text">The json text.</param>
+        </member>
+        <member name="M:Vi.Types.JSON.op_Implicit(Vi.Types.JSON)~System.String">
+            <summary>
+            Casting 'on the fly' to 'string' of the parameter
+            </summary>
+            <param name="value">The instance to be converted in 'string'.</param>
+        </member>
+        <member name="M:Vi.Types.JSON.op_Implicit(System.String)~Vi.Types.JSON">
+            <summary>
+            Casting 'on the fly' to 'JSON' of the parameter
+            </summary>
+            <param name="text">the fully qualified file nane to be converted in 'Vi.Types.File'</param>
+        </member>
+        <member name="M:Vi.Types.JSON.ToJSON(System.String)">
+            <summary>
+            Performs an explicit casting from string to 'Vi.Types.JSON'.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Types.JSON.ToString">
+            <summary>
+            Returns the FullFileName (defined just for DEBUGGING pourposes.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Vi.Types.Profile">
             <summary>
             Provides methods to manipulate a 'INI' file. This class is a wrapper around the static class: 'Vi.Statics.Profile' where methods are truly implemented.
@@ -2922,400 +3811,17 @@
             Opens the 'INI' file with the default application.
             </summary>
         </member>
-        <member name="T:Vi.Types.JSON">
+        <member name="T:Vi.Types.Utilities">
             <summary>
-            Represents a JSON text and provides utility methods for working with it.
+            Provides utility methods for common operations.
             </summary>
         </member>
-        <member name="F:Vi.Types.JSON.Text">
+        <member name="M:Vi.Types.Utilities.ComputeChecksum(System.String)">
             <summary>
-            Collector of the most common function around a 'JSON' text
+            Computes the SHA-256 checksum of the provided string.
             </summary>
-        </member>
-        <member name="P:Vi.Types.JSON.IsEmpty">
-            <summary>
-            Determines if 'Text' is empty (returns: ("" + this.Text).Trim().Length == 0;)
-            </summary>
-        </member>
-        <member name="M:Vi.Types.JSON.#ctor(System.String)">
-            <summary>
-            Main CTor. Trims the parameter and Assigns it the value 'text' to 'this.Text'. (this.Text = text?.Trim() ?? "";)
-            </summary>
-            <param name="text">The json text.</param>
-        </member>
-        <member name="M:Vi.Types.JSON.op_Implicit(Vi.Types.JSON)~System.String">
-            <summary>
-            Casting 'on the fly' to 'string' of the parameter
-            </summary>
-            <param name="value">The instance to be converted in 'string'.</param>
-        </member>
-        <member name="M:Vi.Types.JSON.op_Implicit(System.String)~Vi.Types.JSON">
-            <summary>
-            Casting 'on the fly' to 'JSON' of the parameter
-            </summary>
-            <param name="text">the fully qualified file nane to be converted in 'Vi.Types.File'</param>
-        </member>
-        <member name="M:Vi.Types.JSON.ToJSON(System.String)">
-            <summary>
-            Performs an explicit casting from string to 'Vi.Types.JSON'.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Vi.Types.JSON.ToString">
-            <summary>
-            Returns the FullFileName (defined just for DEBUGGING pourposes.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Vi.Types.HResult.GetCode(System.Int32)">
-            <summary>
-            Returns the specific error code from an HResult.
-            </summary>
-            <param name="hresult">The HResult to analize.</param>
-            <returns>The error code number aqssociated with the HResult</returns>
-        </member>
-        <member name="M:Vi.Types.HResult.GetDescription(System.Int32)">
-            <summary>
-            Gets a descriptive string for a given HResult value.
-            This tries to match the full HResult first, then falls back to combining facility and code.
-            </summary>
-        </member>
-        <member name="T:Vi.Types.Error">
-            <summary>
-            Light version of the Exception should (must) be used each time the flow must be interrupted
-            Very usefull to break nested control
-            </summary>
-        </member>
-        <member name="F:Vi.Types.Error.Line">
-            <summary>
-            the line number where the Error arosen
-            </summary>
-        </member>
-        <member name="F:Vi.Types.Error.Member">
-            <summary>
-            The member from where the Error arosen
-            </summary>
-        </member>
-        <member name="F:Vi.Types.Error.File">
-            <summary>
-            The file where the Error arosen
-            </summary>
-        </member>
-        <member name="F:Vi.Types.Error.CustomMessage">
-            <summary>
-            Customer should never be promped with the Exception Message. This is the default message to the customer.
-            </summary>
-        </member>
-        <member name="M:Vi.Types.Error.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Vi.Types.Error"/> class with a default message.
-            </summary>
-        </member>
-        <member name="M:Vi.Types.Error.#ctor(System.String,System.String,System.Int32,System.String,System.String)">
-            <summary>
-            Create a new instance of the Error object with a message for the customer
-            </summary>
-            <param name="message">This message will be assigned to the base Exception.Message</param>
-            <param name="customMessage">The message for the customer.</param>
-        </member>
-        <member name="M:Vi.Types.Error.#ctor(System.Exception,System.Int32,System.String,System.String)">
-            <summary>
-            Create a new instance of 'Error' from a previous instance of System.Exception that is passed to the 'InnerException' parameter.
-            </summary>
-            <param name="se"></param>
-            <param name="line"></param>
-            <param name="member"></param>
-            <param name="file"></param>
-        </member>
-        <member name="M:Vi.Types.Error.#ctor(System.String,System.Exception,System.Int32,System.String,System.String)">
-            <summary>
-            Create a new instance of 'Error' from a previous instance of System.Exception that is passed to the 'InnerException' parameter.
-            </summary>
-            <param name="message">the message to show for this instance</param>
-            <param name="se"></param>
-            <param name="line"></param>
-            <param name="member"></param>
-            <param name="file"></param>
-        </member>
-        <member name="M:Vi.Types.Error.Throw(System.String,System.Int32,System.String,System.String)">
-            <summary>
-            Trows an Error  adding Line, member and file where the request was made;
-            </summary>
-            <param name="message"></param>
-            <param name="line">The line from where this method was called.</param>
-            <param name="member">The member from where this method was called.</param>
-            <param name="file">The file from where this method was called.</param>
-            <exception cref="T:Vi.Types.Error"></exception>
-        </member>
-        <member name="M:Vi.Types.Error.IfTrue(System.Boolean,System.String,System.Int32,System.String,System.String)">
-            <summary>
-            Throws an error if the condition is true.
-            </summary>
-            <param name="condition">The contition to check.</param>
-            <param name="message"></param>
-            <param name="line">The line from where this method was called.</param>
-            <param name="member">The member from where this method was called.</param>
-            <param name="file">The file from where this method was called.</param>
-            <exception cref="T:Vi.Types.Error">The message to sent to the user.</exception>
-        </member>
-        <member name="M:Vi.Types.Error.IfEmpty(System.String,System.String,System.Int32,System.String,System.String)">
-            <summary>
-            Throws an error if and only if the string is the string.Empty.
-            </summary>
-            <param name="text">The text to check</param>
-            <param name="message">The text to send.</param>
-            <param name="line">The line from where this method was called.</param>
-            <param name="member">The member from where this method was called.</param>
-            <param name="file">The file from where this method was called.</param>
-            <exception cref="T:Vi.Types.Error"></exception>
-        </member>
-        <member name="M:Vi.Types.Error.IfSpaces(System.String,System.String,System.Int32,System.String,System.String)">
-            <summary>
-            Throws an error if and only if the string is the made of spaces (blanks).
-            </summary>
-            <param name="text">The text to check</param>
-            <param name="message">The text to send.</param>
-            <param name="line">The line from where this method was called.</param>
-            <param name="member">The member from where this method was called.</param>
-            <param name="file">The file from where this method was called.</param>
-            <exception cref="T:Vi.Types.Error"></exception>
-        </member>
-        <member name="M:Vi.Types.Error.IfFalse(System.Boolean,System.String,System.Int32,System.String,System.String)">
-            <summary>
-            Throws an error if the condition is false.
-            </summary>
-            <param name="condition">The contition to check.</param>
-            <param name="message"></param>
-            <param name="line">The line from where this method was called.</param>
-            <param name="member">The member from where this method was called.</param>
-            <param name="file">The file from where this method was called.</param>
-            <exception cref="T:Vi.Types.Error">The message to sent to the user.</exception>
-        </member>
-        <member name="M:Vi.Types.Error.IfNull(System.Object,System.String,System.Int32,System.String,System.String)">
-            <summary>
-            Throws an error if the item is null. Uses the method ErrorIfTrue where condition is (item is null).
-            </summary>
-            <param name="entity">The entity to check</param>
-            <param name="message">The message to sent to the user.</param>
-            <param name="line">The line from where this method was called.</param>
-            <param name="member">The member from where this method was called.</param>
-            <param name="file">The file from where this method was called.</param>
-        </member>
-        <member name="M:Vi.Types.Error.ToString">
-            <summary>
-            Defined for debug pourposes.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Vi.Types.Error.Log(System.Int32,System.String,System.String)">
-            <summary>
-            Logs the current error instance using the Vi.Logger.
-            </summary>
-        </member>
-        <member name="T:Vi.Types.Directory">
-            <summary>
-            Collect some of the most common function on a string representing a Directory
-            
-            </summary>
-        </member>
-        <member name="F:Vi.Types.Directory.Path">
-            <summary>
-            The path in the string format.
-            </summary>
-        </member>
-        <member name="P:Vi.Types.Directory.Exists">
-            <summary>
-            Determines whether the given path refers to an existing directory on disk.
-            Uses 'System.IO.Directory.Exists'
-            </summary>
-        </member>
-        <member name="M:Vi.Types.Directory.#ctor(System.String)">
-            <summary>
-            Main CTor (assigns the path)
-            </summary>
-            <param name="path">The path in the string format.</param>
-        </member>
-        <member name="P:Vi.Types.Directory.Name">
-            <summary>
-            The name of the directory (without the path)
-            </summary>
-        </member>
-        <member name="P:Vi.Types.Directory.IsAccessDenied">
-            <summary>
-            checks if the access to the directory is denied!
-            </summary>
-        </member>
-        <member name="P:Vi.Types.Directory.IsValid">
-            <summary>
-            Determines whether the specified path is valid.
-            A valid path is defined as one that:
-            - Is not null or whitespace,
-            - Does not contain invalid path characters,
-            - Is rooted (i.e., has a valid drive or network location),
-            - Does not exceed the maximum length of 260 characters.
-            </summary>
-            <returns>
-            True if the path is valid; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Vi.Types.Directory.op_Implicit(Vi.Types.Directory)~System.String">
-            <summary>
-            Implements a kind of 'implicit' cast to make this type interchangeable between 'string' and 'Vi.Types.Directory'
-            </summary>
-            <param name="directory">The instance of a 'Directory' to cast as string.</param>
-        </member>
-        <member name="M:Vi.Types.Directory.op_Implicit(System.String)~Vi.Types.Directory">
-            <summary>
-            Implements a kind of 'implicit' cast to make this type interchangeable between 'string' and 'Vi.Types.Directory'
-            </summary>
-            <param name="path">The string to 'cast'  into 'Vi.Types.Directory'.</param>
-        </member>
-        <member name="M:Vi.Types.Directory.ToDirectory(Vi.Types.Directory)">
-            <summary>
-            Do Nothing. Returns the parameter.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Vi.Types.Directory.ToDirectory(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Vi.Types.Directory.Create">
-            <summary>
-            Creates a new directory if not already existing
-            </summary>
-        </member>
-        <member name="M:Vi.Types.Directory.ToString">
-            <summary>
-            Returns the Path (defined just for DEBUGGIN pourposes).
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Vi.Types.Directory.SubDirectories">
-            <summary>
-            Returns the subdirectories of the specified path.
-            </summary>
-            <param name="path">The path to check.</param>
-            <returns>The  array of subDirectories, Empty array otherwise</returns>
-        </member>
-        <member name="M:Vi.Types.Directory.HasSubDirectories">
-            <summary>
-            Checks if the directory has subdirectories.
-            </summary>
-            <param name="path">The path to check.</param>
-            <returns>the number of sub directories, 0 otherwise.</returns>
-        </member>
-        <member name="T:Vi.Types.File">
-            <summary>
-            Represents a file and provides utility methods for file operations.
-            It also create a Type (for a string representing a file) used to 
-            enforce method overload 
-            </summary>
-        </member>
-        <member name="F:Vi.Types.File._FileInfo">
-            <summary>
-            The System.IO.FileInfo object related to this file (lazily instantiated).
-            </summary>
-        </member>
-        <member name="P:Vi.Types.File.FileInfo">
-            <summary>
-            The System.IO.FileInfo object related to this file (lazily instantiated).
-            </summary>
-        </member>
-        <member name="F:Vi.Types.File.FullFileName">
-            <summary>
-            Collector of the most common function around a 'File'
-            </summary>
-        </member>
-        <member name="P:Vi.Types.File.Exists">
-            <summary>
-            Determines if the file exists (applies 'System.IO.File.Exists')
-            </summary>
-        </member>
-        <member name="P:Vi.Types.File.Extention">
-            <summary>
-            The LONG version of the extension WITH the dot.
-            </summary>
-        </member>
-        <member name="P:Vi.Types.File.Ext">
-            <summary>
-            The SHORT version of the extension WITHOUT the dot.
-            </summary>
-        </member>
-        <member name="P:Vi.Types.File.IsValidPath">
-            <summary>
-            Determines whether the specified file path is valid.
-            A valid path is defined as one that:
-            - Is not null or whitespace,
-            - Does not contain invalid path characters,
-            - Is rooted (i.e., has a valid drive or network location),
-            - Does not exceed the maximum length of 260 characters.
-            </summary>
-            <returns>
-            True if the file path is valid; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Vi.Types.File.IsAccessDenied">
-            <summary>
-            Checks if the file is 'protected' against any kind of reading
-            </summary>
-        </member>
-        <member name="P:Vi.Types.File.IsEmpty">
-            <summary>
-            Determines if 'FullFileName' is empty (returns: ("" + this.FullFileName).Trim().Length == 0;)
-            </summary>
-        </member>
-        <member name="P:Vi.Types.File.FullName">
-            <summary>
-            Returns the File Name WITH the extention. Applies 'System.IO.Path.GetFileName'
-            </summary>
-        </member>
-        <member name="P:Vi.Types.File.FileName">
-            <summary>
-            Returns the file name without the extension. 
-            Applies 'System.IO.Path.GetFileNameWithoutExtension'.
-            </summary>
-        </member>
-        <member name="P:Vi.Types.File.Path">
-            <summary>
-            The File's 'full path'. (Applies 'System.IO.Path.GetDirectoryName')
-            </summary>
-        </member>
-        <member name="M:Vi.Types.File.#ctor(System.String)">
-            <summary>
-            Main CTor. Trims the parameter and Assigns it the value 'fullFileName' to 'this.FullFIleName'. (this.FullFileName = fullFileName?.Trim() ?? "";)
-            </summary>
-            <param name="fullFileName"></param>
-        </member>
-        <member name="M:Vi.Types.File.op_Implicit(Vi.Types.File)~System.String">
-            <summary>
-            Casting 'on the fly' to 'string' of the parameter
-            </summary>
-            <param name="file">The instance to be converted in 'string'.</param>
-        </member>
-        <member name="M:Vi.Types.File.op_Implicit(System.String)~Vi.Types.File">
-            <summary>
-            Casting 'on the fly' to 'File' of the parameter
-            </summary>
-            <param name="fullFileName">the fully qualified file nane to be converted in 'Vi.Types.File'</param>
-        </member>
-        <member name="M:Vi.Types.File.ToFile(System.String)">
-            <summary>
-            Performs an explicit casting from string to 'Vi.Types.File'.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Vi.Types.File.ToString">
-            <summary>
-            Returns the FullFileName (defined just for DEBUGGING pourposes.
-            </summary>
-            <returns></returns>
+            <param name="data">The input string to compute the checksum for.</param>
+            <returns>A hexadecimal string representing the computed checksum.</returns>
         </member>
         <member name="T:Vi.Types.Percentage">
             <summary>
@@ -3368,18 +3874,6 @@
             <param name="value">The built in typy to cast to Percentage.</param>
             <returns>New instance of a 'percent' struct.</returns>
         </member>
-        <member name="T:Vi.Types.Utilities">
-            <summary>
-            Provides utility methods for common operations.
-            </summary>
-        </member>
-        <member name="M:Vi.Types.Utilities.ComputeChecksum(System.String)">
-            <summary>
-            Computes the SHA-256 checksum of the provided string.
-            </summary>
-            <param name="data">The input string to compute the checksum for.</param>
-            <returns>A hexadecimal string representing the computed checksum.</returns>
-        </member>
         <member name="T:Vi.Console">
             <summary>
             Implements some utility methods for the console.
@@ -3392,376 +3886,6 @@
             </summary>
             <param name="level">The specification of the message level.</param>
             <param name="message">The text of the message.</param>
-        </member>
-        <member name="T:Vi.Delegates.TraceDelegate">
-            <summary>
-            Da utilizzare nei log destinati ai tecnici.
-            </summary>
-            <param name="messaggio">il messaggio da registrare.</param>
-            <param name="line">La linea del codice dove il metodo Trace è stato chiamato.</param>
-            <param name="member">Il ni dove il metodo Trace è stato chiamato.</param>
-            <param name="file"></param>
-        </member>
-        <member name="T:Vi.Delegates.ConfirmDelegate">
-            <summary>
-            Delegate to handle confirmation requests from the user.
-            </summary>
-            <param name="messaggio">The message to display in the confirmation request.</param>
-            <returns>True if the user confirms, otherwise false.</returns>
-        </member>
-        <member name="T:Vi.Delegates.InfoDelegate">
-            <summary>
-            Delegate to communicate application state information to the user.
-            </summary>
-            <param name="messaggio">The message to be communicated.</param>
-        </member>
-        <member name="T:Vi.Tools.Properties.Ico">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Ico.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Ico.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Ico.Logo_16x16">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-            </summary>
-        </member>
-        <member name="T:Vi.Tools.Properties.Images3D">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Images3D.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Images3D.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Images3D.Piu_12x12">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Images3D.Piu_16x16">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Images3D.Piu_20x20">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Images3D.Piu_25x25">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Images3D.Piu_32x32">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="T:Vi.Tools.Properties.ImagesDFlat">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.Configurazione_Verde_25x25">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.elimina_Rosso_16x16">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.elimina_Rosso_30x30">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.elimina_Verde_30x30">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.Home_Verde_30x30">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.Modifica_Verde_25x25">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.Operatore_Verde_25x25">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.Piu_Rosso_20x20">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.Piu_Verde_16x16">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.Piu_Verde_25x25">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.Progettazione_Verde_25x25">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.Responsabile_Verde_25x25">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.save_Verde_30x30">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesDFlat.SMS_Verde_25x25">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="T:Vi.Tools.Properties.ImagesRFlat">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Bin_Gray_16x16">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Bin_Rosso_16x16">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Down_Green_27x27">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Left_Green_27x27">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Pencil_Gray_16x16">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Piu_Gray_20x20">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Piu_Verde_14x14">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Piu_Verde_18x18">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Piu_Verde_20x20">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.QuestionMark_Orange_32x32">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Right_Green_27x27">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.ImagesRFlat.Up_Green_27x27">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="T:Vi.Tools.Properties.Resource">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Resource.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Resource.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Resource.Dotted">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Resource.Underline">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="T:Vi.Tools.Properties.Resources">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Resources.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Resources.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Resources.Dotted">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Properties.Resources.Underline">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="T:Vi.Tools.Watcher">
-            <summary>
-            Observes a Directory and it's subDirectories, waiting for changes.
-            If a change occours writes a copy of the changed file (before the change) in a backup diretory.
-            </summary>
-        </member>
-        <member name="T:Vi.Tools.Watcher.CopyDelegate">
-            <summary>
-            It's 'boilerplate code': the delegate for the event 'Copy'
-            </summary>
-            <param name="changeType">Changes that might occur to a file or directory.</param>
-            <param name="subPath">The sub path where the file is stored (relative to the root path from where this watching is 'observing')</param>
-            <param name="fileName">The name of the file copied.</param>
-        </member>
-        <member name="F:Vi.Tools.Watcher.Copy">
-            <summary>
-            Notifies the ouside world that a backup copy was created.
-            </summary>
-        </member>
-        <member name="T:Vi.Tools.Watcher.ExceptionDelegate">
-            <summary>
-            It's 'boilerplate code': the delegate for the event 'Exception'
-            </summary>
-            <param name="se"></param>
-        </member>
-        <member name="F:Vi.Tools.Watcher.Exception">
-            <summary>
-             Notifies the ouside world that an exception occurren in this class.
-            </summary>
-        </member>
-        <member name="M:Vi.Tools.Watcher.OnException(System.Exception)">
-            <summary>
-            It's 'boilerplate code', but this method should be called instead of 'this.Exception'.
-            </summary>
-        </member>
-        <member name="F:Vi.Tools.Watcher.FSW">
-            <summary>
-            The 'pointer' to the watcher!
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Watcher.Path">
-            <summary>
-            The directory to monitor, in standard or Universal Naming Convention (UNC) notation.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Watcher.Filter">
-            <summary>
-            The type of files to watch. For example, "*.txt" watches for changes to all 'txt' files.
-            </summary>
-        </member>
-        <member name="P:Vi.Tools.Watcher.Backup">
-            <summary>
-            The full path of the backup directory, in standard or Universal Naming Convention (UNC) notation.
-            </summary>
-        </member>
-        <member name="M:Vi.Tools.Watcher.#ctor(System.String,System.String,System.IO.NotifyFilters,System.String)">
-            <summary>
-            Initialize a FileSystemWatcher.
-            </summary>
-            <param name="backup">The full path of the backup directory, in standard or Universal Naming Convention (UNC) notation.</param>
-            <param name="path">The directory to monitor, in standard or Universal Naming Convention (UNC) notation.</param>
-            <param name="notifyFilters">Specifies changes to watch for in a file or folder.</param>
-            <param name="filter">The type of files to watch. For example, "*.txt" watches for changes to all 'txt' files.</param>
-        </member>
-        <member name="M:Vi.Tools.Watcher.Store(System.IO.FileSystemEventArgs)">
-            <summary>
-            Creates a copy of the modified file in the backup directory. 
-            The backup directory is a 'mirror' of the original directory. 
-            Each day there is a new backup diretory under the root folder.
-            </summary>
-            <param name="e">the parameter provided by all the managed events:{Changed, Created, Deleted, Renamed}</param>
         </member>
         <member name="T:Vi.Utilities">
             <summary>
@@ -3862,18 +3986,23 @@
             <param name="imageOnTop">The image on top</param>
             <returns>The overlay of the 2 images.</returns>
         </member>
-        <member name="M:Vi.Utilities.GetAssociatedIcon(System.String)">
-            <summary>
-            Retrieves the associated icon for a given file extension from the Windows registry.
-            </summary>
-            <param name="fileExtension">The file extension</param>
-            <returns>The ico associated with the extension if any, null otherwise.</returns>
-        </member>
         <member name="M:Vi.Utilities.GetRedDot">
             <summary>
             Generates a transparent bitmap containing a red dot in the bottom right corner.
             </summary>
             <returns>A bitmap 48x48 with a red dot image 8 pixel radius, 12 pixel from bottom 12 pixel from right with 50% opacity.</returns>
+        </member>
+        <member name="T:SD.MySQL.Extensions.ColumnTypes.Methods">
+            <summary>
+            Collection of 'extension methods' for byte
+            </summary>
+        </member>
+        <member name="M:SD.MySQL.Extensions.ColumnTypes.Methods.IsDECIMAL(System.Nullable{Vi.MySQL.Types.Column.Types})">
+            <summary>
+            Check if the number is even (divisible by 2).
+            </summary>
+            <param name="value">The value to check.</param>
+            <returns>Returns '(value AND 1) == 0'.</returns>
         </member>
         <member name="T:Xi.Statics.Profile">
             <summary>

@@ -110,7 +110,7 @@ namespace Vi.Types
         }
 
         /// <summary>
-        /// Trows an Error  adding Line, member and file where the request was made;
+        /// Trows an Error (inconditionally) adding Line, member and file where the request was made;
         /// </summary>
         /// <param name="message"></param>
         /// <param name="line">The line from where this method was called.</param>
@@ -120,6 +120,24 @@ namespace Vi.Types
         public static void Throw(string message, [CallerLineNumber] int line = 0, [CallerMemberName] string member = "?", [CallerFilePath] string file = "?")
         {
             throw new Error(message, line, member, file);
+        }
+
+
+        /// <summary>
+        /// Throws an Error if the condition is true.
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <param name="message"></param>
+        /// <param name="line"></param>
+        /// <param name="member"></param>
+        /// <param name="file"></param>
+        /// <exception cref="Error"></exception>
+        public static void Throw(bool condition, string message, [CallerLineNumber] int line = 0, [CallerMemberName] string member = "?", [CallerFilePath] string file = "?")
+        {
+            // ToDo add this attribute to the parameter 'condition' [System.Diagnostics.CodeAnalysis.DoesNotReturnIf(true)]
+            //      (evita i  'warning' per potentially null value
+            //      sara' necessario passare ad una versione del del framework piu recente
+            if (condition) throw new Error(message, line, member, file);
         }
 
         /// <summary>
