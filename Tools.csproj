@@ -21,11 +21,6 @@
     <Compile Update="API\enum.WTS_INFO_CLASS.cs">
       <DependentUpon>class.Wtsapi32.cs</DependentUpon>
     </Compile>
-    <Compile Update="Types\Infrastructure.cs">
-      <DependentUpon>Xi.static.Profile.cs</DependentUpon>
-    </Compile>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
     <PackageReference Include="System.Drawing.Common" Version="9.0.9" />
   </ItemGroup>

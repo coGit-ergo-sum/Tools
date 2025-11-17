@@ -65,11 +65,6 @@ namespace Vi.Statics
         /// </summary>
         public static string LogFileX { get; private set; }
 
-        ///////////// <summary>
-        /////////////  Last time the logs were deleted up, 
-        /////////////  used to run the cleaning once a day.
-        ///////////// </summary>
-        //////////private static DateTime LastCleaning = DateTime.MinValue; 
         #endregion
 
         #region Delegates & Events

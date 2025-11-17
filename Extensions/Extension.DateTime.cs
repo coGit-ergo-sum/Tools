@@ -17,7 +17,11 @@ namespace Vi.Extensions.DateTime
         /// <param name="value">The datetime to convert.</param>
         /// <returns>the datetime in the format 'yyyy-MM-dd hh:mm:ss fff'</returns>
         public static string ToYyyyMMddhhmmssfff(this System.DateTime value) { return value.ToString("yyyy-MM-dd hh:mm:ss fff"); }
-        public static string ToYyyyMMdd(this System.DateTime value) { return value.ToString("yyyy-MM-dd"); }
+
+
+		public static string ToYyyyMMddhhmmss(this System.DateTime value) { return value.ToString("yyyy-MM-dd hh:mm:ss"); }
+
+		public static string ToYyyyMMdd(this System.DateTime value) { return value.ToString("yyyy-MM-dd"); }
 
 
         public static string ToHhmmss(this System.DateTime value) { return value.ToString("hh:mm:ss"); }

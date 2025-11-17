@@ -264,6 +264,14 @@ namespace Vi.Extensions.String
             return parseOk ? result : @default;
         }
 
+        public static Int64 ToInt64(this string value, Int64 @default)
+        {
+            value = value.Remove(",", ".");
+            Int64 result = 0;
+            var parseOk = Int64.TryParse(value, out result);
+            return parseOk ? result : @default;
+        }
+
         /// <summary>
         /// Applies 'byte.TryParse'
         /// </summary>

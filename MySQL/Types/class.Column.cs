@@ -216,25 +216,6 @@ namespace Vi.MySQL.Types
             /// </summary>
             YEAR = 13, // Year
 
-            //// -------------------------------
-            ////
-            ///// <summary>
-            /////  Obsolete Use Datetime or Date type
-            ///// </summary>
-            //Newdate = 14,
-            ////
-            //// -------------------------------
-
-            /*
-            //// -------------------------------
-            // Corrispondence NOT found
-            /// <summary>
-            /// Fixed-length string (n characters).
-            /// </summary>
-            CHAR = 11,
-            //// -------------------------------
-            */
-
 
             /// <summary>
             /// Very small binary blob (up to 255 bytes).

@@ -29,6 +29,7 @@ namespace Vi
         /// </summary>
         public static Color BlueDakar = Color.FromArgb(59, 102, 132);
 
+        public static Color BlueCheck = Color.FromArgb(0, 95, 184);
 
         [Obsolete("Only to show the existence of the 'Obsolete' decorator")]
         public void Obsolete() { }
@@ -635,47 +636,3 @@ namespace Vi
 
     }
 }
-
-////////////public static Bitmap GetRedDot(int diameter, decimal opacity)
-////////////{
-////////////    if (diameter <= 0)
-////////////    {
-////////////        return new Bitmap(1, 1); // Restituisce una bitmap minima per diametri non validi
-////////////    }
-
-////////////    Bitmap bmp = new Bitmap(diameter, diameter);
-////////////    using (Graphics g = Graphics.FromImage(bmp))
-////////////    {
-////////////        g.SmoothingMode = SmoothingMode.None;
-////////////        g.Clear(Color.Transparent); // Rende lo sfondo trasparente
-
-////////////        using (SolidBrush brush = new SolidBrush(Color.Red))
-////////////        {
-////////////            g.FillEllipse(brush, 0, 0, diameter - 1, diameter - 1);
-////////////        }
-////////////    }
-////////////    return bmp;
-////////////}
-
-/////////////// <summary>
-/////////////// retrieves the root for the application: it is 'Path.Combine(BaseDirectory, assemblyName)
-/////////////// </summary>
-////////////public static Vi.Types.Directory GetAppRoot()
-////////////{
-////////////    get
-////////////    {
-////////////        var appRoot = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name);
-////////////        // =========================================================================== //
-////////////        /*
-////////////        // Don't make this run will create an stack overflow
-////////////        // Do not delete this code: it is a reminder!!!!
-////////////        if (!appRoot.ToDirectory().Exists)
-////////////        {
-////////////            Vi.Logger.Warn($"Root Directory for the applcation not found: {appRoot}");
-////////////        }
-////////////        */
-////////////        // =========================================================================== //
-
-////////////        return appRoot;
-////////////    }
-////////////}

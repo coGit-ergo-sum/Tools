@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
@@ -537,11 +538,6 @@ namespace Vi
             return ve.Line;
         } 
 
-        //////////public static void Error(Vi.Types.Error ve, [CallerLineNumber] int line = 0, [CallerMemberName] System.String caller = "?", [CallerFilePath] System.String file = "?")
-        //////////{
-        //////////    Vi.Logger.Error(indentation: 0, ve, ve.Line, ve.Member, ve.File);
-        //////////}
-
         /// <summary>
         /// Logs an error message with the specified indentation and error details.
         /// </summary>
@@ -612,6 +608,29 @@ namespace Vi
             // fNeedFileInfo 'true' to get info on file & line.
             var st = new StackTrace(se,fNeedFileInfo: true);
 
+            /*
+            var frames = st.GetFrames();
+            var lines = new List<int>();
+
+            if (frames != null)
+            {
+                foreach (var frame in frames)
+                {
+                    // Controlla se il frame è valido e se contiene informazioni sul file
+                    if (frame != null)
+                    {
+                        int lineNumber = frame.GetFileLineNumber();
+
+                        // Aggiunge il numero di linea solo se è un valore valido (spesso > 0)
+                        if (lineNumber > 0)
+                        {
+                            lines.Add(lineNumber);
+                        }
+                    }
+                }
+            }
+            */
+
             var frame = st.GetFrame(0);
             if (frame != null)
             {
@@ -628,126 +647,3 @@ namespace Vi
         #endregion
     }
 }
-
-
-/////////////// <summary>
-/////////////// This Method is Without implementation
-/////////////// </summary>
-/////////////// <param name="text">The text to log.</param>
-/////////////// <param name="line">The Line number in the file where this method is called.</param>
-/////////////// <param name="caller">The name of the caller from which the log comes.</param>
-/////////////// <param name="file">The name of the file from where this method is called.</param>
-////////////public void Fatal(string text, [CallerLineNumber] int line = 0, [CallerMemberName] System.String caller = "?", [CallerFilePath] System.String file = "?") { }
-
-//#region Fatal
-/////// <summary>
-/////// Fatal is reserved for special exceptions/conditions where it is imperative that you can quickly pick out these events. Fatal should to be used early in an application's development. It's usually only with experience it is possible identify situations worthy of the FATAL moniker experience do specific events become worth of promotion to Fatal. After all, an error's an error.
-/////// </summary>
-/////// <param name="text">The text to log.</param>
-/////// <param name="file">The name of the file from where this method is called.</param>
-/////// <param name="caller">The name of the caller where this method is called.</param>
-/////// <param name="line">The Line of the file where this method is called.</param>
-////// // [DebuggerStepThrough]
-////public static void Fatal(string text, [CallerLineNumber] int line = 0, [CallerMemberName] System.String caller = "?", [CallerFilePath] System.String file = "?")
-////{
-////    Vi.Logger.Fatal(indentation: 0, text, line, caller, file);
-////}
-
-/////// <summary>
-/////// Fatal is reserved for special exceptions/conditions where it is imperative that you can quickly pick out these events. 
-/////// Fatal should be used early in an application's development. It's usually only with experience it is possible to identify 
-/////// situations worthy of the FATAL moniker. After all, an error's an error.
-/////// </summary>
-/////// <param name="indentation">The indentation level for the log message.</param>
-/////// <param name="text">The text to log.</param>
-/////// <param name="line">The line number in the file where this method is called.</param>
-/////// <param name="caller">The name of the caller from which the log originates.</param>
-/////// <param name="file">The name of the file from where this method is called.</param>
-////// // [DebuggerStepThrough]
-////public static void Fatal(int indentation, string text, [CallerLineNumber] int line = 0, [CallerMemberName] System.String caller = "?", [CallerFilePath] System.String file = "?")
-////{
-////    Vi.Logger._Implementation.Fatal(text, line, caller, file);
-////    Vi.Logger.OnLogN?.Invoke(indentation, Levels.FATAL, text, line, caller, file);
-////}
-
-/////// <summary>
-/////// Fatal is reserved for special exceptions/conditions where it is imperative that you can quickly pick out these events. Fatal should to be used early in an application's development. It's usually only with experience it is possible identify situations worthy of the FATAL moniker experience do specific events become worth of promotion to Fatal. After all, an error's an error.
-/////// </summary>
-/////// <param name="file">The name of the file from where this method is called.</param>
-/////// <param name="caller">The name of the caller where this method is called.</param>
-/////// <param name="line">The Line of the file where this method is called.</param>
-/////// <returns>An instance of 'FormatClass' with the method 'Format' used to compose the text to log like the 'String.Format'</returns>
-////// // [DebuggerStepThrough]
-////public static FormatClass Fatal([CallerLineNumber] int line = 0, [CallerMemberName] System.String caller = "?", [CallerFilePath] System.String file = "?")
-////{
-////    return new FormatClass(Logger.Fatal, line, caller, file);
-////}
-//#endregion
-
-
-///////////////// <summary>
-///////////////// Writes the message on the Console.
-///////////////// </summary>
-///////////////// <param name="level">Specifies which kind of log {Debug; Warn; ...}</param>
-///////////////// <param name="text">The text to log.</param>
-///////////////// <include file='Logger/XMLs/List4Log.xml' path='Docs/Member[@name="AppendItem"]/*' />
-///////////////// <include file='Logger/XMLs/List4Log.xml' path='Docs/Member[@name="AppendItemPublic"]/*' />
-//////////////// // [DebuggerStepThrough]
-//////////////public static void WriteLine(Vi.Logger.Levels level, string text)
-//////////////{
-//////////////    Vi.Logger._Implementation.WriteLine(level.ToString(), text);
-//////////////}
-
-///////////////// <summary>
-///////////////// Very simple 'extention' of the method 'WriteLine'. that sets 
-///////////////// different colors for the text based on the level.
-///////////////// </summary>
-///////////////// <param name="level">The specification of the message level.</param>
-///////////////// <param name="text">The text of the message.</param>
-//////////////// // [DebuggerStepThrough]
-//////////////public static void WriteLine(string level, string text)
-//////////////{
-//////////////    level = ("" + level).Trim().ToUpper();
-//////////////    var backgroundColor = System.Console.BackgroundColor;
-//////////////    switch (level)
-//////////////    {
-//////////////        case "DEBUG":
-//////////////            System.Console.BackgroundColor = ConsoleColor.Black;
-//////////////            System.Console.ForegroundColor = ConsoleColor.White;
-//////////////            break;
-//////////////        case "INFO":
-//////////////            System.Console.BackgroundColor = ConsoleColor.Black;
-//////////////            System.Console.ForegroundColor = ConsoleColor.Green;
-//////////////            break;
-//////////////        case "WARN":
-//////////////            System.Console.BackgroundColor = ConsoleColor.Black;
-//////////////            System.Console.ForegroundColor = ConsoleColor.Yellow;
-//////////////            break;
-
-//////////////        case "ERROR":
-//////////////            System.Console.BackgroundColor = ConsoleColor.Black;
-//////////////            System.Console.ForegroundColor = ConsoleColor.Red;
-//////////////            break;
-
-//////////////        case "EXCEPTION":
-//////////////            System.Console.BackgroundColor = ConsoleColor.Red;
-//////////////            System.Console.ForegroundColor = ConsoleColor.White;
-//////////////            break;
-
-//////////////        case "FATAL":
-//////////////            System.Console.BackgroundColor = ConsoleColor.Red;
-//////////////            System.Console.ForegroundColor = ConsoleColor.Green;
-//////////////            break;
-
-//////////////        case "":
-//////////////            Vi.Logger.WriteLine(Vi.Logger.Levels.WARN, $"The provided level is the empty string.");
-//////////////            break;
-
-//////////////        default:
-//////////////            Vi.Logger.WriteLine(Vi.Logger.Levels.WARN, $"The provided level does not exists: {level}");
-//////////////            break;
-//////////////    }
-
-//////////////    System.Console.WriteLine(text);
-//////////////    System.Console.BackgroundColor = backgroundColor;
-//////////////}
