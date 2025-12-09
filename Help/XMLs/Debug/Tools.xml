@@ -3469,6 +3469,137 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Vi.Types.FlowBreaker">
+            <summary>
+            In a world where the use of 'goto' is widely discouraged, this exception provides a way to
+            forcibly break out of an execution flow.
+            
+            It must be used with great care: it is still an Exception, and therefore introduces a
+            non-negligible overhead on the processor. For this reason, it should only be employed in
+            scenarios where such overhead is acceptable (for example, desktop applications with a
+            limited number of users).
+            
+            </summary>
+            This type is intended as a controlled escape mechanism for complex or deeply nested logic,
+            where traditional flow-control constructs would significantly reduce clarity.
+            (Alternatively, one could use a cheerful 'goto' and bravely face the judgement of the entire
+            developer community… but this option is generally considered hazardous to one’s reputation.
+            Based on personal experience.)
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:Vi.Types.FlowBreaker.Line">
+            <summary>
+            the line number where the Error arosen
+            </summary>
+        </member>
+        <member name="F:Vi.Types.FlowBreaker.Member">
+            <summary>
+            The member from where the Error arosen
+            </summary>
+        </member>
+        <member name="F:Vi.Types.FlowBreaker.File">
+            <summary>
+            The file where the Error arosen
+            </summary>
+        </member>
+        <member name="F:Vi.Types.FlowBreaker.CustomMessage">
+            <summary>
+            Customer should never be promped with the Exception Message. This is the default message to the customer.
+            </summary>
+        </member>
+        <member name="M:Vi.Types.FlowBreaker.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Main CTor. Assigns the messages to the base Exception
+            </summary>
+            <param name="message">This message will be assigned to the base Exception.Message</param>
+        </member>
+        <member name="M:Vi.Types.FlowBreaker.Jump(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Trows an Error (inconditionally) adding Line, member and file where the request was made;
+            </summary>
+            <param name="message"></param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+            <exception cref="T:Vi.Types.Error"></exception>
+        </member>
+        <member name="M:Vi.Types.FlowBreaker.Jump(System.Boolean,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an Error if the condition is true.
+            </summary>
+            <param name="condition"></param>
+            <param name="message"></param>
+            <param name="line"></param>
+            <param name="member"></param>
+            <param name="file"></param>
+            <exception cref="T:Vi.Types.Error"></exception>
+        </member>
+        <member name="M:Vi.Types.FlowBreaker.IfTrue(System.Boolean,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an error if the condition is true.
+            </summary>
+            <param name="condition">The contition to check.</param>
+            <param name="message"></param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+            <exception cref="T:Vi.Types.Error">The message to sent to the user.</exception>
+        </member>
+        <member name="M:Vi.Types.FlowBreaker.IfEmpty(System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an error if and only if the string is the string.Empty.
+            </summary>
+            <param name="text">The text to check</param>
+            <param name="message">The text to send.</param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+            <exception cref="T:Vi.Types.Error"></exception>
+        </member>
+        <member name="M:Vi.Types.FlowBreaker.IfSpaces(System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an error if and only if the string is the made of spaces (blanks).
+            </summary>
+            <param name="text">The text to check</param>
+            <param name="message">The text to send.</param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+            <exception cref="T:Vi.Types.Error"></exception>
+        </member>
+        <member name="M:Vi.Types.FlowBreaker.IfFalse(System.Boolean,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an error if the condition is false.
+            </summary>
+            <param name="condition">The contition to check.</param>
+            <param name="message"></param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+            <exception cref="T:Vi.Types.Error">The message to sent to the user.</exception>
+        </member>
+        <member name="M:Vi.Types.FlowBreaker.IfNull(System.Object,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Throws an error if the item is null. Uses the method ErrorIfTrue where condition is (item is null).
+            </summary>
+            <param name="entity">The entity to check</param>
+            <param name="message">The message to sent to the user.</param>
+            <param name="line">The line from where this method was called.</param>
+            <param name="member">The member from where this method was called.</param>
+            <param name="file">The file from where this method was called.</param>
+        </member>
+        <member name="M:Vi.Types.FlowBreaker.ToString">
+            <summary>
+            Defined for debug pourposes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vi.Types.FlowBreaker.Log(System.Int32,System.String,System.String)">
+            <summary>
+            Logs the current error instance using the Vi.Logger.
+            </summary>
+        </member>
         <member name="M:Vi.Types.HResult.GetCode(System.Int32)">
             <summary>
             Returns the specific error code from an HResult.

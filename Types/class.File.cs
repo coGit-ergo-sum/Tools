@@ -55,7 +55,8 @@ namespace Vi.Types
         /// <summary>
         /// The SHORT version of the extension WITHOUT the dot.
         /// </summary>
-        public string Ext { get { return this.Ext.Trim('.'); } }
+        public string Ext { get { return System.IO.Path.GetExtension(this.FullName).ToLowerInvariant(); } }
+                //return this.Ext.Trim('.'); } }
 
         /// <summary>
         /// Determines whether the specified file path is valid.

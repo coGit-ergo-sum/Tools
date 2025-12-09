@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Topics>
-  <Topic id="welcome_page" file="welcome.md" title="Benvenuto" />
-  <Topic id="getting_started" file="gettingstarted.md" title="Guida Introduttiva">
-    <Topic id="installation" file="installation.md" title="Installazione" />
-    <Topic id="configuration" file="configuration.md" title="Configurazione" />
-  </Topic>
-  <Topic id="faqs" file="faq.md" title="Domande Frequenti" />
-</Topics>

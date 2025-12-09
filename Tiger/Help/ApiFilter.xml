@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ApiFilter>
-  <Filter entryType="Namespace" id="N:Vi.Statics.Tiger" expose="true" />
-</ApiFilter>

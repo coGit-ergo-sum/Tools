@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<NamespaceSummaries>
-  <Namespace name="SD.Interop">
-    Interoperability layer for ETL pipelines, configuration and transport
-    between file-based sources and relational databases.
-  </Namespace>
-</NamespaceSummaries>
